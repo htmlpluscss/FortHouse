@@ -1,0 +1,94 @@
+	<div class="modal__item modal__item--login">
+
+		<form action="/" class="modal-login form">
+
+			<h3 class="modal-login__head h2">
+				Вход в личный кабинет
+			</h3>
+
+			<div class="modal-login__fieldset">
+
+				<div class="inputbox">
+
+					<label for="modal-login-email" class="inputbox__label">
+						Email
+					</label>
+
+					<input class="input" placeholder="Введите еmail" required="required" name="email" type="email" id="modal-login-email">
+
+				</div>
+
+				<div class="inputbox">
+
+					<label for="modal-login-pass" class="inputbox__label">
+						Пароль
+					</label>
+
+					<div class="inputbox__input-wrap visible-toggle-password">
+
+						<input id="modal-login-pass" placeholder="Введите пароль" type="password" name="password" class="input visible-toggle-password__input" required="required">
+
+						<div class="inputbox__ico-right">
+
+							<button class="visible-toggle-password__btn button" type="button" aria-label="показать пароль">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M11.98 15.98a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM12 4C6.48 4 2 8.84 2 12c0 3.09 4.58 8 10 8s10-4.91 10-8c0-3.16-4.48-8-10-8Z"/>
+									<path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+								</svg>
+								<svg class="hide" width="24" height="24" viewBox="0 0 24 24">
+									<path d="M11.98 15.98a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM12 4C6.48 4 2 8.84 2 12c0 3.09 4.58 8 10 8s10-4.91 10-8c0-3.16-4.48-8-10-8Z"/>
+									<path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+									<path d="M19.59 21 2.99 4.41 4.42 3l16.6 16.59L19.58 21Z"/>
+								</svg>
+							</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="modal-login__remember-recovery">
+
+					<div class="checkbox">
+
+						<label class="checkbox__control">
+
+							<input type="checkbox" class="checkbox__input" name="remember" checked="checked">
+
+							<span class="checkbox__label">
+								Запомнить меня
+							</span>
+
+						</label>
+
+					</div>
+
+					<button class="button" type="button" data-modal="recovery">
+						Забыли пароль?
+					</button>
+
+				</div>
+
+			</div>
+
+			<div class="form__ok hide"></div>
+			<div class="form__error hide"></div>
+
+			<button class="btn btn--medium modal-login__submit form__submit">
+				Войти
+			</button>
+
+			<p class="modal-login__foot">
+
+				Еще нет аккаунта?
+
+				<button class="button link" type="button" data-modal="reg">
+					Зарегистрируйтесь
+				</button>
+
+			</p>
+
+		</form>
+
+	</div>

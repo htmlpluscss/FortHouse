@@ -1,0 +1,64 @@
+		<script type="application/ld+json">
+
+			{
+				"@context" : "https://schema.org",
+				"@type" : "Product",
+				"name" : "{{ title }}",
+				"description" : "{{ description }}",
+				"image" : "{{ url }}/{{ ogImage }}",
+				"url" : "{{ url }}/{{ urlPage }}/",
+				"brand": {
+					"@type" : "Brand",
+					"name" : "GRASS"
+				},
+				"sku" : "AVD-0795",
+				"gtin13" : "глобальный идентификатор товара, например код ISBN, MPN или GTIN8 (если нет то id в системе)",
+				"offers": {
+					"@type" : "Offer",
+					"price" : "7900",
+					"priceValidUntil" : "2021-12-31",
+					"availability" : "https://schema.org/InStock",
+					"priceCurrency" : "RUB",
+					"url" : "{{ url }}/{{ urlPage }}/"
+				},
+				"aggregateRating": {
+					"@type" : "AggregateRating",
+					"worstRating" : "1",
+					"bestRating" : "5",
+					"ratingValue" : "4.7",
+					"reviewCount" : "2"
+				},
+				"review" : [
+					{
+						"@type" : "Review",
+						"author" : {
+							"@type" : "Person",
+							"name" : "Макс Д."
+						},
+						"description" : "Хорошие ценники, техники предостаточно, большая официальная гарантия и сервис отработан до самых мелочей. Стиральная машина куплена, прошло все ровно и теперь можно нацеливаться на покупку уже сушилки, причем и модель прямо здесь же выбрали.",
+						"reviewRating": {
+							"@type" : "Rating",
+							"worstRating" : "1",
+							"bestRating" : "5",
+							"ratingValue" : "5"
+						}
+					},
+					{
+						"@type" : "Review",
+						"author" : {
+							"@type" : "Person",
+							"name" : "Алексей"
+						},
+						"description" : "Быстрая обработка заказа и доставк Согласовали окно доставки заранее",
+						"reviewRating": {
+							"@type" : "Rating",
+							"worstRating" : "1",
+							"bestRating" : "5",
+							"ratingValue" : "4"
+						}
+					}
+				]
+
+			}
+
+		</script>

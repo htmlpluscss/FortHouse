@@ -1,0 +1,42 @@
+.sort {
+
+	display: flex;
+	justify-content: flex-end;
+
+	&__item {
+
+		margin-left: 24px;
+		line-height: 24px;
+		display: flex;
+		color: #F5C400;
+		font-size: 12px;
+		position: relative;
+		cursor: pointer;
+		user-select: none;
+
+		svg {
+
+			margin-left: 3px;
+			fill: var(--grey);
+
+		}
+
+		&.is-revert {
+
+			svg {
+
+				transform: scaleY(-1);
+
+			}
+
+		}
+
+		&.is-active {
+
+			color: var(--text);
+
+		}
+
+	}
+
+}

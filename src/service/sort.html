@@ -1,0 +1,104 @@
+		<div class="catalog__sort">
+
+			<button type="button" class="catalog__sort-btn-mobile catalog__sort-btn-mobile--filter button" aria-label="открыть фильтр">
+
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<path d="M3 7h3v2H3V7Zm0 8h11v2H3v-2Zm7-8h11v2H10V7Zm8 8h3v2h-3v-2Z"/>
+					<path d="M11 8a3 3 0 1 1-6 .11A3 3 0 0 1 11 8ZM9 8a1 1 0 1 0-2-.06A1 1 0 0 0 9 8Zm10 8a3 3 0 1 1-6 .11 3 3 0 0 1 6-.11Zm-2 0a1 1 0 1 0-2-.06 1 1 0 0 0 2 .06Z"/>
+				</svg>
+
+			</button>
+
+			<button type="button" class="catalog__sort-btn-mobile catalog__sort-btn-mobile--sort button" aria-label="открыть сортировку">
+
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<path fill-rule="evenodd" d="M7 8V6h11v2H7ZM5 5a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1v4a1 1 0 0 1-.24.65L15 15.36v3.57c0 .47-.3.9-.75 1.04l-2.8.93A1.1 1.1 0 0 1 10 19.86v-4.5L5.23 9.64A1 1 0 0 1 5 9V5Zm3.13 5 3.6 4.3c.17.22.27.5.27.77v3.54l1-.33v-3.2c0-.29.1-.56.28-.78l3.58-4.3H8.13Z"/>
+				</svg>
+
+			</button>
+
+			<form action="/" class="catalog__sort-form-mobile sort-mobile filter-sort-trigger-mobile" data-id="filter-service">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="radio" class="checkbox__input" name="sort" data-direction="decrease" value="popular" checked="checked">
+
+						<span class="checkbox__label">
+							По популярности
+						</span>
+
+					</label>
+
+				</div>
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="radio" class="checkbox__input" name="sort" data-direction="increase" value="price">
+
+						<span class="checkbox__label">
+							Сначала дешевые
+						</span>
+
+					</label>
+
+				</div>
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="radio" class="checkbox__input" name="sort" data-direction="decrease" value="price">
+
+						<span class="checkbox__label">
+							Сначала дорогие
+						</span>
+
+					</label>
+
+				</div>
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="radio" class="checkbox__input" name="sort" data-direction="decrease" value="sale">
+
+						<span class="checkbox__label">
+							По размеру скидке
+						</span>
+
+					</label>
+
+				</div>
+
+			</form>
+
+			<form action="/" class="catalog__sort-form-desktop sort filter-sort-trigger" data-id="filter-catalog">
+
+				<input type="hidden" name="direction" value="decrease" data-alt="increase">
+
+				<button type="button" class="sort__item button is-active" data-value="popular">
+
+					по популярности
+
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<path d="M7 13h10l1-2H6l1 2ZM4 6c-.56 0-.8.4-.55.9L4 8h16l.55-1.1c.25-.5 0-.9-.54-.9H3.99Zm6.78 11.56a.87.87 0 0 0 .72.44h1c.27 0 .6-.2.72-.44L14 16h-4l.78 1.56Z"/>
+					</svg>
+
+				</button>
+
+				<button type="button" class="sort__item button" data-value="price">
+					по цене
+				</button>
+
+				<button type="button" class="sort__item button" data-value="sale">
+					по скидке
+				</button>
+
+			</form>
+
+		</div>

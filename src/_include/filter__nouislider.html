@@ -1,0 +1,25 @@
+		<fieldset class="filter__fieldset">
+
+			<legend class="filter__legend h6">
+				Цена
+			</legend>
+
+			<div class="filter__nouislider">
+
+				<div class="nouislider" data-min="{{ fieldset.min }}" data-max="{{ fieldset.max }}" data-step="1" data-suf="₽">
+
+					<div class="nouislider__inputbox">
+
+						<input type="tel" class="input nouislider__min is-side" name="price-min" value="{{ fieldset.minThousands }} ₽">
+
+						<input type="tel" class="input nouislider__max is-side" name="price-max" value="{{ fieldset.maxThousands }} ₽">
+
+					</div>
+
+					<div class="nouislider__track"></div>
+
+				</div>
+
+			</div>
+
+		</fieldset>

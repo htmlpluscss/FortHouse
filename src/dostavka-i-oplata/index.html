@@ -1,0 +1,143 @@
+{% set title = "Доставка и оплата" %}
+
+{% set description = "Условия доставки в города Владимир, Муром, Сергиев Посад и в регионы России. Условия оплаты для физических лиц и юридических лиц" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="delivery-payment">
+
+			<h1 class="delivery-payment__title h2">
+				{{ title }}
+			</h1>
+
+			<div class="delivery-payment__list">
+
+				<div class="delivery-payment__item">
+
+					<h2 class="delivery-payment__head h6">
+						Самовывоз
+					</h2>
+
+					<ol>
+						<li>
+							Владимир - ул.&nbsp;Тракторная д.&nbsp;48
+						</li>
+						<li>
+							Муром - ул.&nbsp;Ленина д.&nbsp;34
+						</li>
+						<li>
+							Сергиев Посад - ул.&nbsp;Железнодорожная д.&nbsp;46
+						</li>
+					</ol>
+
+				</div>
+
+				<div class="delivery-payment__item">
+
+					<h2 class="delivery-payment__head h6">
+						Доставка в города Владимир, Муром, Сергиев&nbsp;Посад
+					</h2>
+
+					<ol>
+						<li>
+							При заказе на сумму <b>более 3&nbsp;000&nbsp;₽</b> доставка  осуществляется <b class="color-green">бесплатно</b>
+						</li>
+						<li>
+							При заказе на сумму <b>менее 3&nbsp;000&nbsp;₽</b> стоимость доставки - <b>200&nbsp;₽</b>
+						</li>
+					</ol>
+
+				</div>
+
+				<div class="delivery-payment__item">
+
+					<h2 class="delivery-payment__head h6">
+						Доставка в регионы
+					</h2>
+
+					<ol>
+						<li>
+							Заказ возможен при покупке на сумму <b>более 1&nbsp;000&nbsp;₽</b>
+						</li>
+						<li>
+							Доставка до всех транспортных компаний осуществляется <b class="color-green">бесплатно</b>
+						</li>
+						<li>
+							Доставка осуществляется транспортными компаниями по тарифам компаний:
+						</li>
+					</ol>
+
+					<div class="delivery-payment__shipping">
+
+						<p class="delivery-payment__shipping-item">
+
+							<a href="/" target="_blank" rel="noopener noffolow">
+
+								<img src="/img/product/shipping/cdek.svg" width="42" height="15" loading="lazy" alt="cdek">
+
+								СДЭК
+
+							</a>
+
+						</p>
+
+						<p class="delivery-payment__shipping-item">
+
+							<a href="/" target="_blank" rel="noopener noffolow">
+
+								<img src="/img/product/shipping/russian-post.svg" width="42" height="15" loading="lazy" alt="Почта России">
+
+								Почта России
+
+							</a>
+
+						</p>
+
+						<p class="delivery-payment__shipping-item">
+
+							Прочие ТК - <b>По запросу</b>
+
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class="delivery-payment__item delivery-payment__item--payment">
+
+					<h2 class="delivery-payment__head h6">
+						Условия оплаты
+					</h2>
+
+					<h3 class="delivery-payment__sub-head h7">
+						Для физических лиц:
+					</h3>
+
+					<ol>
+						<li>наличный расчёт в наших магазинах</li>
+						<li>расчет банковской картой в наших магазинах</li>
+						<li>оплата банковской картой онлайн</li>
+						<li>оплата наложенным платежом при получении товара</li>
+					</ol>
+
+					<h3 class="delivery-payment__sub-head h7">
+						Для юридических лиц:
+					</h3>
+
+					<p>
+						По безналичному расчёту
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}

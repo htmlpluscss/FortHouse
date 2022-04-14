@@ -1,0 +1,43 @@
+{% set title = "Подкатегория" %}
+
+{% set description = "Бытовая техника: Моющие пылесосы Karcher, Пароочистители, Стеклоочистители, Насосы и станции водоснабжения" %}
+
+{% set breadcrumbs = ["Бытовая техника","Пылесосы"] %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<h1 class="h2">
+			Пылесосы
+		</h1>
+
+		<div class="catalog">
+
+			<div class="catalog__filter">
+
+{% include "catalog/filter/filter.html" %}
+
+			</div>
+
+			<div class="catalog__body">
+
+{% include "catalog/sort.html" %}
+
+				<div class="catalog__result">
+
+{% include "catalog/tags.html" %}
+{% include "catalog/list.html" %}
+{% include "template/pagin.html" %}
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}

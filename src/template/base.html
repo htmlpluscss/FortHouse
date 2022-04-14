@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: https://ogp.me/ns#">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>{{ title }}</title>
+
+	<link href="/css/styles.css" rel="preload" as="style">
+	<link href="/js/scripts.js" rel="preload" as="script">
+
+	<link rel="preconnect" href="https://mc.yandex.ru/">
+
+	<link href="/fonts/roboto-v29-latin_cyrillic-ext-400.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+	<link href="/fonts/roboto-v29-latin_cyrillic-ext-500.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+	<link href="/fonts/roboto-v29-latin_cyrillic-ext-700.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+
+	<link href="{{ url }}/favicon.png" rel="apple-touch-icon-precomposed">
+
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ description | default(site) }}">
+	<meta name="theme-color" content="#ffffff">
+
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:site_name" content="{{ site }}">
+	<meta property="og:url" content="{{ url }}{% if urlPage %}/{{ urlPage }}/{% endif %}">
+	<meta property="og:type" content="{{ ogType | default('website') }}">
+	<meta property="og:title" content="{{ title }}">
+	<meta property="og:description" content="{{ description | default(site) }}">
+
+	<meta property="og:image" content="{{ url }}/{{ ogImage | default('og.png') }}">
+	<meta property="og:image:secure_url" content="{{ url }}/{{ ogImage | default('og.png') }}">
+{% if not ogImage %}
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+{% endif %}
+	<meta property="og:image" content="{{ url }}/{{ ogImage256 | default('og-256.png') }}">
+	<meta property="og:image:width" content="256">
+	<meta property="og:image:height" content="256">
+
+	<link href="/css/styles.css" rel="stylesheet">
+	<script defer src="/js/scripts.js"></script>
+
+{% for item in preloadImage %}
+	<link href="{{ item.img }}" rel="preload" as="image" media="{{ item.media }}">
+{% endfor %}
+
+
+{% if dev %}
+
+	<style>
+
+		main hr {
+
+			margin: 20px 0;
+
+		}
+
+		main h1, main h2, main h3 {
+
+			margin: 20px 0 10px;
+
+		}
+
+		main .w100p {
+
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+
+		}
+
+		main .flex {
+
+			margin: 0 -10px;
+			display: flex;
+			flex-wrap: wrap;
+
+		}
+
+		main p {
+
+			margin: 0 10px;
+
+		}
+
+		.item {
+
+			margin: 10px;
+
+		}
+
+		code {
+
+			margin: 10px;
+			background-color: #fff;
+			color: #000;
+			display: block;
+			border: 1px solid #efefef;
+			white-space: pre;
+
+		}
+
+	</style>
+
+{% endif %}
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+{% include "template/header.html" %}
+
+{% include "template/menu-catalog.html" %}
+
+	<main class="main">
+
+{% if breadcrumbs %}
+
+{% include "template/breadcrumbs.html" %}
+
+{% endif %}
+
+{% block content %}{% endblock %}
+
+	</main>
+
+{% include "template/footer.html" %}
+
+</div>
+
+{% include "template/modal.html" %}
+
+	<button class="page-up is-hidden button" type="button" aria-label="Прокрутить страницу вверх">
+
+		<svg width="24" height="24" viewBox="0 0 24 24">
+			<path d="M5.8 12.2a1 1 0 0 0 1.4 0L11 8.42V18a1 1 0 1 0 2 0V8.41l3.8 3.8a1 1 0 1 0 1.4-1.42l-5.5-5.5a1 1 0 0 0-.67-.29h-.06a1 1 0 0 0-.68.3l-5.5 5.5a1 1 0 0 0 0 1.4Z"/>
+		</svg>
+
+	</button>
+
+</body>
+</html>

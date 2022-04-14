@@ -1,0 +1,72 @@
+				<article class="catalog-preview">
+
+					<a href="/catalog/product/" class="catalog-preview__photo">
+
+						<picture>
+
+							<source srcset="/img/preview/catalog/{{ item.photo }}--224x300.webp 2x" type="image/webp" media="(max-width: 767px)">
+							<source srcset="/img/preview/catalog/{{ item.photo }}--224x300.png 2x" media="(max-width: 767px)">
+
+							<source srcset="/img/preview/catalog/{{ item.photo }}--{{ settings[0] }}x{{ settings[1] }}.webp 1x, /img/preview/catalog/{{ item.photo }}--{{ settings[0] * 2 }}x{{ settings[1] * 2 }}.webp 2x" type="image/webp">
+							<source srcset="/img/preview/catalog/{{ item.photo }}--{{ settings[0] }}x{{ settings[1] }}.png 1x, /img/preview/catalog/{{ item.photo }}--{{ settings[0] * 2 }}x{{ settings[1] * 2 }}.png 2x">
+
+							<img src="/img/preview/catalog/{{ item.photo }}--{{ settings[0] }}x{{ settings[1] }}.png" alt="{{ item.name }}" loading="lazy" width="{{ settings[0] }}" height="{{ settings[1] }}">
+
+						</picture>
+
+					</a>
+
+					<div class="catalog-preview__price">
+
+						<div class="price price--fz{{ settings[2] }}">
+
+		{% include "_include/price.html" %}
+
+						</div>
+
+					</div>
+
+					<div class="catalog-preview__name h{{ settings[3] }}">
+
+						<a href="/catalog/product/">
+							{{ item.name }}
+						</a>
+
+					</div>
+
+					<form action="/" class="catalog-preview__form form-buy">
+
+						<input type="hidden" name="id" value="123">
+
+		{% if item.label %}
+
+						<div class="catalog-preview__label">
+
+							<div class="label label--{{ item.labelColor }}">
+
+								<div class="label__text">
+									{{ item.label }}
+								</div>
+
+							</div>
+
+						</div>
+
+		{% endif %}
+
+						<div class="catalog-preview__btn">
+
+							<button class="
+								btn
+								btn--buy
+								{% if settings[4] %} btn--{{ settings[4] }}{% endif %}
+								form-buy__submit
+							">
+								В корзину
+							</button>
+
+						</div>
+
+					</form>
+
+				</article>

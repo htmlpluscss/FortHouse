@@ -1,0 +1,235 @@
+.swiper-gallery-preview {
+
+	display: flex;
+
+	@media ($smWidth) {
+
+		display: block;
+
+	}
+
+	img {
+
+		border-radius: 3px;
+
+	}
+
+	.swiper-container {
+
+		height: 570px;
+		overflow: hidden;
+
+		@media ($smWidth) {
+
+			height: auto;
+			margin: 0 calc( var(--indent) * -1 );
+
+		}
+
+	}
+
+	&__preview {
+
+		width: 102px;
+		flex-shrink: 0;
+		position: relative;
+		margin-right: 24px;
+
+		@media ($smWidth) {
+
+			margin: 0;
+			width: 100%;
+
+			&:not(.swiper-container-style) .swiper-gallery-preview__item + .swiper-gallery-preview__item {
+
+				display: none;
+
+			}
+
+		}
+
+		.swiper-controls {
+
+			height: 570px;
+
+			@media ($smWidth) {
+
+				height: auto;
+				position: relative;
+
+			}
+
+		}
+
+		.swiper-navigation {
+
+			flex-direction: column;
+			top: -36px;
+			bottom: -36px;
+
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+
+			width: 24px;
+			height: 24px;
+			border-radius: 0;
+			box-shadow: none !important;
+			--blue: #F5C400;
+
+		}
+
+		.swiper-pagination {
+
+			bottom: 0;
+			position: relative;
+			margin-top: 6px;
+
+		}
+
+	}
+
+	&__link {
+
+		display: block;
+
+	}
+
+	&__item {
+
+		margin-bottom: 15px;
+		position: relative;
+		cursor: pointer;
+
+		@media ($smWidth) {
+
+			margin: 0;
+			padding: 0 var(--indent);
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+
+			img,
+			video {
+
+				width: 100%;
+				height: auto;
+
+			}
+
+		}
+
+		&.is-video {
+
+			video {
+
+				pointer-events: none;
+				display: block;
+
+				@media ($smWidth) {
+
+					pointer-events: auto;
+
+				}
+
+			}
+
+			&::before {
+
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				z-index: 1;
+				content: '';
+				pointer-events: none;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath fill='%23FFE431' d='M15 23.75a8.75 8.75 0 1 0 0-17.5 8.75 8.75 0 0 0 0 17.5Zm0 2.5a11.25 11.25 0 1 1 0-22.5 11.25 11.25 0 0 1 0 22.5Z'/%3E%3Cpath fill='%23FFE431' d='M13.76 18.9c-.74.43-1.35.08-1.35-.78v-6.24c0-.86.6-1.2 1.35-.77l5.73 3.37c.5.29.5.75 0 1.04l-5.73 3.37Z'/%3E%3C/svg%3E");
+
+			}
+
+		}
+
+		&.is-current {
+
+			&::after {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				content: '';
+				border: 2px solid #F5C400;
+				border-radius: 3px;
+				pointer-events: none;
+
+				@media ($smWidth) {
+
+					display: none;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&__big {
+
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media ($smWidth) {
+
+			&:not(.is-only-item) {
+
+				display: none;
+
+			}
+
+		}
+
+		&-item {
+
+			&.is-hide {
+
+				display: none;
+
+			}
+
+		}
+
+		img,
+		video {
+
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+
+			@media ($mdWidth) {
+
+				width: 100%;
+				height: 570px;
+				display: block;
+
+			}
+
+			@media ($smWidth) {
+
+				height: auto;
+
+			}
+
+		}
+
+	}
+
+}

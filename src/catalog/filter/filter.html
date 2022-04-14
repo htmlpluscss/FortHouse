@@ -1,0 +1,111 @@
+	<form action="/" class="filter" id="filter-catalog">
+
+{% include "_include/filter__head.html" %}
+
+{% set fieldset = {
+
+	legend : "Тип",
+	name   : "type",
+
+	list : [
+		{
+			label : "Пылесосы с аквафильтром",
+			checked: true
+		},
+		{
+			label : "Моющие пылесосы"
+		},
+		{
+			label : "Пылесосы сухой уборки"
+		},
+		{
+			label : "Хозяйственные пылесосы",
+			checked: true
+		},
+		{
+			label : "Паропылесосы"
+		}
+	]
+
+} %}
+
+{% include "_include/filter__checkbox.html" %}
+
+
+{% set fieldset = {
+
+	min : 8345,
+	max : 150953,
+	minThousands : "8 345",
+	maxThousands : "123 953"
+
+} %}
+
+{% include "_include/filter__nouislider.html" %}
+
+
+{% set fieldset = {
+
+	legend : "Производитель",
+	name   : "brend",
+
+	list : [
+		{
+			label : "Karcher",
+			checked: true,
+			disabled : true
+		}
+	]
+
+} %}
+
+{% include "_include/filter__checkbox.html" %}
+
+
+{% set fieldset = {
+
+	legend : "Материал помпы",
+	name   : "pump",
+
+	list : [
+		{
+			label : "Композит (N-cor)"
+		},
+		{
+			label : "Силлумин",
+			checked: true
+		},
+		{
+			label : "Латунь"
+		}
+	]
+
+} %}
+
+{% include "_include/filter__checkbox.html" %}
+
+
+{% set fieldset = {
+
+	legend : "Забор воды из емкости",
+	name   : "tank",
+
+	list : [
+		{
+			label : "Есть",
+			value : "yes",
+			checked: true
+		},
+		{
+			label : "Нет",
+			value : "no"
+		}
+	]
+
+} %}
+
+{% include "_include/filter__radio.html" %}
+
+{% include "_include/filter__foot.html" %}
+
+	</form>

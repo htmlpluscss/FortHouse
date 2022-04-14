@@ -1,0 +1,47 @@
+{% set title = "Карточка товара" %}
+
+{% set description = "Представляем Вам - минимойку GRASS C22P-1508. Эта малышка с давлением 150 бар. Новая веха развития. Первая мойка от Grass для каждого! Она пригодится как для мойки авто, так и в хозяйственных нуждах!" %}
+
+{% set breadcrumbs = ["Бытовая техника","Минимойки","Минимойка GRASS C22P-1508"] %}
+
+{% set ogType = "article" %}
+{% set urlPage = "catalog/product" %}
+{% set ogImage = "img/product/gallery/1--996x1164.jpg" %}
+{% set ogImage256 = "img/product/gallery/1--204x204.jpg" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center product-page">
+
+{% include "catalog/product/schema.html" %}
+
+		<div class="product-page__main">
+
+			<div class="product">
+
+				<header class="product__header">
+
+{% set availability = "В наличии" %}
+
+{% include "catalog/product/header.html" %}
+
+				</header>
+
+				<div class="product__body">
+
+{% include "catalog/product/gallery/5/gallery.html" %}
+{% include "catalog/product/details.html" %}
+{% include "catalog/product/form-buy.html" %}
+{% include "catalog/product/delivery.html" %}
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}

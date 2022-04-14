@@ -1,0 +1,80 @@
+{% set news = [
+
+	{
+		name : "Невероятное падение цен под Новый Год 2020!",
+		date : "с 02.12.2019 по 10.01.2020"
+	},
+	{
+		name : "Юбилей Karcher. Уникальные модели!",
+		date : "до 5 декабря 2021"
+	},
+	{
+		name : "Супер скидки от Karcher",
+		date : "с 01.11.2019 по 31.12.2019"
+	},
+	{
+		name : "Акция на апрель!",
+		date : "до 31.04.2018"
+	}
+
+] %}
+
+	<section class="news-list">
+
+		<h2 class="news-list__title h2">
+			{{ title }}
+		</h2>
+
+		<div class="swiper-wrap">
+
+			<div class="swiper-inner">
+
+				<div class="swiper-container swiper-container--card-auto">
+
+					<div class="news-list__column swiper-wrapper">
+
+{% for item in news %}
+
+						<article class="news-list__item swiper-slide">
+
+							<a href="/" class="news-list__photo">
+
+								<picture>
+
+									<source srcset="/img/news/preview/{{ loop.index }}--480x340.webp" type="image/webp" media="(max-width: 767px)">
+									<source srcset="/img/news/preview/{{ loop.index }}--480x340.png" media="(max-width: 767px)">
+
+									<source srcset="/img/news/preview/{{ loop.index }}--336x216.webp 1x, /img/news/preview/{{ loop.index }}--672x432.webp 2x" type="image/webp">
+									<source srcset="/img/news/preview/{{ loop.index }}--336x216.jpg 1x, /img/news/preview/{{ loop.index }}--672x432.jpg 2x">
+
+									<img src="/img/news/preview/{{ loop.index }}--336x216.jpg" alt="{{ item.name }}" loading="lazy" width="336" height="216">
+
+								</picture>
+
+							</a>
+
+							<time datetime="2021-12-05" class="news-list__date">
+								{{ item.date }}
+							</time>
+
+							<div class="news-list__name h4">
+
+								<a href="/">
+									{{ item.name }}
+								</a>
+
+							</div>
+
+						</article>
+
+{% endfor %}
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>

@@ -1,0 +1,350 @@
+{% set title = "Контакты" %}
+
+{% set description = "Условия доставки в города Владимир, Муром, Сергиев Посад и в регионы России. Условия оплаты для физических лиц и юридических лиц" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="contacts">
+
+			<h1 class="contacts__title h2">
+				{{ title }}
+			</h1>
+
+			<dl class="contacts__common">
+
+				<div class="contacts__common-item">
+
+					<dt>
+						Единая электронная почта
+					</dt>
+
+					<dd>
+						<a href="mailto:chistovgorode@mail.ru">
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-email"/>
+							</svg>
+							chistovgorode@mail.ru
+						</a>
+					</dd>
+
+				</div>
+
+				<div class="contacts__common-item">
+
+					<dt>
+						Отдел по работе с интернет-заказами
+					</dt>
+
+					<dd>
+						<a href="tel:89157561050">
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-phone"/>
+							</svg>
+							8 (915) 756 10 50
+						</a>
+					</dd>
+
+				</div>
+
+				<div class="contacts__common-item hidden-md">
+
+					<dt>
+						Отдел по работе с юридическими лицами
+					</dt>
+
+					<dd>
+						<a href="tel:89157561050">
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-phone"/>
+							</svg>
+							8 (915) 756 10 50
+						</a>
+					</dd>
+
+				</div>
+
+			</dl>
+
+			<div class="contacts__flex">
+
+				<div class="contacts__map" id="map">
+
+					<script>
+
+						( script => {
+
+							script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+
+							script.onload = () => {
+
+								ymaps.ready( () => {
+
+									const myMap = new ymaps.Map('map', {
+											center: [56.129057, 40.406635],
+											zoom: 7,
+											controls: []
+										});
+
+									const zoomControl = new ymaps.control.ZoomControl({
+										options: {
+											visible: true,
+											position: {
+												top: 20,
+												right: 20
+											}
+										}
+									});
+
+									myMap.controls.add(zoomControl);
+
+									const objectManager = new ymaps.ObjectManager();
+
+
+									objectManager.objects.options.set('iconLayout', 'default#image');
+									objectManager.objects.options.set('iconImageSize', [22, 32]);
+									objectManager.objects.options.set('iconImageHref', "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='32' viewBox='0 0 22 32'%3E%3Cpath fill='%230F0B38' d='M11 31.75c-3.99 0-10.5-15.2-10.5-21a10.5 10.5 0 0 1 21 0c0 5.8-6.51 21-10.5 21ZM11 16a5.1 5.1 0 1 0 0-10.2A5.1 5.1 0 0 0 11 16Z'/%3E%3C/svg%3E");
+
+									myMap.geoObjects.add(objectManager);
+
+									const data =
+									{
+										"type": "FeatureCollection",
+										"features": [
+											{
+												"id": 0,
+												"type": "Feature",
+												"geometry": {
+													"type": "Point",
+													"coordinates": [56.129057, 40.406635]
+												},
+												"properties": {
+													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Владимир</span>",
+													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Тракторная д. 48</span>"
+												}
+											},
+											{
+												"id": 1,
+												"type": "Feature",
+												"geometry": {
+													"type": "Point",
+													"coordinates": [55.579174, 42.052411]
+												},
+												"properties": {
+													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Муром</span>",
+													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Ленина д. 34</span>"
+												}
+											},
+											{
+												"id": 2,
+												"type": "Feature",
+												"geometry": {
+													"type": "Point",
+													"coordinates": [56.315311, 38.135972]
+												},
+												"properties": {
+													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Сергиев Посад</span>",
+													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Железнодорожная д. 46</span>"
+												}
+											}
+										]
+									};
+
+									objectManager.add(data);
+
+								});
+
+							};
+
+							window.addEventListener("load", () => {
+
+								setTimeout( () => document.head.appendChild(script), Cookies.get('fastLoadScript') ? 0 : 10000);
+
+							});
+
+						})(document.createElement('script'));
+
+					</script>
+
+				</div>
+
+				<div class="contacts__list">
+
+					<section class="contacts__item">
+
+						<h2 class="contacts__item-name h7">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-location"/>
+							</svg>
+
+							Магазин в г. Владимир
+
+						</h2>
+
+						<p class="contacts__item-address">
+							ул. Тракторная д. 48 (Напротив т/ц Мегаторг)
+						</p>
+
+						<div class="contacts__item-row">
+
+							<div class="contacts__item-col">
+
+								<div class="contacts__ico">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="#svg-phone"/>
+									</svg>
+
+									<a href="tel:84922602024">
+										8 (4922) 60 20 24
+									</a>
+
+									<br>
+
+									<a href="tel:89157561050">
+										8 (915) 756 10 50
+									</a>
+
+								</div>
+
+							</div>
+
+							<div class="contacts__item-col">
+
+								<div class="contacts__ico">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<path d="M11.07 12.38a1 1 0 0 0 .22.33l2.67 2.66a1 1 0 0 0 1.41-1.41L13 11.59V8a1 1 0 0 0-2 0v4a1 1 0 0 0 .08.39v-.01ZM12 4a8 8 0 1 1 0 16 8 8 0 0 1 0-16Z"/>
+									</svg>
+
+									Пн-Пт: 9:00-19:00 <br>
+									Сб-Вс: 9:30-17:30
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</section>
+
+					<section class="contacts__item">
+
+						<h2 class="contacts__item-name h7">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-location"/>
+							</svg>
+
+							Магазин в г. Муром
+
+						</h2>
+
+						<p class="contacts__item-address">
+							ул. Ленина д. 34
+						</p>
+
+						<div class="contacts__item-row">
+
+							<div class="contacts__item-col">
+
+								<div class="contacts__ico">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="#svg-phone"/>
+									</svg>
+
+									<a href="tel:89190159194">
+										8 (919) 015 91 94
+									</a>
+
+								</div>
+
+							</div>
+
+							<div class="contacts__item-col">
+
+								<div class="contacts__ico">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<path d="M11.07 12.38a1 1 0 0 0 .22.33l2.67 2.66a1 1 0 0 0 1.41-1.41L13 11.59V8a1 1 0 0 0-2 0v4a1 1 0 0 0 .08.39v-.01ZM12 4a8 8 0 1 1 0 16 8 8 0 0 1 0-16Z"/>
+									</svg>
+
+									Пн-Пт: 9:00-18:00 <br>
+									Сб: 10:00-16:00 <br>
+									Вс: выходной
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</section>
+
+					<section class="contacts__item">
+
+						<h2 class="contacts__item-name h7">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-location"/>
+							</svg>
+
+							Магазин в г. Сергиев Посад
+
+						</h2>
+
+						<p class="contacts__item-address">
+							ул. Железнодорожная д. 46 (т/ц Автомаркет)
+						</p>
+
+						<div class="contacts__item-row">
+
+							<div class="contacts__item-col">
+
+								<div class="contacts__ico">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="#svg-phone"/>
+									</svg>
+
+									<a href="tel:89045949437">
+										8 (904) 594 94 37
+									</a>
+
+								</div>
+
+							</div>
+
+							<div class="contacts__item-col">
+
+								<div class="contacts__ico">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<path d="M11.07 12.38a1 1 0 0 0 .22.33l2.67 2.66a1 1 0 0 0 1.41-1.41L13 11.59V8a1 1 0 0 0-2 0v4a1 1 0 0 0 .08.39v-.01ZM12 4a8 8 0 1 1 0 16 8 8 0 0 1 0-16Z"/>
+									</svg>
+
+									Пн-Пт: 10:00-18:00 <br>
+									Сб-Вс: выходной
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</section>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}

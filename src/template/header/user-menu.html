@@ -1,0 +1,147 @@
+								<div class="user-menu user-menu--{{ userMenuMobile | default('header') }}">
+
+									<div class="user-menu__head">
+
+										<div class="user-menu__photo">
+											АП
+										</div>
+
+										<p class="user-menu__name">
+											Анна Петрова
+										</p>
+
+										<div class="user-menu__email">
+
+											<a href="emailto:anna.petrova@gmail.com">
+												anna.petrova@gmail.com
+											</a>
+
+										</div>
+
+									</div>
+
+									<ul class="user-menu__list">
+
+								{% if userMenuMobile %}
+
+										<li class="user-menu__item">
+
+											<button class="user-menu__link button btn-toggle-menu-catalog" type="button">
+
+												<svg width="24" height="24" viewBox="0 0 24 24">
+													<use xlink:href="#svg-catalog"/>
+												</svg>
+
+												Каталог
+
+											</button>
+
+										</li>
+
+								{% endif %}
+
+										<li class="user-menu__item">
+
+											<a class="user-menu__link" href="/lk/">
+
+												<svg width="24" height="24" viewBox="0 0 24 24">
+													<use xlink:href="#svg-user"/>
+												</svg>
+
+										{% if userMenuMobile %}
+
+												Личный кабинет
+
+										{% else %}
+
+												Данные аккаунта
+
+										{% endif %}
+
+											</a>
+
+										</li>
+
+										<li class="user-menu__item">
+
+											<a class="user-menu__link" href="/lk/card/">
+
+												<svg width="24" height="24" viewBox="0 0 24 24">
+
+											{% if userMenuMobile %}
+
+													<use xlink:href="#svg-card"/>
+
+											{% else %}
+
+													<g id="svg-card">
+														<path d="M5.01 17h14v-6h-14v6Zm0-8h14V7h-14v2ZM19 5H5a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z" fill-rule="evenodd"/>
+														<path d="M7.01 15h2v-2h-2v2Z" fill-rule="evenodd"/>
+													</g>
+
+											{% endif %}
+
+												</svg>
+
+												Сохраненные карты
+
+											</a>
+
+										</li>
+
+										<li class="user-menu__item">
+
+											<a class="user-menu__link" href="/lk/address/">
+
+												<svg width="24" height="24" viewBox="0 0 24 24">
+													<use xlink:href="#svg-location"/>
+												</svg>
+
+												Мои адреса
+
+											</a>
+
+										</li>
+
+										<li class="user-menu__item">
+
+											<a class="user-menu__link" href="/lk/order/">
+
+												<svg width="24" height="24" viewBox="0 0 24 24">
+													<use xlink:href="#svg-order"/>
+												</svg>
+
+												Мои заказы
+
+											</a>
+
+										</li>
+
+									</ul>
+
+									<hr>
+
+									<button class="user-menu__link user-menu__link--exit button" data-modal="exit" type="button">
+
+										<svg width="24" height="24" viewBox="0 0 24 24">
+
+									{% if userMenuMobile %}
+
+											<use xlink:href="#svg-exit"/>
+
+									{% else %}
+
+											<g id="svg-exit">
+												<path d="M4.98 11A.99.99 0 0 0 4 12c0 .55.44 1 .98 1h11.04a.99.99 0 0 0 .98-1 .99.99 0 0 0-.98-1H4.98Z"/>
+												<path d="M6.23 8.3 3.3 11.27a1.05 1.05 0 0 0 0 1.48l2.93 2.96A1.03 1.03 0 0 0 8 14.96c0-.28-.1-.55-.3-.74L5.5 12l2.2-2.22a1.05 1.05 0 0 0-.34-1.7 1.03 1.03 0 0 0-1.13.23ZM12 3v2h7v14h-7v2h7a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-7Z"/>
+											</g>
+
+									{% endif %}
+
+										</svg>
+
+										Выход
+
+									</button>
+
+								</div>

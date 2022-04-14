@@ -1,0 +1,86 @@
+.visible-md,
+.visible-sm {
+
+	display: none;
+
+}
+
+.center {
+
+	width: 1336px;
+	max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 var(--indent);
+
+}
+
+@media ($desktop) {
+
+
+}
+
+@media ($mdWidth) and (min-width: 768px) {
+
+
+}
+
+@media ($mdWidth) {
+
+	.hidden-md {
+
+		display: none !important;
+
+	}
+
+	.visible-md {
+
+		display: block;
+
+	}
+
+	.center {
+
+	}
+
+}
+
+@media ($smWidth) {
+
+	:root {
+
+		--indent: 15px;
+		--gap: 12px;
+		--space: 27px;
+		--card-shadow: 0 2px 6px 1px rgba(175, 174, 198, 0.14);
+
+	}
+
+	.hidden-sm {
+
+		display: none !important;
+
+	}
+
+	.visible-sm {
+
+		display: block;
+
+	}
+
+	.center {
+
+	}
+
+}
+
+@media ($xsWidth) {
+
+	.hidden-xs {
+
+		display: none !important;
+
+	}
+
+
+}

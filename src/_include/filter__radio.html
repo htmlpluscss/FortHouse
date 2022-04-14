@@ -1,0 +1,42 @@
+		<fieldset class="filter__fieldset">
+
+			<legend class="filter__legend h6">
+				{{ fieldset.legend }}
+			</legend>
+
+{% for item in fieldset.list %}
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input
+
+							type="radio"
+							class="checkbox__input"
+							name="{{ fieldset.name }}"
+							value="{{ item.value }}"
+
+						{% if item.checked %}
+
+							checked="checked"
+
+						{% endif %}
+
+						>
+
+						<span class="checkbox__label">
+							{{ item.label }}
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+{% endfor %}
+
+		</fieldset>

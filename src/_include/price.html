@@ -1,0 +1,15 @@
+{% if item.priceOld %}
+
+					<b class="price__sale">
+						{{ item.price }} ₽
+					</b>
+
+					<s class="price__old">
+						{{ item.priceOld }} ₽
+					</s>
+
+{% else %}
+
+					{{ item.price }} ₽
+
+{% endif %}

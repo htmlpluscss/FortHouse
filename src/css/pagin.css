@@ -1,0 +1,78 @@
+.pagin {
+
+	margin: 48px 0 84px;
+	display: flex;
+	justify-content: flex-end;
+
+	@media ($smWidth) {
+
+		margin: var(--space) 0;
+
+	}
+
+	&__item {
+
+		&--sep {
+
+			width: 28px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: var(--BnW);
+
+		}
+
+	}
+
+	&__item--current &__link {
+
+		background-color: var(--yellow);
+		color: #fff;
+		pointer-events: none;
+
+	}
+
+	&__item--disabled &__link {
+
+		pointer-events: none;
+
+		svg {
+
+			fill: var(--BnW);
+
+		}
+
+	}
+
+	&__link {
+
+		color: #F5C400;
+		min-width: 32px;
+		height: 32px;
+		display: block;
+		text-align: center;
+		line-height: 32px;
+		font-size: 14px;
+		border-radius: 3px;
+
+		svg {
+
+			fill: #0F0B38;
+
+		}
+
+		&:hover {
+
+			color: var(--color);
+
+			svg {
+
+				fill: var(--yellow);
+
+			}
+
+		}
+
+	}
+
+}

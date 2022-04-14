@@ -1,0 +1,43 @@
+{% set title = "Ошибка 404" %}
+
+{% set description = "Что-то пошло не так. Данная страница не существует или была удалена" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="page404">
+
+			<div class="page404__content">
+
+				<h1 class="page404__title">
+					404
+				</h1>
+
+				<p class="page404__text">
+					Что-то пошло не так. Данная страница не существует или была удалена
+				</p>
+
+				<div class="page404__btn">
+
+					<a href="/" class="btn btn--big">
+						На главную
+					</a>
+
+				</div>
+
+			</div>
+
+			<div class="page404__img">
+
+				<img src="/img/404.svg" width="608" height="308" loading="lazy" alt="">
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}

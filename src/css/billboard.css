@@ -1,0 +1,218 @@
+.billboard {
+
+	position: relative;
+	flex-shrink: 0;
+
+	@media ($smWidth) {
+
+		background-color: #fbfafb;
+
+	}
+
+	.swiper-pagination {
+
+		left: var(--indent);
+
+		@media ($smWidth) {
+
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: var(--space);
+
+		}
+
+	}
+
+	&:not(.swiper-container-style) &__item + &__item {
+
+		display: none;
+
+	}
+
+	&__wrap {
+
+		display: flex;
+		overflow: hidden;
+		flex-grow: 1;
+
+	}
+
+	&__list {
+
+		display: flex;
+		width: 100%;
+
+	}
+
+	&__item {
+
+		width: 100%;
+		display: flex;
+		flex-shrink: 0;
+		height: 432px;
+
+		@media ($smWidth) {
+
+			height: 283px;
+			padding-bottom: calc( 42px +  var(--space) );
+
+			br {
+
+				display: none;
+
+			}
+
+		}
+
+		.center {
+
+			display: flex;
+
+		}
+
+	}
+
+	&__img {
+
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+
+		@media ($mdWidth) {
+
+			img {
+
+				max-width: 100%;
+				height: auto;
+				max-height: 432px;
+				object-fit: contain;
+				mix-blend-mode: multiply;
+
+			}
+
+		}
+
+		@media ($smWidth) {
+
+			padding: var(--space) 0;
+
+			img {
+
+				max-height: 160px;
+
+			}
+
+		}
+
+	}
+
+	&__content {
+
+		padding: 80px 0 97px;
+		flex-direction: column;
+		display: flex;
+		width: 680px;
+		margin-right: 34px;
+		flex-shrink: 0;
+		position: relative;
+
+		@media ($mdWidth) {
+
+			width: 50%;
+			margin-right: 0;
+			padding: var(--space) 2% var(--space) 0;
+
+		}
+
+		@media ($smWidth) {
+
+			margin-right: calc( 18px - 2% );
+
+		}
+
+	}
+
+	&__item--img-wide &__content {
+
+		width: 496px;
+
+		@media ($mdWidth) {
+
+			width: 50%;
+
+		}
+
+		@media ($smWidth) {
+
+			width: 48%;
+
+		}
+
+	}
+
+	&__intro {
+
+		font-weight: 500;
+		font-size: 21px;
+		line-height: 27px;
+		color: #F5C400;
+		margin-bottom: 21px;
+
+		@media ($smWidth) {
+
+			display: none;
+
+		}
+
+	}
+
+	&__title {
+
+		margin-bottom: 12px;
+
+		@media ($smWidth) {
+
+			margin: 6px 0;
+			min-height: 90px;
+			display: flex;
+			align-items: center;
+
+		}
+
+	}
+
+	&__text {
+
+		font-size: 18px;
+		line-height: 24px;
+		margin-bottom: 20px;
+
+		@media ($smWidth) {
+
+			font-size: 12px;
+			line-height: 18px;
+			min-height: 72px;
+			margin-bottom: 12px;
+
+		}
+
+	}
+
+	&__btn {
+
+		margin-top: auto;
+		width: 178px;
+
+		@media ($smWidth) {
+
+			width: 200%;
+			position: absolute;
+			top: 100%;
+			left: 0;
+
+		}
+
+	}
+
+}

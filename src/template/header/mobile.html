@@ -1,0 +1,78 @@
+					<div class="header__mobile">
+
+						<button class="button btn-menu-toggle" type="button" aria-label="открыть меню сайта">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<path d="M16.92 18a1 1 0 0 0 0-2H4A1 1 0 0 0 3 17a1 1 0 0 0 .99 1h12.93ZM3 7a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1 1 1 0 0 0-1-1H4a1 1 0 0 0-1 1Zm17 6a1 1 0 1 0 0-2H4a1 1 0 1 0 0 2h16Z"/>
+								<path d="m12 10.59-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 0 0 1.42 1.4L12 13.42l5.3 5.3a1 1 0 0 0 1.4-1.42L13.42 12l5.3-5.3a1 1 0 1 0-1.42-1.4L12 10.58Z"/>
+							</svg>
+
+						</button>
+
+						<a class="header__mobile-cart js-set-cart-counter" href="/cart/" data-counter="3" aria-label="Корзина">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-cart"/>
+							</svg>
+
+						</a>
+
+						<div class="header__mobile-location">
+
+							<button class="header__mobile-location-link button" type="button" data-modal="city">
+
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<use xlink:href="#svg-location"/>
+								</svg>
+
+								Владимир
+
+							</button>
+
+						</div>
+
+	{% if headerUser === true %}
+
+						<div class="header__mobile-user-menu">
+
+		{% set userMenuMobile = "mobile" %}
+
+		{% include "template/header/user-menu.html" %}
+
+						</div>
+
+	{% else %}
+
+						<div class="header__mobile-login">
+
+							<button class="header__mobile-login-btn button" data-modal="login" type="button">
+
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M12 3v2h7v14h-7v2h7a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-7Z"/>
+									<path d="M3.98 11A.99.99 0 0 0 3 12c0 .55.44 1 .98 1h11.04a.99.99 0 0 0 .98-1 .99.99 0 0 0-.98-1H3.98Z"/>
+									<path d="M12.3 8.3a1.05 1.05 0 0 0 0 1.48L14.5 12l-2.2 2.22a1.05 1.05 0 0 0 0 1.47c.4.41 1.06.41 1.47 0l2.93-2.95a1.06 1.06 0 0 0 0-1.48L13.77 8.3a1.03 1.03 0 0 0-1.47 0Z"/>
+								</svg>
+
+								Войти в аккаунт
+
+							</button>
+
+						</div>
+
+						<div class="header__mobile-catalog">
+
+							<button class="btn btn--big btn--white btn-toggle-menu-catalog" type="button">
+
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<use xlink:href="#svg-catalog"/>
+								</svg>
+
+								Каталог
+
+							</button>
+
+						</div>
+
+	{% endif %}
+
+					</div>

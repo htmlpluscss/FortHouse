@@ -1,0 +1,303 @@
+/**
+ * Swiper 7.0.8
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2021 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: October 4, 2021
+ */
+
+
+.swiper-wrap {
+
+	position: relative;
+
+	.swiper-inner {
+
+		@media ($desktop) {
+
+			padding: 12px;
+			margin: -12px;
+			overflow: hidden;
+
+			.swiper-container {
+
+				overflow: visible;
+
+			}
+
+		}
+
+	}
+
+	.swiper-inner + .swiper-controls {
+
+		@media (min-width: 1356px) {
+
+			left: -30px;
+			right: -30px;
+
+		}
+
+	}
+
+}
+
+.swiper-container-style {
+
+	position: relative;
+
+	.swiper-container {
+
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		list-style: none;
+		padding: 0;
+		z-index: 1;
+
+	}
+
+	.swiper-container-no-flexbox .swiper-slide {
+
+		float: left;
+
+	}
+
+	.swiper-wrapper {
+
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		transition-property: transform;
+
+	}
+
+	.swiper-container-android .swiper-slide,
+	.swiper-wrapper {
+
+		transform: translate3d(0, 0, 0);
+
+	}
+
+	.swiper-slide {
+
+		flex-shrink: 0;
+		width: 100%;
+		position: relative;
+		transition-property: transform;
+
+	}
+
+	.swiper-controls {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+		z-index: 3;
+
+	}
+
+	.swiper-navigation {
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		@media ($smWidth) {
+
+			display: none;
+
+		}
+
+	}
+
+	.swiper-button {
+
+		&-prev,
+		&-next {
+
+			z-index: 2;
+			position: relative;
+			pointer-events: auto;
+
+			width: 60px;
+			height: 60px;
+			background-color: #fff;
+			border-radius: 50%;
+			box-shadow: var(--box-shadow);
+
+			svg {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				fill: #f5c400;
+
+			}
+
+			@media ($desktop) {
+
+				&:hover {
+
+					box-shadow: var(--card-shadow);
+
+					svg {
+
+						fill: var(--text);
+
+					}
+
+				}
+
+			}
+
+		}
+
+		&-prev {
+
+		}
+
+		&-next {
+
+		}
+
+		&-disabled {
+
+			opacity: 0;
+			pointer-events: none;
+
+		}
+
+	}
+
+	.swiper-pagination {
+
+		transition: 300ms opacity;
+		transform: translate3d(0, 0, 0);
+		z-index: 4;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		bottom: 32px;
+		left: 0;
+
+		.button {
+
+			height: 8px;
+			width: 8px;
+			flex-shrink: 0;
+			border-radius: 50%;
+			transition: var(--transitionDefault);
+			pointer-events: auto;
+			margin-right: 8px;
+			background-color: var(--border);
+
+			&.is-active {
+
+				background-color: #d9d8df;
+
+			}
+
+			@media ($smWidth) {
+
+				width: 4px;
+				height: 4px;
+				margin: 0 3px;
+
+			}
+
+		}
+
+	}
+
+	.swiper-notification {
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		pointer-events: none;
+		opacity: 0;
+		z-index: -1000;
+
+	}
+
+	/* Auto Height */
+	.swiper-container-autoheight,
+	.swiper-container-autoheight .swiper-slide {
+
+		height: auto;
+
+	}
+
+	.swiper-container-autoheight .swiper-wrapper {
+
+		align-items: flex-start;
+		transition-property: transform, height;
+
+	}
+
+	/* fade*/
+
+	.swiper-container-fade .swiper-slide {
+
+		pointer-events: none;
+		transition-property: opacity;
+
+	}
+
+	.swiper-container-fade .swiper-slide-active {
+
+		pointer-events: auto;
+		z-index: 1;
+
+	}
+
+	/* vertical */
+
+	.swiper-vertical .swiper-controls {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+	}
+
+	.swiper-vertical > .swiper-wrapper {
+
+		flex-direction: column;
+		height: 100%;
+
+	}
+
+	.swiper-container-pointer-events.swiper-vertical {
+
+		touch-action: pan-x;
+
+	}
+
+	.swiper-vertical.swiper-container-css-mode > .swiper-wrapper {
+
+		scroll-snap-type: y mandatory;
+
+	}
+
+}

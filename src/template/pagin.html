@@ -1,0 +1,59 @@
+			<ul class="pagin">
+
+				<li class="pagin__item pagin__item--disabled">
+
+					<a href="/" class="pagin__link" title="Назад">
+
+						<svg width="32" height="32" viewBox="0 0 32 32">
+							<path d="m13 15 4.6-4.6a.99.99 0 1 1 1.4 1.4l-3.9 3.9 3.9 3.9a.99.99 0 0 1-1.4 1.4L13 16.41A1 1 0 0 1 13 15Z"/>
+						</svg>
+
+					</a>
+
+				</li>
+
+				<li class="pagin__item pagin__item--current">
+
+					<a href="/" class="pagin__link">
+						1
+					</a>
+
+				</li>
+
+{% for i in [2,3,4,5,6,7,8,9,10,11] %}
+
+				<li class="pagin__item{% if i > 3 %} hidden-sm{% endif %}">
+
+					<a href="/" class="pagin__link">
+						{{ i }}
+					</a>
+
+				</li>
+
+{% endfor %}
+
+				<li class="pagin__item pagin__item--sep">
+					...
+				</li>
+
+				<li class="pagin__item">
+
+					<a href="/" class="pagin__link">
+						20
+					</a>
+
+				</li>
+
+				<li class="pagin__item">
+
+					<a href="/" class="pagin__link" title="Вперёд">
+
+						<svg width="32" height="32" viewBox="0 0 32 32">
+							<path d="M19 15a1 1 0 0 1 0 1.4L14.4 21a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4L19 15Z"/>
+						</svg>
+
+					</a>
+
+				</li>
+
+			</ul>

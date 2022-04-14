@@ -1,0 +1,116 @@
+
+	<div class="catalog__list">
+
+{% for item in [
+
+	{
+		"name"   : "Ремонт моек высокого давления (Karcher)",
+		"price"  : "800",
+		"label"  : "Бесплатная диагностика"
+	},
+
+	{
+		"name"   : "Ремонт шлангов высокого давления",
+		"price"  : "350"
+	},
+
+	{
+		"name"   : "Изготовление рукавов высокого давления",
+		"price"  : "1 500"
+	},
+
+	{
+		"name"   : "Ремонт поломоечных машин",
+		"price"  : "800",
+		"label"  : "Бесплатная диагностика"
+	},
+
+	{
+		"name"   : "Ремонт пылесосов (Karcher)",
+		"price"  : "800",
+		"label"  : "Бесплатная диагностика"
+	},
+
+	{
+		"name"   : "Диагностика бытовой техники",
+		"price"  : "1 000"
+	},
+
+	{
+		"name"   : "Диагностика профессиональной техники",
+		"price"  : "1 600"
+	}
+
+] %}
+
+				<article class="catalog-preview">
+
+					<a href="/service/item/" class="catalog-preview__photo">
+
+						<picture>
+
+							<source srcset="/img/service/{{ loop.index }}--248x400.webp 1x, /img/service/{{ loop.index }}--582x456.webp 2x" type="image/webp" media="(max-width: 767px)">
+							<source srcset="/img/service/{{ loop.index }}--248x400.jpg 1x, /img/service/{{ loop.index }}--582x456.jpg 2x" media="(max-width: 767px)">
+
+							<source srcset="/img/service/{{ loop.index }}--291x228.webp 1x, /img/service/{{ loop.index }}--582x456.webp 2x" type="image/webp">
+							<source srcset="/img/service/{{ loop.index }}--291x228.jpg 1x, /img/service/{{ loop.index }}--582x456.jpg 2x">
+
+							<img src="/img/service/{{ loop.index }}--291x228.jpg" alt="{{ item.name }}" loading="lazy" width="291" height="228">
+
+						</picture>
+
+					</a>
+
+					<div class="catalog-preview__price">
+
+						<div class="price price--fz21">
+
+		{% include "_include/price.html" %}
+
+						</div>
+
+					</div>
+
+					<div class="catalog-preview__name h6">
+
+						<a href="/service/item/">
+							{{ item.name }}
+						</a>
+
+					</div>
+
+					<form action="/" class="catalog-preview__form form-buy">
+
+						<input type="hidden" name="id" value="123">
+
+		{% if item.label %}
+
+						<div class="catalog-preview__label">
+
+							<div class="label label--green">
+
+								<div class="label__text">
+									{{ item.label }}
+								</div>
+
+							</div>
+
+						</div>
+
+		{% endif %}
+
+						<div class="catalog-preview__btn">
+
+							<button class="btn btn--buy btn--medium form-buy__submit">
+								В корзину
+							</button>
+
+						</div>
+
+					</form>
+
+				</article>
+
+{% endfor %}
+
+	</div>

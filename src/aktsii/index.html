@@ -1,0 +1,21 @@
+{% set title = "Акции" %}
+
+{% set description = "магазин техники Karcher - гарантия лучшей цены!" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<div class="aktsii">
+
+		<div class="center">
+
+{% include "aktsii/news-list.html" %}
+
+{% include "aktsii/stock.html" %}
+
+		</div>
+
+	</div>
+
+{% endblock %}

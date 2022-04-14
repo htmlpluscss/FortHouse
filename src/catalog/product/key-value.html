@@ -1,0 +1,96 @@
+				<h2 class="h7">
+					Характеристики товара
+				</h2>
+
+{% set param = [
+
+	{
+		key   : "Давление, бар",
+		value : "150"
+	},
+	{
+		key   : "Мощность двигателя, kW",
+		value : "2,5"
+	},
+	{
+		key   : "Производительность, л/мин",
+		value : "8,3"
+	},
+	{
+		key   : "Емкость для химии, л",
+		value : "0,9"
+	},
+	{
+		key   : "Длина сетевого кабеля, м",
+		value : "5,5"
+	},
+	{
+		key   : "Уровень шума, дБ",
+		value : "78"
+	},
+	{
+		key   : "Вес, кг",
+		value : "25 кг"
+	},
+	{
+		key   : "Габариты, см",
+		value : "340x330x865"
+	},
+	{
+		key   : "Предыдущие версии товара",
+		value : "Минимойка GRASS C22P-1508; Минимойка GRASS C22P-1508"
+	}
+
+]%}
+
+				<dl class="key-value">
+
+{% for row in param %}
+
+					<div class="key-value__row">
+
+						<dt class="key-value__head">
+							{{ row.key }}
+						</dt>
+
+						<dd class="key-value__body">
+							{{ row.value }}
+						</dd>
+
+					</div>
+
+{% endfor %}
+
+				</dl>
+
+				<ul class="files">
+
+					<li class="files__item">
+
+						<a class="files__link" href="file.pdf" target="_blank">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<path d="M17 10v9H7V5h5.99v2.49a1.5 1.5 0 0 0 1.5 1.5h4.5v-.52a1 1 0 0 0-.36-.77l-5.07-4.24A2 2 0 0 0 12.27 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9h-2Z"/>
+							</svg>
+
+							Деталировка техники.pdf
+
+						</a>
+
+					</li>
+
+					<li class="files__item">
+
+						<a class="files__link" href="file.pdf" target="_blank">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<path d="M17 10v9H7V5h5.99v2.49a1.5 1.5 0 0 0 1.5 1.5h4.5v-.52a1 1 0 0 0-.36-.77l-5.07-4.24A2 2 0 0 0 12.27 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9h-2Z"/>
+							</svg>
+
+							Еще один файл.pdf
+
+						</a>
+
+					</li>
+
+				</ul>
