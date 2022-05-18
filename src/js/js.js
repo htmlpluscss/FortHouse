@@ -13,11 +13,13 @@ https://github.com/htmlpluscss/
 	let resizeTimeout = null,
 		windowWidthOLd = window.innerWidth;
 
+	const header = document.querySelector('.header');
+
 	window.addEventListener("resize", () => {
 
 		window.requestAnimationFrame( () => {
 
-			if (!resizeTimeout) {
+			if (resizeTimeout === null) {
 
 				resizeTimeout = setTimeout( () => {
 
@@ -26,8 +28,7 @@ https://github.com/htmlpluscss/
 					if(windowWidthOLd !== window.innerWidth) {
 
 						windowWidthOLd = window.innerWidth;
-
-						PubSub.publish('windowWidthResize');
+						document.documentElement.style.setProperty('--scrollMargin', header.clientHeight + 'px');
 
 					}
 
@@ -41,11 +42,10 @@ https://github.com/htmlpluscss/
 
 	window.addEventListener("load", () => {
 
-		PubSub.publish('pageLoad');
-
-		Cookies.set('fastLoadScript', true);
+		localStorage.setItem('fastLoadScript', true);
 
 		document.documentElement.style.setProperty('--transitionDefault', '.3s');
+		document.documentElement.style.setProperty('--scrollMargin', header.clientHeight + 'px');
 
 	});
 

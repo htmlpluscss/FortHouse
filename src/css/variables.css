@@ -1,38 +1,22 @@
 :root {
 
-	--Primary: #ffe431;
-/* 	--Secondary: #f7f6ff; Пока не используется */
-	--BnW: #afaec6;
-	--Notice: #ee555e;
-	--Success: #49d88b;
-	--Indigo: #548eff;
-	--Indigo_dark: #1665ff;
-	--Violet: #9F54ff;
-	--Pink: #ff549c;
-
-
-	--dark: #42424a;  /* BnW200 */
-	--text: #0f0b38;   /* Text_main */
-	--grey: #828090;   /* BnW400 */
-	--yellow: var(--Primary);
-	--green: var(--Success);
-	--violet: var(--Violet);
-	--blue: var(--Indigo);
-	--pink: var(--Pink);
-	--red: var(--Notice);
+	--color: #fff;
+	--text: #777;
+	--grey: #ababab;
+	--orange: #fa481c;
+	--orangeHover: #fa5a32;
+	--green: #5e9f00;
+	--red: red;
 	--error: #f00;
-	--bg: #fff;
-	--border: #eeeef1; /* BnW800 */
-
-	--box-shadow: 0 4px 10px 2px rgba(175, 174, 198, 0.23);
-	--card-shadow: 0 4px 8px 2px rgba(175, 174, 198, 0.14);
+	--bg: #000;
+	--border: #797979;
 
 	--transitionDefault: 0s;
-	--heightHeaderFixed: 0; /* для отступа wrapper при фиксировании меню */
+	--scrollMargin: 0; /* heightHeader */
 
-	--indent: 23px;
-	--gap: 33px;
-	--space: 84px;
+	--indent: 40px;
+	--gap: 24px;
+	--space: 36px;
 
 }
 

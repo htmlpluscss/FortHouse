@@ -2,7 +2,6 @@
 
 	flex-shrink: 0;
 	position: relative;
-	background-color: var(--border);
 
 	&__top {
 
@@ -21,138 +20,13 @@
 		padding: 12px 0;
 		font-size: 12px;
 		line-height: 18px;
-		color: #fff;
-		background-color: #d9d8df;
 
 		@media ($smWidth) {
 
-			padding: 15px 0;
 
 		}
 
 	}
 
-	&__flex {
-
-		display: flex;
-
-		@media ($smWidth) {
-
-			display: block;
-
-		}
-
-	}
-
-	&__col {
-
-		@media ($smWidth) {
-
-			margin-bottom: 38px;
-
-		}
-
-		&:nth-child(1) {
-
-			flex-grow: 18;
-
-		}
-
-		&:nth-child(2) {
-
-			flex-grow: 18;
-
-		}
-
-		&:nth-child(3) {
-
-			flex-grow: 11;
-
-		}
-
-	}
-
-	&__contact {
-
-		svg {
-
-			fill: #F5C400;
-
-			@media ($smWidth) {
-
-				width: 24px;
-				height: 24px;
-
-			}
-
-		}
-
-		&-link {
-
-			font-weight: bold;
-			font-size: 18px;
-			line-height: 24px;
-			margin: 27px 0;
-
-			@media ($smWidth) {
-
-				font-size: 15px;
-				line-height: 21px;
-				margin: 12px 0;
-
-			}
-
-		}
-
-	}
-
-	&__menu {
-
-		font-size: 12px;
-		line-height: 18px;
-		margin-top: 25px;
-
-		li {
-
-			margin: 12px 0;
-
-			a {
-
-				color: var(--grey);
-
-			}
-
-		}
-
-	}
-
-	&__payment {
-
-		display: flex;
-		align-items: center;
-		margin-top: 30px;
-
-		@media ($smWidth) {
-
-			margin: 24px 0;
-
-		}
-
-		img {
-
-			margin-right: 25px;
-			mix-blend-mode: multiply;
-
-			@media ($smWidth) {
-
-				width: auto;
-				height: 18px;
-				margin-right: 18px;
-
-			}
-
-		}
-
-	}
 
 }

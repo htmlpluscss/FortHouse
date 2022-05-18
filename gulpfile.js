@@ -70,8 +70,8 @@ const html = (files, since = {}, folder = '') => {
 			},
 			path: 'src/'
 		}))
-		.pipe(w3cjs())
-		.pipe(w3cjs.reporter())
+//		.pipe(w3cjs())
+//		.pipe(w3cjs.reporter())
 		.pipe(gulp.dest('build' + folder))
 
 };

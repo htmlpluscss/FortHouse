@@ -65,17 +65,17 @@ legend {
 
 .btn {
 
-	padding: 0 15px;
-	font-size: 15px;
-	height: 36px;
-	line-height: 36px;
-	border-radius: 3px;
-	color: var(--text);
+	padding: 0 24px;
+	font-size: 12px;
+	height: 45px;
+	line-height: 45px;
+	border-radius: 2px;
+	color: var(--bg);
 	display: grid;
 	align-items: center;
 	grid-auto-flow: column;
-	gap: 6px;
-	background-color: var(--yellow);
+	gap: 12px;
+	background-color: var(--orange);
 
 	svg {
 
@@ -83,204 +83,11 @@ legend {
 
 	}
 
-	&:disabled,
-	&--disabled {
-
-		background-color: #fff4ad;
-		pointer-events: none;
-
-	}
-
 	@media ($desktop) {
 
 		&:hover {
 
-			background-color: #f5c400;
-
-		}
-
-	}
-
-	&--dark {
-
-		color: #fff;
-		background-color: var(--dark);
-
-		svg {
-
-			fill: #fff;
-
-		}
-
-		&:disabled {
-
-			background-color: #d9d8df;
-
-		}
-
-		@media ($desktop) {
-
-			&:hover {
-
-				background-color: #0f0b38;
-
-			}
-
-		}
-
-	}
-
-	&--white {
-
-		background-color: #fff;
-
-		&:disabled {
-
-			background-color: #d9d8df;
-
-		}
-
-		@media ($desktop) {
-
-			&:hover {
-
-				background-color: var(--border);
-
-			}
-
-		}
-
-	}
-
-	&--medium {
-
-		padding: 0 18px;
-		line-height: 42px;
-		height: 42px;
-		gap: 9px;
-
-	}
-
-	&--big {
-
-		padding: 0 18px;
-		font-size: 18px;
-		line-height: 48px;
-		height: 48px;
-		gap: 12px;
-
-	}
-
-	&--buy {
-
-		min-width: 116px;
-
-	}
-
-	&--buy&--medium {
-
-		min-width: 149px;
-
-	}
-
-	&--buy&--big {
-
-		padding: 0 30px;
-
-	}
-
-	&--reset {
-
-		border-radius: 18px;
-
-		&-form,
-		&:disabled {
-
-			background-color: var(--border);
-			color: var(--grey);
-			border-radius: 18px;
-
-			svg {
-
-				fill: var(--grey);
-
-			}
-
-			@media ($desktop) {
-
-				&:hover {
-
-					--grey: var(--text);
-
-				}
-
-			}
-
-		}
-
-	}
-
-	&--toggle {
-
-		height: 24px;
-		line-height: 24px;
-		background-color: transparent !important;
-		gap: 6px;
-		padding: 0;
-		font-weight: 500;
-		font-size: 15px;
-
-	}
-
-	&--add {
-
-		height: 24px;
-		line-height: 24px;
-		background-color: transparent !important;
-		gap: 15px;
-		padding: 0;
-		font-weight: 500;
-		font-size: 18px;
-		color: var(--blue);
-
-		@media ($desktop) {
-
-			&:hover {
-
-				--blue: var(--Indigo_dark);
-
-			}
-
-		}
-
-		svg {
-
-			fill: var(--blue);
-
-		}
-
-	}
-
-	&--ico {
-
-		width: 24px;
-		height: 24px;
-		padding: 0;
-		background-color: transparent !important;
-
-		svg {
-
-			fill: #d9d8df;
-
-		}
-
-		@media ($desktop) {
-
-			&:hover svg {
-
-				fill: var(--BnW);
-
-			}
+			background-color: var(--orangeHover);
 
 		}
 
@@ -288,6 +95,7 @@ legend {
 
 }
 
+/*
 .input {
 
 	line-height: 24px;
@@ -318,8 +126,6 @@ legend {
 
 	}
 
-
-/*
 	textarea& {
 
 		height: 126px;
@@ -345,7 +151,7 @@ legend {
 		}
 
 	}
-*/
+
 	@media ($desktop) {
 
 		font-size: 15px;
@@ -620,4 +426,4 @@ legend {
 
 	}
 
-}
+}*/

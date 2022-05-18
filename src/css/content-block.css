@@ -1,76 +1,63 @@
 .content-block {
 
 	margin: var(--space) 0;
+	font-size: 13px;
 
-	&__inner {
+	h1 {
 
-		overflow: hidden;
-		max-height: 93px;
-		position: relative;
-		transition: var(--transitionDefault);
+		font-size: 24px;
+		text-transform: uppercase;
+		line-height: 1.2;
 
-		font-size: 12px;
-		line-height: 18px;
-		color: var(--grey);
-		padding-bottom: 48px;
+	}
 
-		@media ($smWidth) {
+	h2 {
 
-			max-height: 71px;
+		font-size: 18px;
+		text-transform: uppercase;
+		line-height: 1.2;
+		margin: 48px 0 24px;
 
-		}
+	}
 
-		p + p {
+	h3 {
+
+		font-size: 15px;
+		text-transform: uppercase;
+		margin: 36px 0 18px;
+
+	}
+
+	p {
+
+		text-align: justify;
+
+		& + p {
 
 			margin-top: 18px;
 
 		}
 
-		&::after {
-
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			content: '';
-			background-image: linear-gradient(0deg, #fff, rgba(255, 255, 255, 0) 118.82%);
-			pointer-events: none;
-			transition: var(--transitionDefault);
-
-		}
-
 	}
 
-	&.is-open &__inner {
+	ul {
 
-		max-height: 9999px;
+		margin: 18px 0;
 
-		&::after {
+		li {
 
-			opacity: 0;
-
-		}
-
-	}
-
-	&__toggle {
-
-		overflow: hidden;
-		text-align: right;
-
-		&-label {
-
-			display: block;
-			height: 24px;
-			transform: translateY(-24px);
-			transition: var(--transitionDefault);
+			margin: 12px 0;
 
 			&::before {
 
-				content: attr(data-alt);
-				display: block;
-				line-height: 24px;
+				position: absolute;
+				width: 4px;
+				height: 4px;
+				top: 0;
+				left: 0;
+				content: '';
+				border-radius: 50%;
+				background-color: red;
 
 			}
 
@@ -78,33 +65,24 @@
 
 	}
 
-	&.is-open &__toggle {
+	ol {
 
-		svg {
+		margin: 18px 0;
+		counter-reset: headings 0;
 
-			transform: scaleY(-1);
-		}
+		li {
 
-		&-label {
+			margin: 12px 0;
 
-			transform: translateY(0);
+			&::before {
 
-		}
+				counter-increment: headings 1;
+				content: counter(headings, decimal);
+				float: left;
+				min-height: 12px;
+				margin-right: 6px;
 
-	}
-
-	&__btn {
-
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		display: flex;
-		justify-content: center;
-
-		@media ($smWidth) {
-
-			bottom: 6px;
+			}
 
 		}
 

@@ -11,16 +11,16 @@
 
 	<link rel="preconnect" href="https://mc.yandex.ru/">
 
-	<link href="/fonts/roboto-v29-latin_cyrillic-ext-400.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
-	<link href="/fonts/roboto-v29-latin_cyrillic-ext-500.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
-	<link href="/fonts/roboto-v29-latin_cyrillic-ext-700.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+	<link href="/fonts/open-sans-v29-latin_cyrillic-ext-400.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+	<link href="/fonts/open-sans-v29-latin_cyrillic-ext-600.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+	<link href="/fonts/open-sans-v29-latin_cyrillic-ext-700.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
 
 	<link href="{{ url }}/favicon.png" rel="apple-touch-icon-precomposed">
 
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{{ description | default(site) }}">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#0000000">
 
 	<meta property="og:locale" content="ru_RU">
 	<meta property="og:site_name" content="{{ site }}">
@@ -114,8 +114,6 @@
 
 {% include "template/header.html" %}
 
-{% include "template/menu-catalog.html" %}
-
 	<main class="main">
 
 {% if breadcrumbs %}
@@ -133,14 +131,6 @@
 </div>
 
 {% include "template/modal.html" %}
-
-	<button class="page-up is-hidden button" type="button" aria-label="Прокрутить страницу вверх">
-
-		<svg width="24" height="24" viewBox="0 0 24 24">
-			<path d="M5.8 12.2a1 1 0 0 0 1.4 0L11 8.42V18a1 1 0 1 0 2 0V8.41l3.8 3.8a1 1 0 1 0 1.4-1.42l-5.5-5.5a1 1 0 0 0-.67-.29h-.06a1 1 0 0 0-.68.3l-5.5 5.5a1 1 0 0 0 0 1.4Z"/>
-		</svg>
-
-	</button>
 
 </body>
 </html>
