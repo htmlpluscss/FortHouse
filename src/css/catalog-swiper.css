@@ -4,7 +4,7 @@
 
 		margin-top: 36px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-top: var(--space);
 
@@ -27,13 +27,13 @@
 		font-size: 12px;
 		color: var(--grey);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: none;
 
 		}
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -55,7 +55,7 @@
 
 		display: flex;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
@@ -92,7 +92,7 @@
 		display: flex;
 		flex-shrink: 0;
 
-		@media ($desktop) {
+		@media $desktop {
 
 			width: 237px !important;
 			margin-right: 24px;
@@ -105,7 +105,7 @@
 
 		}
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			width: 240px !important;
 			margin-left: var(--gap);
@@ -124,7 +124,7 @@
 
 	&--col-4 &__item {
 
-		@media ($desktop) {
+		@media $desktop {
 
 			width: 306px !important;
 			margin-right: 22px;

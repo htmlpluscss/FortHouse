@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: flex-end;
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		margin: var(--space) 0;
 

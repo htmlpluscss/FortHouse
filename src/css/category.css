@@ -2,13 +2,13 @@
 
 	margin: calc( var(--space) / 2) 0 0;
 
-	@media ($mdWidth) {
+	@media $mdWidth {
 
 		margin: calc( var(--space) / 2) auto var(--space);
 
 	}
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		margin: var(--space) 0;
 
@@ -22,7 +22,7 @@
 
 	&__flex {
 
-		@media ($desktop) {
+		@media $desktop {
 
 			display: flex;
 
@@ -36,7 +36,7 @@
 		flex-shrink: 0;
 		padding-right: 74px;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			width: auto;
 			padding: 0;
@@ -53,7 +53,7 @@
 
 	&__body {
 
-		@media ($desktop) {
+		@media $desktop {
 
 			width: calc( 100% - 370px );
 			margin-top: -16px;
@@ -79,7 +79,7 @@
 		gap: 24px;
 		grid-template-columns: repeat(4, 1fr);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			gap: var(--gap);
 			grid-template-columns: repeat(2, 1fr);
@@ -96,13 +96,13 @@
 		background-color: #f7f7f9;
 		border-radius: 12px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			height: 159px;
 
 		}
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -124,7 +124,7 @@
 		padding: 24px 15px;
 		border-radius: 12px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: var(--gap);
 			font-size: 15px;
@@ -132,7 +132,7 @@
 
 		}
 
-		@media ($xsWidth) {
+		@media $xsWidth {
 
 			font-size: 12px;
 
@@ -147,7 +147,7 @@
 		bottom: 15px;
 		mix-blend-mode: multiply;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			right: 0;
 			bottom: 0;
@@ -167,7 +167,7 @@
 		margin-top: 24px;
 		padding-left: 27px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-top: 21px;
 
@@ -184,7 +184,7 @@
 
 			}
 
-			@media ($desktop) {
+			@media $desktop {
 
 				&:hover {
 
@@ -222,7 +222,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			&:nth-child(n+7) {
 

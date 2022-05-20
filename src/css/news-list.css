@@ -25,7 +25,7 @@
 
 		display: flex;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
@@ -44,7 +44,7 @@
 		position: relative;
 		margin-right: var(--gap);
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			width: 240px !important;
 			margin-right: 0;
@@ -60,7 +60,7 @@
 
 		}
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -82,7 +82,7 @@
 		margin-bottom: 30px;
 		display: block;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			height: 170px;
 
@@ -96,7 +96,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-bottom: 9px;
 
@@ -116,7 +116,7 @@
 		line-height: 21px;
 		color: var(--grey);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			font-size: 12px;
 			line-height: 18px;

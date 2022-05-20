@@ -2,7 +2,7 @@
 
 	margin: calc( var(--space) / 2) 0;
 
-	@media ($mdWidth) {
+	@media $mdWidth {
 
 		margin: calc( var(--space) / 2) auto var(--space);
 
@@ -14,7 +14,7 @@
 
 	}
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		margin: var(--space) 0;
 

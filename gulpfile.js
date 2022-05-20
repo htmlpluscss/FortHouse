@@ -8,14 +8,13 @@ const csso             = require("gulp-csso");
 const minify           = require('gulp-minify');
 const browserReporter  = require('postcss-browser-reporter');
 
-const postcssImport    = require('postcss-partial-import');
+const postcssImport    = require('postcss-import');
 const postcssVariables = require('postcss-advanced-variables');
 const postcssColor     = require('postcss-color-function');
-const postcssNesting   = require('postcss-nesting');
 const postcssNested    = require('postcss-nested');
 const postcssExtend    = require('postcss-extend');
 
-const mqpacker         = require("css-mqpacker");
+const mqpacker         = require("@lipemat/css-mqpacker");
 const sourcemaps       = require('gulp-sourcemaps');
 
 const nunjucksRender   = require('gulp-nunjucks-render');
@@ -24,7 +23,7 @@ const rename           = require('gulp-rename');
 
 const plumber          = require('gulp-plumber');
 const server           = require('browser-sync').create();
-const ftp              = require('gulp-ftp');
+const ftp              = require('vinyl-ftp');
 const replace          = require('gulp-replace');
 const filter           = require('gulp-filter');
 
@@ -37,7 +36,6 @@ const concat           = require('gulp-concat');
 const remember         = require('gulp-remember');
 
 const debug            = require('gulp-debug');
-const touch            = require('gulp-touch');
 
 const w3cjs            = require('gulp-w3cjs');
 
@@ -89,11 +87,10 @@ gulp.task('css', () => {
 				postcssImport(),
 				postcssVariables(),
 				postcssColor(),
-				postcssNesting(),
 				postcssNested(),
 				postcssExtend(),
 				autoprefixer({
-					browsers: 'Android >= 5'
+					overrideBrowserslist: 'Android >= 5'
 				}),
 				mqpacker(),
 				browserReporter()
@@ -180,14 +177,15 @@ gulp.task('ftp', () => {
 	}
 
 	const f = filter('**/*.html', {restore: true});
+	const conn = ftp.create( config.ftp );
 
-	return gulp.src(['build/**/*','build/img/'], {since: gulp.lastRun('ftp')})
+	return gulp.src( ['build/**/*','build/img/'] )
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
 		.pipe(replace('css/styles.css', 'css/styles.min.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
 		.pipe(f.restore)
-		.pipe(ftp(config.ftp));
+        .pipe(conn.dest(domain));
 
 });
 

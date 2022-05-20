@@ -2,14 +2,14 @@
 
 	margin: calc( var(--space) / 2) 0 var(--space);
 
-	@media ($mdWidth) {
+	@media $mdWidth {
 
 		margin: calc( var(--space) / 2) auto var(--space);
 		max-width: 830px;
 
 	}
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		margin: var(--space) 0;
 
@@ -19,7 +19,7 @@
 
 		margin-bottom: var(--gap);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-bottom: var(--space);
 
@@ -51,7 +51,7 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: var(--gap) 90px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: block;
 
@@ -88,7 +88,7 @@
 		font-size: 15px;
 		color: var(--text);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-top: var(--space);
 
@@ -121,7 +121,7 @@
 		display: flex;
 		flex-wrap: wrap;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin: 0 -10px;
 
@@ -136,7 +136,7 @@
 			color: var(--grey);
 			font-weight: 500;
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				margin: 10px 10px 0;
 

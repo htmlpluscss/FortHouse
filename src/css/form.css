@@ -83,7 +83,7 @@ legend {
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 		&:hover {
 
@@ -118,7 +118,7 @@ legend {
 	border: 1px solid var(--border);
 	border-radius: 3px;
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		border-width: 1.5px;
 		height: 42px;
@@ -152,7 +152,7 @@ legend {
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 		font-size: 15px;
 
@@ -263,7 +263,7 @@ legend {
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 	}
 
@@ -335,7 +335,7 @@ legend {
 
 	}
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		.input {
 
@@ -356,7 +356,7 @@ legend {
 		border-color: var(--yellow);
 		padding-right: 88px;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			padding-right: 36px;
 
@@ -370,7 +370,7 @@ legend {
 		top: 6px;
 		right: 6px;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			top: 9px;
 			right: 9px;

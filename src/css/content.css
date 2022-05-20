@@ -16,7 +16,7 @@ hr {
 
 	text-decoration: underline;
 
-	@media ($desktop) {
+	@media $desktop {
 
 		&:hover {
 
@@ -36,7 +36,7 @@ hr {
 	font-size: 42px;
 	line-height: 54px;
 
-	@media ($mdWidth) {
+	@media $mdWidth {
 
 		font-size: 24px;
 		line-height: 1.25;
@@ -59,7 +59,7 @@ hr {
 	font-size: 30px;
 	line-height: 36px;
 
-	@media ($mdWidth) {
+	@media $mdWidth {
 
 		font-size: 24px;
 		line-height: 30px;
@@ -82,7 +82,7 @@ hr {
 	font-size: 24px;
 	line-height: 30px;
 
-	@media ($mdWidth) {
+	@media $mdWidth {
 
 		font-size: 15px;
 		line-height: 21px;

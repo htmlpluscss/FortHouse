@@ -14,12 +14,12 @@
 
 }
 
-@media ($desktop) {
+@media $desktop {
 
 
 }
 
-@media ($mdWidth) {
+@media $mdWidth {
 
 	.hidden-md {
 
@@ -42,7 +42,7 @@
 
 }
 
-@media ($smWidth) {
+@media $smWidth {
 
 	:root {
 
@@ -72,7 +72,7 @@
 
 }
 
-@media ($xsWidth) {
+@media $xsWidth {
 
 	:root {
 

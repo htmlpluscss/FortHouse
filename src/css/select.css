@@ -57,7 +57,7 @@
 		transition: var(--transitionDefault);
 		border: 1px solid var(--border);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			border-width: 1.5px;
 
@@ -148,7 +148,7 @@
 
 			}
 
-			@media ($desktop) {
+			@media $desktop {
 
 				&:hover {
 

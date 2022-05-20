@@ -14,7 +14,7 @@
 
 		position: fixed;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			&__logo,
 			&__mobile-location {
@@ -34,7 +34,7 @@
 
 	}
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		padding: 0;
 		position: relative;
@@ -46,7 +46,7 @@
 		display: flex;
 		align-items: center;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: block;
 			position: relative;
@@ -66,7 +66,7 @@
 
 		position: relative;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: none;
 
@@ -78,7 +78,7 @@
 
 		padding-top: 24px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: 0;
 
@@ -97,7 +97,7 @@
 		width: 154px;
 		padding-top: 4px;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			width: 110px;
 			padding: 0;
@@ -111,7 +111,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: 15px 0;
 			width: 100%;
@@ -149,7 +149,7 @@
 		justify-content: flex-end;
 		margin-left: var(--gap);
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			margin-left: 24px;
 			grid-gap: 12px;
@@ -167,7 +167,7 @@
 			transform: translateY(33px);
 			transition: opacity var(--transitionDefault) 0s, transform 0s var(--transitionDefault);
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				&::after {
 
@@ -212,7 +212,7 @@
 			width: 100%;
 			transition: var(--transitionDefault);
 
-			@media ($desktop) {
+			@media $desktop {
 
 				&:hover {
 
@@ -260,7 +260,7 @@
 
 		display: none;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: block;
 
@@ -383,7 +383,7 @@
 
 }
 
-@media ($smWidth) {
+@media $smWidth {
 
 	.menu-show {
 

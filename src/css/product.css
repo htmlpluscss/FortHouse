@@ -1,6 +1,6 @@
 .product-page {
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		display: flex;
 		flex-direction: column;
@@ -56,7 +56,7 @@
 
 	margin: -15px 0 101px;
 
-	@media ($mdWidth) {
+	@media $mdWidth {
 
 		margin: 0;
 
@@ -73,7 +73,7 @@
 			margin-bottom: 9px;
 			align-items: center;
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				flex-direction: column-reverse;
 				align-items: flex-start;
@@ -118,7 +118,7 @@
 		line-height: 21px;
 		color: #F5C400;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			font-size: 12px;
 
@@ -151,7 +151,7 @@
 		grid-template-rows: auto 1fr;
 		gap: var(--gap) 20px;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			margin: var(--gap) 0;
 			grid-template-columns: 1fr 1fr;
@@ -160,7 +160,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin: 0;
 			display: flex;
@@ -175,7 +175,7 @@
 
 		grid-row: span 2;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			margin: var(--gap) 0;
 			grid-row: span 1;
@@ -183,7 +183,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			order: 1;
 
@@ -195,7 +195,7 @@
 
 		grid-row: span 2;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			order: 4;
 			display: none;
@@ -206,7 +206,7 @@
 
 			max-width: 261px;
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				max-width: none;
 
@@ -227,7 +227,7 @@
 		box-shadow: var(--card-shadow);
 		padding: 12px 21px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: 0;
 			order: 3;
@@ -249,7 +249,7 @@
 
 		margin: 14px 0 18px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin: 0;
 
@@ -313,7 +313,7 @@
 		margin-top: 45px;
 		width: 100%;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: none;
 
@@ -323,7 +323,7 @@
 
 	&__delivery {
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			order: 2;
 
@@ -335,7 +335,7 @@
 			font-size: 15px;
 			line-height: 24px;
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				&:last-child {
 
@@ -418,7 +418,7 @@
 
 			margin-bottom: var(--gap);
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				font-size: 15px;
 				line-height: 21px;
@@ -431,7 +431,7 @@
 
 			margin: 9px 0;
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				margin: 0;
 
@@ -443,7 +443,7 @@
 
 			margin-top: 15px;
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				margin-top: 21px;
 
@@ -464,7 +464,7 @@
 		display: flex;
 		margin-top: var(--gap);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: block;
 
@@ -475,7 +475,7 @@
 			width: 261px;
 			margin-right: calc( var(--gap) * 4 );
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				width: auto;
 				margin: 0 0 var(--space);
@@ -494,7 +494,7 @@
 
 			width: 400px;
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				width: auto;
 
@@ -526,7 +526,7 @@
 		top: var(--heightHeader);
 		z-index: 9;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			position: fixed;
 			top: auto;
@@ -577,7 +577,7 @@
 
 		&__img {
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				img {
 
@@ -600,13 +600,13 @@
 
 		&__price {
 
-			@media ($desktop) {
+			@media $desktop {
 
 				display: none;
 
 			}
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				.price {
 
@@ -630,7 +630,7 @@
 
 		&__title {
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				display: none;
 
@@ -646,7 +646,7 @@
 			color: #F5C400;
 			font-weight: 500;
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				display: none;
 
@@ -656,7 +656,7 @@
 
 		&__buy {
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				font-size: 18px;
 				min-width: 0;

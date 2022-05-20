@@ -3,7 +3,7 @@
 	position: relative;
 	flex-shrink: 0;
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		background-color: #fbfafb;
 
@@ -13,7 +13,7 @@
 
 		left: var(--indent);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			left: 0;
 			right: 0;
@@ -52,7 +52,7 @@
 		flex-shrink: 0;
 		height: 432px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			height: 283px;
 			padding-bottom: calc( 42px +  var(--space) );
@@ -79,7 +79,7 @@
 		align-items: center;
 		flex-grow: 1;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			img {
 
@@ -93,7 +93,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: var(--space) 0;
 
@@ -117,7 +117,7 @@
 		flex-shrink: 0;
 		position: relative;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			width: 50%;
 			margin-right: 0;
@@ -125,7 +125,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-right: calc( 18px - 2% );
 
@@ -137,13 +137,13 @@
 
 		width: 496px;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			width: 50%;
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			width: 48%;
 
@@ -159,7 +159,7 @@
 		color: #F5C400;
 		margin-bottom: 21px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: none;
 
@@ -171,7 +171,7 @@
 
 		margin-bottom: 12px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin: 6px 0;
 			min-height: 90px;
@@ -188,7 +188,7 @@
 		line-height: 24px;
 		margin-bottom: 20px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			font-size: 12px;
 			line-height: 18px;
@@ -204,7 +204,7 @@
 		margin-top: auto;
 		width: 178px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			width: 200%;
 			position: absolute;

@@ -14,7 +14,7 @@
 	transition: opacity var(--transitionDefault);
 	z-index: 8;
 
-	@media ($mdWidth) {
+	@media $mdWidth {
 
 		width: 36px;
 		height: 36px;
