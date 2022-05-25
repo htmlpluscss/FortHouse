@@ -1,9 +1,30 @@
-				<div class="header__cart">
+				<div class="header-cart js-accent">
 
-					<a class="js-set-cart-counter" href="/cart/" title="Корзина" data-counter="{% if cartHeaderCount %}{{ cartHeaderCount }}{% endif %}">
+					<a class="header-cart__link js-set-cart-counter" href="/zakaz/" title="Корзина" data-counter="{% if cartHeaderCount %}{{ cartHeaderCount }}{% endif %}">
 						<svg width="24" height="24" viewBox="0 0 24 24">
-							<path d="M9.71 16.17a2.45 2.45 0 100 4.9 2.45 2.45 0 000-4.9zm-.45 2.45c0-.25.2-.45.45-.45s.45.2.45.45-.2.45-.45.45a.45.45 0 01-.45-.45zM17 16.17a2.45 2.45 0 100 4.9 2.45 2.45 0 000-4.9zm0 1.99c.25 0 .45.2.45.45s-.2.45-.45.45a.45.45 0 01-.45-.45c0-.25.2-.45.45-.45zM20.81 5.69a1.03 1.03 0 00-.81-.41H7.9l-.18-1.11A2.6 2.6 0 005.15 2H4a1 1 0 00-1 1 1 1 0 001 1h1.15c.3 0 .55.21.6.51l1.45 8.57a2.59 2.59 0 002.56 2.17h8.58a1 1 0 001-1 1 1 0 00-1-1H9.77a.6.6 0 01-.6-.51l-.03-.17h7.7a3 3 0 002.86-2.09l1.25-3.9c.1-.3.05-.63-.14-.89zM17.8 9.88a1 1 0 01-.96.7H8.8l-.56-3.3h10.39l-.83 2.6z"/>
+							<path fill-rule="evenodd" d="M5.8 2H1v2h3.22l2.77 12.68H7V17h13v-.25l2.2-9.66.33-1.09H6.66l-.58-2.61L5.8 2Zm14.19 6H7.09l1.53 7h9.78l1.59-7Z"/>
+							<path d="M10 22a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM19 20a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
 						</svg>
 					</a>
+
+					<form class="header-cart__minicart" action="/zakaz/">
+
+						<p class="header-cart__minicart-label" data-declension="товар|товара|товаров">
+							В корзине <span class="header-cart__minicart-count">2</span> товара
+						</p>
+
+						<div class="header-cart__minicart-flex">
+
+							<p class="header-cart__minicart-total">
+								Итого: <span class="header-cart__minicart-result" data-suf="₽">118&nbsp;778</span>
+							</p>
+
+							<button class="btn">
+								Оформить заказ
+							</button>
+
+						</div>
+
+					</form>
 
 				</div>

@@ -2,7 +2,7 @@
 @import url(variables.css);
 @import url(media.css);
 @import url(default.css);
-/* @import url(form.css); */
+@import url(form.css);
 /*@import url(select.css);*/
 
 /* @import url(content.css); */

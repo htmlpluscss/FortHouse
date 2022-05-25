@@ -20,7 +20,9 @@
 		window.scrollTo(0,windowScroll);
 		activeModal = false;
 
-		setTimeout( () => document.documentElement.classList.remove('scroll-behavior-off'));
+		setTimeout( () => document.documentElement.classList.remove('scroll-behavior-off'), 500);
+
+		document.querySelector('#modal-video').innerHTML = '';
 
 	});
 
@@ -56,8 +58,6 @@
 
 			activeModal.focus();
 
-			PubSub.publish('open-' + selector);
-
 		});
 
 	};
@@ -91,13 +91,5 @@
 	});
 
 	modal.addEventListener('modalShow', event => modalShow(event.detail.selector));
-
-	modal.ok = (title, text) => {
-
-		modal.querySelector('.modal__item--ok .modal-login__head').innerHTML = title ? title : '';
-		modal.querySelector('.modal__item--ok .modal-login__text').innerHTML = text ? text : '';
-		modalShow('ok');
-
-	}
 
 })(document.querySelector('.modal'));

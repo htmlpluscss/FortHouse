@@ -170,16 +170,16 @@ gulp.task('copy', () => {
 
 gulp.task('ftp', () => {
 
-	if(!config) {
+//	if(!config) {
 
 		return true;
 
-	}
+//	}
 
 	const f = filter('**/*.html', {restore: true});
 	const conn = ftp.create( config.ftp );
 
-	return gulp.src( ['build/**/*','build/img/'] )
+	return gulp.src( ['build/**/*'] )
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
 		.pipe(replace('css/styles.css', 'css/styles.min.css?' + Date.now()))

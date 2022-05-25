@@ -164,6 +164,6 @@
 	const script = document.createElement('script');
 	script.src = '/js/nouislider.min.js';
 	script.onload = () => noUiSliderInit();
-	setTimeout( () => document.head.appendChild(script), Cookies.get('fastLoadScript') ? 0 : 10000);
+	setTimeout( () => document.head.appendChild(script), localStorage.getItem('fastLoadScript') ? 0 : 10000);
 
 })(document.querySelectorAll('.nouislider'));
