@@ -170,7 +170,7 @@
 
 			position: absolute;
 			top: 28px;
-			left: 12px;
+			left: 14px;
 			fill: var(--grey);
 
 		}
@@ -183,13 +183,27 @@
 			font-weight: 600;
 			height: 80px;
 			line-height: 40px;
-			padding: 20px 0 20px 50px;
+			padding: 20px 10px 20px 50px;
 			width: 100%;
-			text-transform: uppercase;
 
-			&:focus + svg {
+			&::placeholder {
 
-				fill: #fff;
+				text-transform: uppercase;
+				opacity: .5;
+
+			}
+
+			&:focus {
+
+				background-color: #fff;
+				box-shadow: none;
+				color: #000;
+
+				svg {
+
+					fill: #fff;
+
+				}
 
 			}
 

@@ -3,12 +3,6 @@
 	position: relative;
 	flex-shrink: 0;
 
-	@media $smWidth {
-
-		background-color: #fbfafb;
-
-	}
-
 	.swiper-controls .swiper-pagination {
 
 		bottom: 340px;
@@ -113,6 +107,8 @@
 			right: 0;
 			bottom: 0;
 			margin: auto;
+			object-fit: cover;
+			max-width: 100%;
 
 		}
 
@@ -187,9 +183,15 @@
 			padding: 0 20px;
 			height: 280px;
 			background-color: #fff;
-			margin: 0 10px;
 			position: relative;
 			z-index: 1;
+			margin: 0 1px;
+
+			@media (min-width: 1336px) {
+
+				margin: 0 10px;
+
+			}
 
 			dt {
 
