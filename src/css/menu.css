@@ -2,6 +2,34 @@
 
 	display: flex;
 
+	@media $smWidth {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: var(--transitionDefault);
+		transform: translateX(-100%);
+		width: 200px;
+		padding: 10px 0;
+		background-color: var(--orange);
+		display: block;
+
+		.menu-show & {
+
+			transform: translateX(0);
+
+		}
+
+		a {
+
+			color: #fff;
+			white-space: nowrap;
+			padding: 0 var(--indent);
+
+		}
+
+	}
+
 	a {
 
 		display: block;
@@ -33,6 +61,21 @@
 		display: flex;
 		gap: 10px;
 
+		@media $smWidth {
+
+			flex-wrap: wrap;
+			gap: 0;
+			padding: 10px 0;
+			margin-right: -10px;
+
+			li:nth-child(n+5) {
+
+				display: none;
+
+			}
+
+		}
+
 	}
 
 	a {
@@ -43,6 +86,18 @@
 		font-weight: 600;
 		padding: 20px;
 		transition: var(--transitionDefault);
+
+		@media $smWidth {
+
+			padding: 4px 12px;
+
+			&::before {
+
+				left: 0;
+
+			}
+
+		}
 
 		&::before {
 

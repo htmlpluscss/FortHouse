@@ -8,7 +8,25 @@
 
 					<div class="header__menu-top">
 
+						<button class="button btn-menu-toggle" type="button" aria-label="открыть меню">
+
+							<span class="btn-menu-toggle__top"></span>
+							<span class="btn-menu-toggle__center"></span>
+							<span class="btn-menu-toggle__bottom"></span>
+
+						</button>
+
 {% include "template/header/menu-top.html" %}
+
+					</div>
+
+					<div class="header__phone-mobile">
+
+						<a href="tel:+74952830878">
+
+							+7 495 283-08-78
+
+						</a>
 
 					</div>
 
@@ -71,6 +89,16 @@
 				</div>
 
 			</div>
+
+		</div>
+
+		<div class="header__search-mobile">
+
+			<form action="/search.php" autocomplete="off">
+
+				<input name="model" class="input" placeholder="Поиск по каталогу">
+
+			</form>
 
 		</div>
 

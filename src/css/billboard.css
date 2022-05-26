@@ -3,6 +3,12 @@
 	position: relative;
 	flex-shrink: 0;
 
+	@media $smWidth {
+
+		display: none;
+
+	}
+
 	.swiper-controls .swiper-pagination {
 
 		bottom: 340px;

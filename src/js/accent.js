@@ -13,6 +13,12 @@
 
 		el.addEventListener('mouseenter', () => {
 
+			if ( window.innerWidth < 1250 ) {
+
+				return;
+
+			}
+
 			el.classList.add('is-up');
 			document.body.classList.add('overlay');
 
