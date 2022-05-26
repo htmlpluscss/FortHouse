@@ -19,7 +19,7 @@
 			  swipePrev = document.createElement('button'),
 			  items = swipe.querySelectorAll('.swiper-slide'),
 			  count = items.length,
-			  standart = swipe.classList.contains('swiper-container--standart'),
+			  billboard = swipe.classList.contains('swiper-container--billboard'),
 			  realty = swipe.classList.contains('swiper-container--realty'),
 			  gallery = swipe.classList.contains('swiper-container--gallery'),
 			  related = swipe.classList.contains('swiper-container--related');
@@ -63,18 +63,23 @@
 
 		}
 
-		if (standart) {
+		if (billboard) {
 
 			swipeBtns.remove();
 
 			toggleSwipe = () => {
 
 				toggleSwipe = false;
+				swipe.closest('.billboard').classList.add('swiper-container-style');
 
 				new Swiper(swipe, {
 					loop: true,
 					autoplay: {
-						delay: 3000
+						delay: 10000
+					},
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true
 					},
 					pagination: {
 						el: swipeNav,

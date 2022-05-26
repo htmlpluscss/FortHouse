@@ -1,50 +1,14 @@
 /**
- * Swiper 7.0.8
+ * Swiper 8.1.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
- * Copyright 2014-2021 Vladimir Kharlampidi
+ * Copyright 2014-2022 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: October 4, 2021
+ * Released on: May 25, 2022
  */
-
-
-.swiper-wrap {
-
-	position: relative;
-
-	.swiper-inner {
-
-		@media $desktop {
-
-			padding: 12px;
-			margin: -12px;
-			overflow: hidden;
-
-			.swiper-container {
-
-				overflow: visible;
-
-			}
-
-		}
-
-	}
-
-	.swiper-inner + .swiper-controls {
-
-		@media (min-width: 1356px) {
-
-			left: -30px;
-			right: -30px;
-
-		}
-
-	}
-
-}
 
 .swiper-container-style {
 
@@ -61,12 +25,6 @@
 
 	}
 
-	.swiper-container-no-flexbox .swiper-slide {
-
-		float: left;
-
-	}
-
 	.swiper-wrapper {
 
 		position: relative;
@@ -77,7 +35,7 @@
 
 	}
 
-	.swiper-container-android .swiper-slide,
+	.swiper-android .swiper-slide,
 	.swiper-wrapper {
 
 		transform: translate3d(0, 0, 0);
@@ -197,6 +155,7 @@
 		position: absolute;
 		bottom: 32px;
 		left: 0;
+		right: 0;
 
 		.button {
 
@@ -239,64 +198,54 @@
 	}
 
 	/* Auto Height */
-	.swiper-container-autoheight,
-	.swiper-container-autoheight .swiper-slide {
+
+	.swiper-autoheight {
 
 		height: auto;
 
-	}
+		.swiper-slide {
 
-	.swiper-container-autoheight .swiper-wrapper {
+			height: auto;
 
-		align-items: flex-start;
-		transition-property: transform, height;
+		}
 
-	}
+		.swiper-wrapper {
 
-	/* fade*/
+			align-items: flex-start;
+			transition-property: transform, height;
 
-	.swiper-container-fade .swiper-slide {
-
-		pointer-events: none;
-		transition-property: opacity;
+		}
 
 	}
 
-	.swiper-container-fade .swiper-slide-active {
+	/* fade */
 
-		pointer-events: auto;
-		z-index: 1;
+	.swiper-free-mode > .swiper-wrapper {
 
-	}
-
-	/* vertical */
-
-	.swiper-vertical .swiper-controls {
-
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		transition-timing-function: ease-out;
 
 	}
 
-	.swiper-vertical > .swiper-wrapper {
+	.swiper-fade {
 
-		flex-direction: column;
-		height: 100%;
+		&.swiper-free-mode .swiper-slide {
 
-	}
+			transition-timing-function: ease-out;
 
-	.swiper-container-pointer-events.swiper-vertical {
+		}
 
-		touch-action: pan-x;
+		.swiper-slide {
 
-	}
+			pointer-events: none;
+			transition-property: opacity;
 
-	.swiper-vertical.swiper-container-css-mode > .swiper-wrapper {
+			&-active {
 
-		scroll-snap-type: y mandatory;
+				pointer-events: auto;
+
+			}
+
+		}
 
 	}
 

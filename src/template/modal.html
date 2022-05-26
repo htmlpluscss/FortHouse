@@ -2,54 +2,6 @@
 
 		<div class="modal__box">
 
-{% if headerUser === true %}
-
-{% include "template/modal/exit.html" %}
-
-{% else %}
-
-{% include "template/modal/login.html" %}
-
-{% include "template/modal/reg.html" %}
-
-{% include "template/modal/recovery.html" %}
-
-{% include "template/modal/login-required.html" %}
-
-{% endif %}
-
-{% include "template/modal/cart.html" %}
-
-{% include "template/modal/city.html" %}
-
-{% if editAccount === true %}
-
-{% include "template/modal/account-edit-name.html" %}
-{% include "template/modal/account-edit-phone.html" %}
-{% include "template/modal/account-edit-email.html" %}
-{% include "template/modal/account-edit-password.html" %}
-
-{% endif %}
-
-{% if editAddress === true %}
-
-{% include "template/modal/account-address-remove.html" %}
-
-{% endif %}
-
-{% if editCard === true %}
-
-{% include "template/modal/account-card-remove.html" %}
-
-{% endif %}
-
-{% if cart === true %}
-
-{% include "template/modal/order-finish.html" %}
-{% include "template/modal/order-create.html" %}
-
-{% endif %}
-
 			<div class="modal__item modal__item--ok">
 
 				<div class="modal-login__head h2"></div>

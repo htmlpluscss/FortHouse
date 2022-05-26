@@ -12,7 +12,6 @@
 	@media $smWidth {
 
 		padding: 0;
-		align-items: flex-end;
 
 	}
 
@@ -33,21 +32,6 @@
 		width: 550px;
 
 		@media $smWidth {
-
-			border-radius: 9px 9px 0 0;
-			padding: 18px 21px;
-
-		}
-
-		&--cart {
-
-			width: 836px;
-
-		}
-
-		&--ok {
-
-			padding-bottom: 71px;
 
 		}
 

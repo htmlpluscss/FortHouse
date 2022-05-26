@@ -5,18 +5,18 @@
 @import url(form.css);
 /*@import url(select.css);*/
 
-/* @import url(content.css); */
+@import url(content.css);
 @import url(header.css);
 @import url(footer.css);
 @import url(menu.css);
-/* @import url(modal.css); */
+@import url(modal.css);
 /* @import url(breadcrumbs.css); */
 @import url(content-block.css);
 
-/*
-@import url(swiper.css);
 @import url(billboard.css);
-@import url(stock.css);
+@import url(swiper.css);
+
+/*
 @import url(catalog-preview.css);
 @import url(catalog-list.css);
 @import url(catalog-swiper.css);
