@@ -1,10 +1,8 @@
 .breadcrumbs {
 
-	margin: 30px 0;
+	margin: var(--gap) 0;
 
 	@media $smWidth {
-
-		margin: 21px 0;
 
 	}
 
@@ -30,19 +28,12 @@
 
 		display: flex;
 		align-items: center;
-		font-size: 12px;
-		line-height: 18px;
-		--text: var(--grey);
-		margin: 3px 0;
+		color: var(--text);
 
 		&::after {
 
-			margin: 0 6px;
-			width: 3px;
-			height: 3px;
-			content: '';
-			border-radius: 50%;
-			background-color: #bcbbc7;
+			margin: 0 10px;
+			content: '/';
 
 		}
 
@@ -51,6 +42,24 @@
 			&::after {
 
 				display: none;
+
+			}
+
+		}
+
+	}
+
+	&__link {
+
+		font-size: 12px;
+		color: var(--text);
+
+		@media $desktop {
+
+			&:hover {
+
+				color: var(--orangeHover);
+				text-decoration: underline;
 
 			}
 

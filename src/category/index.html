@@ -1,0 +1,325 @@
+{% set title = "Крупная бытовая техника" %}
+
+{% set description = "Холодильники, Морозильники, Винные шкафы, Винные витрины, Винный кулер, Стиральные машины, Сушильные машины, Сушильные шкафы, Гладильные системы, Посудомоечные машины, Шкафы для хранения шуб, Вытяжки, Плиты" %}
+
+{% set breadcrumbs = ["Главная", title] %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="category">
+
+			<h1 class="category__title h1">
+				{{ title }}
+			</h1>
+
+			<div class="category__flex">
+
+				<ul class="category__list">
+
+{% for item in [
+
+	{
+		name : "Холодильники",
+		counter : 454
+	},
+	{
+		name : "Морозильники",
+		counter : 19
+	},
+	{
+		name : "Винные шкафы",
+		counter : 190
+	},
+	{
+		name : "Винные витрины",
+		counter : 10
+	},
+	{
+		name : "Винный кулер",
+		counter : 1
+	},
+	{
+		name : "Стиральные машины",
+		counter : 180
+	},
+	{
+		name : "Сушильные машины",
+		counter : 74
+	},
+	{
+		name : "Сушильные шкафы",
+		counter : 6
+	},
+	{
+		name : "Гладильные системы",
+		counter : 14
+	},
+	{
+		name : "Посудомоечные машины",
+		counter : 59
+	},
+	{
+		name : "Шкафы для хранения шуб",
+		counter : 1
+	},
+	{
+		name : "Вытяжки",
+		counter : 1209
+	},
+	{
+		name : "Плиты",
+		counter : 153
+	},
+	{
+		name : "Аксессуары",
+		counter : 178
+	},
+	{
+		name : "Бытовая химия",
+		counter : 16
+	}
+
+] %}
+
+					<li>
+
+						<a href="/catalog/">
+
+							{{ item.name }}
+
+							<small>
+								{{ item.counter }}
+							</small>
+
+						</a>
+
+					</li>
+
+{% endfor %}
+
+				</ul>
+
+				<ul class="category__brand">
+
+{% for item in [
+
+	{
+		name : "Asko",
+		counter : 80
+	},
+	{
+		name : "Bertazzoni",
+		counter : 165
+	},
+	{
+		name : "Bosch",
+		counter : 175
+	},
+	{
+		name : "CASO",
+		counter : 14
+	},
+	{
+		name : "Climadiff",
+		counter : 31
+	},
+	{
+		name : "Climadiff Avintage",
+		counter : 21
+	},
+	{
+		name : "Cold vine",
+		counter : 70
+	},
+	{
+		name : "De Dietrich",
+		counter : 20
+	},
+	{
+		name : "Dunavox",
+		counter : 10
+	},
+	{
+		name : "Elica",
+		counter : 268
+	},
+	{
+		name : "Faber",
+		counter : 301
+	},
+	{
+		name : "Falmec",
+		counter : 71
+	},
+	{
+		name : "Fornelli",
+		counter : 1
+	},
+	{
+		name : "Franke",
+		counter : 1
+	},
+	{
+		name : "Gaggenau",
+		counter : 1
+	},
+	{
+		name : "Gemm",
+		counter : 23
+	},
+	{
+		name : "Graude",
+		counter : 39
+	},
+	{
+		name : "HG",
+		counter : 16
+	},
+	{
+		name : "Hiberg",
+		counter : 1
+	},
+	{
+		name : "Hisense",
+		counter : 2
+	},
+	{
+		name : "Hitachi",
+		counter : 134
+	},
+	{
+		name : "Indel B",
+		counter : 35
+	},
+	{
+		name : "Io Mabe",
+		counter : 40
+	},
+	{
+		name : "Ip Industrie",
+		counter : 13
+	},
+	{
+		name : "Jackys",
+		counter : 22
+	},
+	{
+		name : "Kitchen Aid",
+		counter : 15
+	},
+	{
+		name : "Korting",
+		counter : 157
+	},
+	{
+		name : "Krona",
+		counter : 9
+	},
+	{
+		name : "Kuppersbusch",
+		counter : 97
+	},
+	{
+		name : "LauraStar",
+		counter : 28
+	},
+	{
+		name : "Liebherr",
+		counter : 5
+	},
+	{
+		name : "Lofra",
+		counter : 29
+	},
+	{
+		name : "Midea",
+		counter : 11
+	},
+	{
+		name : "Miele",
+		counter : 78
+	},
+	{
+		name : "Mitsubishi Electric",
+		counter : 25
+	},
+	{
+		name : "Neff",
+		counter : 26
+	},
+	{
+		name : "Schaub Lorenz",
+		counter : 103
+	},
+	{
+		name : "Sharp",
+		counter : 21
+	},
+	{
+		name : "Shindo",
+		counter : 4
+	},
+	{
+		name : "Siemens",
+		counter : 18
+	},
+	{
+		name : "Sirius",
+		counter : 214
+	},
+	{
+		name : "Smeg",
+		counter : 1
+	},
+	{
+		name : "Teka",
+		counter : 48
+	},
+	{
+		name : "Toshiba",
+		counter : 21
+	},
+	{
+		name : "V-Zug",
+		counter : 16
+	},
+	{
+		name : "Vestfrost",
+		counter : 84
+	}
+
+] %}
+
+					<li>
+
+						<a href="/catalog/">
+
+							{{ item.name }}
+
+							<small>
+								{{ item.counter }}
+							</small>
+
+						</a>
+
+					</li>
+
+{% endfor %}
+
+				</ul>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% include "category/tab-swiper.html" %}
+
+{% include "category/content-block.html" %}
+
+{% endblock %}

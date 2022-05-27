@@ -2,6 +2,16 @@
 
 	display: flex;
 
+	@media $mdWidth {
+
+		a {
+
+			padding: 0 10px;
+
+		}
+
+	}
+
 	@media $smWidth {
 
 		position: absolute;
@@ -23,7 +33,6 @@
 		a {
 
 			color: #fff;
-			white-space: nowrap;
 			padding: 0 var(--indent);
 
 		}
@@ -38,6 +47,7 @@
 		font-weight: 600;
 		padding: 0 22px;
 		--color: #000;
+		white-space: nowrap;
 		transition: var(--transitionDefault);
 
 		@media $desktop {
@@ -61,18 +71,24 @@
 		display: flex;
 		gap: 10px;
 
-		@media $smWidth {
+		@media $mdWidth {
 
 			flex-wrap: wrap;
 			gap: 0;
 			padding: 10px 0;
-			margin-right: -10px;
+			margin-right: -20px;
 
 			li:nth-child(n+5) {
 
 				display: none;
 
 			}
+
+		}
+
+		@media $smWidth {
+
+			margin-right: -10px;
 
 		}
 
@@ -85,7 +101,20 @@
 		line-height: 24px;
 		font-weight: 600;
 		padding: 20px;
+		color: #fff;
 		transition: var(--transitionDefault);
+
+		@media $mdWidth {
+
+			padding: 4px 20px 4px 16px;
+
+			&::before {
+
+				left: 0;
+
+			}
+
+		}
 
 		@media $smWidth {
 

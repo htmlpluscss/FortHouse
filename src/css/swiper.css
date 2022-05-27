@@ -74,12 +74,6 @@
 		right: 0;
 		bottom: 0;
 
-		@media $smWidth {
-
-			display: none;
-
-		}
-
 	}
 
 	.swiper-button {
@@ -91,11 +85,8 @@
 			position: relative;
 			pointer-events: auto;
 
-			width: 60px;
-			height: 60px;
-			background-color: #fff;
-			border-radius: 50%;
-			box-shadow: var(--box-shadow);
+			width: 36px;
+			height: 36px;
 
 			svg {
 
@@ -105,7 +96,7 @@
 				right: 0;
 				bottom: 0;
 				margin: auto;
-				fill: #f5c400;
+				fill: var(--grey);
 
 			}
 
@@ -113,11 +104,9 @@
 
 				&:hover {
 
-					box-shadow: var(--card-shadow);
-
 					svg {
 
-						fill: var(--text);
+						fill: var(--orangeHover);
 
 					}
 

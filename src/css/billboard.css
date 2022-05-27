@@ -2,16 +2,17 @@
 
 	position: relative;
 	flex-shrink: 0;
-
-	@media $smWidth {
-
-		display: none;
-
-	}
+	background-color: #000;
 
 	.swiper-controls .swiper-pagination {
 
 		bottom: 340px;
+
+		@media $mdWidth {
+
+			bottom: 14px;
+
+		}
 
 		.button {
 
@@ -39,11 +40,11 @@
 			&.is-active {
 
 				border: 1px solid var(--orange);
-				background-color: var(--bg);
+				background-color: #000;
 
 				&::after {
 
-					background-color: var(--bg);
+					background-color: #000;
 
 				}
 
@@ -84,6 +85,19 @@
 		height: 768px;
 		position: relative;
 
+		@media $mdWidth {
+
+			height: 560px;
+
+			.center {
+
+				display: block;
+				padding: 0;
+
+			}
+
+		}
+
 		.center {
 
 			display: flex;
@@ -116,6 +130,13 @@
 			object-fit: cover;
 			max-width: 100%;
 
+			@media $mdWidth {
+
+				margin: 0;
+				width: 100%;
+
+			}
+
 		}
 
 	}
@@ -125,6 +146,31 @@
 		max-width: 480px;
 		position: relative;
 		z-index: 1;
+		color: #fff;
+
+		@media $mdWidth {
+
+			max-width: none;
+			padding: var(--indent);
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			color: #000;
+			text-align: center;
+			background-color: rgba(242, 242, 242, .8);
+
+			&::before  {
+
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border-radius: 0;
+
+			}
+
+		}
 
 		&::before {
 
@@ -146,6 +192,12 @@
 
 		margin-bottom: 24px;
 		position: relative;
+
+		@media $smWidth {
+
+			margin-bottom: 20px;
+
+		}
 
 	}
 
@@ -172,6 +224,23 @@
 		margin-top: 36px;
 		display: flex;
 
+		@media $mdWidth {
+
+			margin: 24px 0 20px;
+			justify-content: center;
+
+		}
+
+		@media $smWidth {
+
+			.btn {
+
+				width: 100%;
+
+			}
+
+		}
+
 	}
 
 	&__service {
@@ -182,6 +251,23 @@
 		bottom: 30px;
 		display: flex;
 		justify-content: center;
+
+		@media $mdWidth {
+
+			position: relative;
+			bottom: 0;
+			padding: 10px 0;
+			margin: 0 auto;
+			flex-wrap: wrap;
+			max-width: 960px;
+
+		}
+
+		@media $smWidth {
+
+			display: block;
+
+		}
 
 		&-item {
 
@@ -199,19 +285,33 @@
 
 			}
 
+			@media $mdWidth {
+
+				margin: 5px;
+
+			}
+
+			@media $smWidth {
+
+				width: auto;
+				height: auto;
+				margin: 10px var(--indent);
+				padding-bottom: 20px;
+
+				img {
+
+					margin: auto;
+
+				}
+
+			}
+
 			dt {
 
 				font-size: 13px;
 				line-height: 18px;
 				padding: 8px 0 6px;
 				font-weight: 700;
-				color: #000;
-
-				a {
-
-					color: #000;
-
-				}
 
 			}
 

@@ -1,0 +1,242 @@
+	<aside class="tab-swiper">
+
+		<div class="center">
+
+			<h2 class="tab-swiper__title h3">
+				Новинки
+			</h2>
+
+			<div class="tab-swiper__box">
+
+				<div class="swiper-container swiper-container--preview">
+
+					<div class="tab-swiper__list swiper-wrapper">
+
+{% for item in [
+
+	{
+		img  : "r-wb642vu0_gs_3",
+		name : "Холодильник Hitachi",
+		code : "R-WB 642 VU0 GS",
+		price : "399 950"
+	},
+	{
+		img  : "mdrf631fgf23b_11",
+		name : "Холодильник Midea",
+		code : "MDRF631FGF23B",
+		price : "139 990"
+	},
+	{
+		img  : "mdrf644fgf02b",
+		name : "Холодильник Midea",
+		code : "MDRF644FGF02B",
+		price : "106 990"
+	},
+	{
+		img  : "mdrf644fgf23b",
+		name : "Холодильник Midea",
+		code : "MDRF644FGF23B",
+		price : "117 990"
+	},
+	{
+		img  : "mdrf632fgf46",
+		name : "Холодильник Midea",
+		code : "MDRF632FGF46",
+		price : "91 990"
+	},
+	{
+		img  : "mrs518snx1",
+		name : "Холодильник Midea",
+		code : "MRS518SNX1",
+		price : "86 990"
+	},
+	{
+		img  : "mrs518sfnbe2",
+		name : "Холодильник Midea",
+		code : "MRS518SFNBE2",
+		price : "89 990"
+	},
+	{
+		img  : "mrf519sfnx1",
+		name : "Холодильник Midea",
+		code : "MRF519SFNX1",
+		price : "123 990"
+	},
+	{
+		img  : "mrf519sfnbe1",
+		name : "Холодильник Midea",
+		code : "MRF519SFNBE1",
+		price : "121 990"
+	},
+	{
+		img  : "mrc519sfnx1",
+		name : "Холодильник Midea",
+		code : "MRC519SFNX1",
+		price : "111 990"
+	},
+	{
+		img  : "mrc519sfnbe1_0",
+		name : "Холодильник Midea",
+		code : "MRC519SFNBE1",
+		price : "108 990"
+	},
+	{
+		img  : "mrs518snw1",
+		name : "Холодильник Midea",
+		code : "MRS518SNW1",
+		price : "83 990"
+	},
+	{
+		img  : "vinicave-03",
+		name : "Винный кулер Climadiff",
+		code : "VINICAVE",
+		price : "27 600"
+	},
+	{
+		img  : "pwm507_dv",
+		name : "Стиральная машина Miele",
+		code : "PWM507 DV",
+		price : "288 000"
+	},
+	{
+		img  : "pwm507_dp",
+		name : "Стиральная машина Miele",
+		code : "PWM507 DP",
+		price : "270 000"
+	},
+	{
+		img  : "apcl028",
+		name : "Miele",
+		code : "APCL028",
+		price : "23 000"
+	},
+	{
+		img  : "apcl031",
+		name : "Miele",
+		code : "APCL031",
+		price : "6 500"
+	},
+	{
+		img  : "pdr300hp",
+		name : "Сушильная машина Miele",
+		code : "PDR300HP",
+		price : "165 000"
+	},
+	{
+		img  : "pwm300_dp",
+		name : "Стиральная машина Miele",
+		code : "PWM300 DP",
+		price : "195 000"
+	},
+	{
+		img  : "st_30_1",
+		name : "Аксессуар для гладильной машины Miele",
+		code : "ST 30",
+		price : "20 350"
+	},
+	{
+		img  : "st_10",
+		name : "Аксессуар для гладильной машины Miele",
+		code : "ST 10",
+		price : "21 250"
+	},
+	{
+		img  : "twindos_2",
+		name : "Miele",
+		code : "TwinDos 2",
+		price : "4 000"
+	},
+	{
+		img  : "twindos_1",
+		name : "Miele",
+		code : "TwinDos 1",
+		price : "4 000"
+	},
+	{
+		img  : "tf-hg_4",
+		name : "Miele",
+		code : "TF-HG 4",
+		price : "2 950"
+	},
+	{
+		img  : "tkr_555",
+		name : "Miele",
+		code : "TKR 555",
+		price : "9 300"
+	},
+	{
+		img  : "tk_111",
+		name : "Miele",
+		code : "TK 111",
+		price : "12 100"
+	},
+	{
+		img  : "ubs_t1_g",
+		name : "Miele",
+		code : "UBS T1/G",
+		price : "12 100"
+	},
+	{
+		img  : "ubs_w1_g",
+		name : "Miele",
+		code : "UBS W1/G",
+		price : "12 100"
+	},
+	{
+		img  : "ubs-w_2",
+		name : "Miele",
+		code : "UBS-W/T G",
+		price : "10 850"
+	},
+	{
+		img  : "ubs-w",
+		name : "Miele",
+		code : "UBS-W/T S",
+		price : "8 400"
+	}
+]%}
+
+						<div class="tab-swiper__item swiper-slide">
+
+							<article class="preview-product">
+
+								<div class="preview-product__img">
+
+									<picture>
+
+										<source srcset="https://forthouse.ru/pic/220x220/{{ item.img }}.webp 1x, https://forthouse.ru/pic/440x440/{{ item.img }}.webp 2x" type="image/webp">
+										<source srcset="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg 1x, https://forthouse.ru/pic/440x440/{{ item.img }}.jpg 2x">
+
+										<img src="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg" width="160" height="160" alt="{{ item.name }} {{ item.code }}" loading="lazy">
+
+									</picture>
+
+								</div>
+
+								<h3 class="preview-product__name">
+									{{ item.name }} <br> {{ item.code }}
+								</h3>
+
+								<p class="preview-product__price">
+									{{ item.price }} ₽
+								</p>
+
+								<a class="preview-product__btn-link btn">
+									Подробнее
+								</a>
+
+							</article>
+
+						</div>
+
+{% endfor %}
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</aside>

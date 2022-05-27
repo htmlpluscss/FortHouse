@@ -19,7 +19,19 @@
 
 }
 
+@media ($tablet) {
+
+
+}
+
 @media $mdWidth {
+
+	:root {
+
+		--indent: 30px;
+		--space: 30px;
+
+	}
 
 	.hidden-md {
 

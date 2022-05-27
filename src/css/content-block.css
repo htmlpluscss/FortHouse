@@ -1,7 +1,12 @@
 .content-block {
 
 	margin: var(--space) 0;
-	font-size: 13px;
+
+	@media $mdWidth {
+
+		display: none;
+
+	}
 
 	h1 {
 
@@ -34,15 +39,13 @@
 
 		& + p {
 
-			margin-top: 18px;
+			margin-top: 12px;
 
 		}
 
 	}
 
 	ul {
-
-		margin: 18px 0;
 
 		li {
 
@@ -57,7 +60,7 @@
 				left: 0;
 				content: '';
 				border-radius: 50%;
-				background-color: red;
+				background-color: var(--orange);
 
 			}
 
@@ -67,7 +70,6 @@
 
 	ol {
 
-		margin: 18px 0;
 		counter-reset: headings 0;
 
 		li {

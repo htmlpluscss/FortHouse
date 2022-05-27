@@ -7,7 +7,7 @@
 
 	.center {
 
-		@media $smWidth {
+		@media $mdWidth {
 
 			width: 100%;
 
@@ -30,12 +30,12 @@
 	&__flex {
 
 		display: flex;
+		gap: 36px;
 		justify-content: space-between;
 
 		@media $smWidth {
 
 			flex-wrap: wrap;
-			gap: 36px;
 
 		}
 
@@ -132,7 +132,7 @@
 
 		padding: 24px 0;
 		font-size: 14px;
-		background-color: var(--bg);
+		background-color: #000;
 
 		a {
 

@@ -1,6 +1,6 @@
 :root {
 
-	--color: #fff;
+	--color: #000;
 	--text: #777;
 	--grey: #ababab;
 	--orange: #fa481c;
@@ -8,7 +8,7 @@
 	--green: #5e9f00;
 	--red: red;
 	--error: #f00;
-	--bg: #000;
+	--bg: #f2f2f2;
 	--border: #797979;
 
 	--transitionDefault: 0s;
@@ -21,6 +21,7 @@
 }
 
 $desktop: (min-width: 1250px);
+$tablet:  (min-width: 768px) and (max-width: 1249px);
 $mdWidth: (max-width: 1249px);
 $smWidth: (max-width: 767px);
 $xsWidth: (max-width: 359px);

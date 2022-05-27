@@ -87,7 +87,7 @@ svg {
 
 	display: block;
 	position: relative;
-	fill: var(--color);
+	fill: #fff;
 	transition: var(--transitionDefault);
 
 }

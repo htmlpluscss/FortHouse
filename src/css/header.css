@@ -3,6 +3,16 @@
 	flex-shrink: 0;
 	position: relative;
 
+	.center {
+
+		@media $mdWidth {
+
+			width: 100%;
+
+		}
+
+	}
+
 	&__top {
 
 		background-color: #fff;
@@ -21,6 +31,8 @@
 	}
 
 	&__main {
+
+		background-color: #000;
 
 	}
 
@@ -214,6 +226,12 @@
 
 		margin-left: -20px;
 
+		@media $mdWidth {
+
+			margin-left: -10px;
+
+		}
+
 		@media $smWidth {
 
 			margin: 0;
@@ -233,7 +251,7 @@
 		color: var(--grey);
 		font-weight: 600;
 
-		@media $smWidth {
+		@media $mdWidth {
 
 			display: none;
 
@@ -327,6 +345,8 @@
 					line-height: 40px;
 					padding: 10px var(--indent);
 					width: 100%;
+					color: #fff;
+					background-color: #000;
 
 					&::placeholder {
 
@@ -346,6 +366,12 @@
 				}
 
 			}
+
+		}
+
+		@media $mdWidth {
+
+			margin-right: calc( var(--indent) * -1);
 
 		}
 
@@ -374,6 +400,7 @@
 			line-height: 40px;
 			padding: 20px 10px 20px 50px;
 			width: 100%;
+			color: #fff;
 
 			&::placeholder {
 

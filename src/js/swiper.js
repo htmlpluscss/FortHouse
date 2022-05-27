@@ -20,7 +20,7 @@
 			  items = swipe.querySelectorAll('.swiper-slide'),
 			  count = items.length,
 			  billboard = swipe.classList.contains('swiper-container--billboard'),
-			  realty = swipe.classList.contains('swiper-container--realty'),
+			  preview = swipe.classList.contains('swiper-container--preview'),
 			  gallery = swipe.classList.contains('swiper-container--gallery'),
 			  related = swipe.classList.contains('swiper-container--related');
 
@@ -34,8 +34,8 @@
 		swipePrev.setAttribute('aria-label','Previous slide');
 		swipeNext.setAttribute('aria-label','Next slide');
 
-		swipePrev.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16"><path d="m5.22 7.33 3.57-3.57-.94-.95L2.67 8l5.18 5.19.94-.95-3.57-3.57h8.11V7.33H5.22Z"/></svg>';
-		swipeNext.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16"><path d="M10.78 7.33 7.21 3.76l.94-.95L13.33 8l-5.18 5.19-.94-.95 3.57-3.57H2.67V7.33h8.11Z"/></svg>';
+		swipePrev.innerHTML = '<svg width="20" height="20" viewBox="0 0 96 96"><path d="m39.38 48 30.47-25.39a6 6 0 0 0-7.7-9.22l-36 30a6 6 0 0 0 0 9.22l36 30a6 6 0 0 0 7.7-9.22Z"/></svg>';
+		swipeNext.innerHTML = '<svg width="20" height="20" viewBox="0 0 96 96"><path d="m69.84 43.39-36-30a6 6 0 0 0-7.69 9.22L56.62 48 26.15 73.39a6 6 0 0 0 7.7 9.22l36-30a6 6 0 0 0 0-9.22Z"/></svg>';
 
 		swipeBtns.appendChild(swipePrev);
 		swipeBtns.appendChild(swipeNext);
@@ -121,7 +121,7 @@
 
 		}
 
-		if (realty) {
+		if (preview) {
 
 			swipeNav.remove();
 
@@ -129,29 +129,29 @@
 
 				toggleSwipe = false;
 
-				swipe.parentNode.parentNode.classList.add('swiper-container-style');
+				swipe.parentNode.classList.add('swiper-container-style');
 				swipe.parentNode.appendChild(swipeControls);
 
 				new Swiper(swipe, {
 					loop: true,
-					slidesPerView: 3,
-					slidesPerGroup: 1,
-					spaceBetween: 36,
+					slidesPerView: 7,
+					slidesPerGroup: 7,
 					navigation: {
 						nextEl: swipeNext,
 						prevEl: swipePrev
 					},
 					breakpoints: {
 						320: {
-							slidesPerView: 1
+							slidesPerView: 2,
+							slidesPerGroup: 2
 						},
 						768: {
-							slidesPerView: 2,
-							spaceBetween: 24
+							slidesPerView: 4,
+							slidesPerGroup: 4
 						},
-						1200: {
-							slidesPerView: 3,
-							spaceBetween: 36
+						1250: {
+							slidesPerView: 7,
+							slidesPerGroup: 7
 						}
 					}
 				});
