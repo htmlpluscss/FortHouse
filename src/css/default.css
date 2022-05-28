@@ -70,7 +70,7 @@ a {
 
 ::selection {
 
-	color: var(--color);
+	color: #fff;
 	background-color: var(--orange);
 
 }

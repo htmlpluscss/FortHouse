@@ -247,7 +247,7 @@
 
 						if (window.Swiper) {
 
-							[...swiperContainer].forEach( swipe => swipe.dispatchEvent(new CustomEvent("swiperResize")) );
+							[...swiperContainer].forEach( swipe => swipe.dispatchEvent(new Event("swiperResize")) );
 
 						}
 
@@ -265,7 +265,7 @@
 
 	script.src = '/js/swiper.min.js';
 
-	script.onload = () => [...swiperContainer].forEach( swipe => swipe.dispatchEvent(new CustomEvent("swiperJsLoad")) );
+	script.onload = () => [...swiperContainer].forEach( swipe => swipe.dispatchEvent(new Event("swiperJsLoad")) );
 
 	setTimeout( () => document.head.appendChild(script), localStorage.getItem('fastLoadScript') ? 0 : 10000);
 

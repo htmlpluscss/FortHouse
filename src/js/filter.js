@@ -1,66 +1,77 @@
+( filter => {
 
-( form => {
+	if(!filter) {
 
-	if(form) {
+		return;
 
-		const resultBox = document.querySelector('.catalog__result'),
-			  count = form.querySelector('.filter__count'),
-			  fieldsets = form.querySelectorAll('.filter__fieldset'),
-			  loadingLayer = document.createElement('div');
+	}
 
-		loadingLayer.className = 'catalog__loading';
+	let windowScroll = window.pageYOffset,
+		barResultTotalPositionTop = 0;
 
-		// change
+	const resultBox = document.querySelector('.catalog__list'),
+		  barResultTotal = filter.querySelector('.filter__show-result'),
+		  count = filter.querySelectorAll('.filter__counter-total'),
+		  loadingLayer = document.createElement('div'),
+		  sort = document.querySelector('.catalog__sort'),
+		  ajaxBtn = document.querySelector('.catalog__ajax .btn'),
+		  legends = filter.querySelectorAll('.filter__legend'),
+		  mobileOpen = document.querySelector('.catalog-mobile-filter .btn'),
+		  mobileClose = filter.querySelector('.filter__btn-close');
 
-		form.addEventListener('change', event => {
+	loadingLayer.className = 'catalog__loading';
 
-			const target = event.target;
+	// change
 
-			// Все
+	filter.addEventListener('change', event => {
 
-			if( target.type === 'checkbox' ) {
+		let target = event.target;
 
-				const name = target.getAttribute('name'),
-					  btnAll = form.querySelector('.filter__checkbox-all[name="' + name + '"]');
+		if ( event.detail && event.detail.target ) {
 
-				if ( btnAll ) {
+			target = event.detail.target;
 
-					const list = Array.from(form.querySelectorAll('input[name="' + name + '"]')).filter(input => input !== btnAll);
+		}
 
-					if ( target === btnAll ) {
+		console.log(target);
 
-						Array.from(list, input => input.checked = btnAll.checked);
+		if ( target.classList.contains('nouislider__track') ) {
 
-					} else {
+			barResultTotalPositionTop = target.clientHeight / 2 + target.offsetTop;
 
-						btnAll.checked = list.every( input => input.checked === true );
+		}
 
-					}
+		if ( target.classList.contains('checkbox-filter__input') ||
+			 target.classList.contains('checkbox__input') ||
+			 target.classList.contains('input--border')
+		) {
 
-				}
+			barResultTotalPositionTop = target.parentNode.clientHeight / 2 + target.parentNode.offsetTop;
 
-			}
+		}
 
-			// submit
+		barResultTotal.style.top = barResultTotalPositionTop + 'px';
 
-			console.log(form, 'change');
+		barResultTotal.classList.add('is-show');
+
+		const formData = new FormData(filter);
+
+		const queryString = new URLSearchParams(formData).toString();
+
+		history.pushState(undefined, '', '?' + queryString);
+
+		// источник форма может быть только при клике по кнопке
+
+		if ( target === filter ) {
+
+			filter.elements.page.value = ajaxBtn.disabled === true ? parseInt( filter.elements.page.value ) + 1 : 1;
 
 			resultBox.insertAdjacentElement('afterbegin', loadingLayer);
 
-			const formData = new FormData(form);
+			barResultTotal.classList.remove('is-show');
+			document.body.classList.remove('is-filter-show');
 
-			const queryString = new URLSearchParams(formData).toString();
-
-			history.pushState(undefined, '', '?' + queryString);
-
-			// источник форма может быть только при клике по кнопке
-			if ( target !== form ) {
-
-				formData.append('count', 'on');
-
-			}
-
-			fetch(form.getAttribute('action'), {
+			fetch(filter.getAttribute('action'), {
 				method: 'POST',
 				body: formData
 			})
@@ -68,228 +79,149 @@
 			.then(html => {
 
 				loadingLayer.remove();
-				resultBox.innerHTML = html;
 
-			});
+				// кнопка еще
 
-		});
+				if ( ajaxBtn.disabled === true ) {
 
-		// submit
+					ajaxBtn.disabled = false;
 
-		form.addEventListener('submit', event => {
+					resultBox.insertAdjacentHTML('beforeend', html);
 
-			document.body.classList.remove('filter-open');
+					if ( resultBox.querySelectorAll('.catalog__item').length === parseInt(filter.elements.total.value) ) {
 
-			event.preventDefault();
-
-			form.dispatchEvent(new CustomEvent("change"));
-
-		});
-
-		// default reset
-
-		form.addEventListener('default', () => {
-
-			Array.from(form.querySelectorAll('.checkbox__input:checked:not(:disabled)'), checkbox => checkbox.checked = false);
-
-			Array.from(form.querySelectorAll('.nouislider'), nouislider => nouislider.dispatchEvent(new CustomEvent("reset")));
-
-			form.dispatchEvent(new CustomEvent("change"));
-
-		});
-
-	}
-
-})(document.querySelector('.filter'));
-
-
-
-// filter-sort-trigger desktop
-
-( form => {
-
-	if(form.length) {
-
-		Array.from(form, form => {
-
-			const filter = document.querySelector('#' + form.getAttribute('data-id')),
-				  btnsRadio = form.querySelectorAll('.sort__item'),
-				  direction = form.elements.direction;
-
-			Array.from( btnsRadio, btn => {
-
-				btn.addEventListener("click", () => {
-
-					if( btn.classList.contains('is-active') ) {
-
-						if( btn.classList.contains('is-revert') ) {
-
-							btn.classList.remove('is-revert');
-							filter.elements.direction.value = direction.value;
-
-						} else {
-
-							btn.classList.add('is-revert');
-							filter.elements.direction.value = direction.getAttribute('data-alt');
-
-						}
-
-					} else {
-
-						btn.insertAdjacentElement("beforeend", form.querySelector('.sort__item svg'));
-
-						Array.from( btnsRadio, _btn => {
-
-							_btn.classList.toggle('is-active', btn === _btn);
-
-						});
+						ajaxBtn.classList.add('is-hide');
 
 					}
 
-					filter.elements.sort.value = btn.getAttribute('data-value');
+					if( windowScroll !== window.pageYOffset ) {
 
-					filter.dispatchEvent(new CustomEvent("change"));
-
-				});
-
-			});
-
-		})
-
-	}
-
-})(document.querySelectorAll('.filter-sort-trigger'));
-
-
-// filter-tags-trigger
-
-( form => {
-
-	if(form.length) {
-
-		Array.from(form, form => {
-
-			const filter = document.querySelector('#' + form.getAttribute('data-id')),
-				  btns = form.querySelectorAll('.filter-tags-trigger__tag');
-
-			Array.from( btns, btn => {
-
-				btn.addEventListener("click", () => {
-
-					if( btn.classList.contains('filter-tags-trigger__tag--reset') ) {
-
-						form.classList.add('is-remove');
-
-						setTimeout( ()=> {
-
-							Array.from( btns, _btn => {
-
-								if ( btn !== _btn ) {
-
-									_btn.remove();
-									form.classList.add('hide');
-
-								}
-
-							});
-
-						}, 500);
-
-						filter.dispatchEvent(new CustomEvent("default"));
-
-					} else {
-
-						const name = btn.getAttribute('data-name'),
-							  value = btn.getAttribute('data-value');
-
-						console.log(name,value);
-
-						if ( name === "nouislider" ) {
-
-							filter.querySelector('.nouislider--' + value).dispatchEvent(new CustomEvent("reset"));
-
-						} else {
-
-							filter.querySelector(`[name="${name}"][value="${value}"]`).checked = false;
-
-						}
-
-						btn.classList.add('is-remove');
-
-						setTimeout( ()=> btn.remove(), 500);
-
-						filter.dispatchEvent(new CustomEvent("change"));
+						window.scrollTo(0,windowScroll);
 
 					}
 
-				});
+				} else {
 
-			});
-
-		})
-
-	}
-
-})(document.querySelectorAll('.filter-tags-trigger'));
-
-
-// filter-sort-trigger mobile
-
-( form => {
-
-	if(form) {
-
-		const filter = document.querySelector('#' + form.getAttribute('data-id'));
-
-		form.addEventListener("change", event => {
-
-			filter.elements.direction.value = event.target.getAttribute('data-direction');
-			filter.elements.sort.value = form.elements.sort.value;
-
-			filter.dispatchEvent(new CustomEvent("change"));
-
-			form.classList.remove('is-open');
-
-		});
-
-		// catalog__sort-btn-mobile
-
-		window.addEventListener("click", event => {
-
-			// sort
-
-			const isSort = event.target.closest('.catalog__sort-btn-mobile--sort');
-
-			if ( isSort ) {
-
-				form.classList.toggle('is-open');
-
-			} else {
-
-				if ( event.target.closest('.filter-sort-trigger-mobile') === null ) {
-
-					form.classList.remove('is-open');
+					resultBox.innerHTML = html;
 
 				}
 
-			}
+			});
 
-			// filter
+		} else {
 
-			if ( event.target.closest('.catalog__sort-btn-mobile--filter') ) {
+			formData.append('count', 'on');
 
-				document.body.classList.add('filter-open');
+			fetch(filter.getAttribute('action'), {
+				method: 'POST',
+				body: formData
+			})
+			.then(response => response.text())
+			.then(html => {
 
-			}
+				[...count].forEach( el => el.textContent = html );
 
-			if ( event.target.closest('.filter__btn-close') ) {
+				filter.elements.total.value = html;
 
-				document.body.classList.remove('filter-open');
+				barResultTotal.style.top = barResultTotalPositionTop + 'px';
 
-			}
+			});
+
+		}
+
+	});
+
+	// submit
+
+	filter.addEventListener('submit', event => {
+
+		event.preventDefault();
+
+		filter.dispatchEvent(new Event("change"));
+
+	});
+
+// ajax
+
+	if (ajaxBtn) {
+
+		ajaxBtn.addEventListener("click", () => {
+
+			ajaxBtn.disabled = true;
+
+			windowScroll = window.pageYOffset;
+
+			filter.dispatchEvent(new Event("change"));
 
 		});
 
 	}
 
-})(document.querySelector('.filter-sort-trigger-mobile'));
+// sort
+
+	if (sort) {
+
+		sort.addEventListener("change", event => {
+
+			console.log(event.target);
+
+			if( event.target.name === 'sort' ) {
+
+				filter.elements.sort.value = event.target.value;
+
+			}
+
+			if( event.target.name === 'view' ) {
+
+				filter.elements.view.value = event.target.value;
+
+			}
+
+			filter.dispatchEvent(new Event("change"));
+
+		});
+
+	}
+
+// legend toggle
+
+	[...legends].forEach( btn => {
+
+		btn.addEventListener("click", () => {
+
+			barResultTotal.classList.remove('is-show');
+
+			btn.classList.toggle('is-open');
+
+		});
+
+	})
+
+// btn mobile toggle
+
+	mobileOpen.addEventListener("click", () => {
+
+		windowScroll = window.pageYOffset;
+
+		document.documentElement.classList.add('scroll-behavior-off');
+
+		setTimeout( () => {
+
+			document.body.classList.add('is-filter-show');
+			window.scrollTo(0,0);
+
+		});
+
+	});
+
+	mobileClose.addEventListener("click", () => {
+
+		document.body.classList.remove('is-filter-show');
+
+		window.scrollTo(0,windowScroll);
+
+		setTimeout( () => document.documentElement.classList.remove('scroll-behavior-off'), 500);
+
+	});
+
+})(document.querySelector('.filter'));

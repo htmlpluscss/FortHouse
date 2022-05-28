@@ -33,6 +33,14 @@
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/open-sans-v29-latin_cyrillic-ext-600italic.woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
   font-weight: 400;
   font-display: swap;
   src: url('/fonts/open-sans-v29-latin_cyrillic-ext-400italic.woff2');

@@ -1,24 +1,45 @@
 .breadcrumbs {
 
 	margin: var(--gap) 0;
+	position: relative;
 
-	@media $smWidth {
+	@media $mdWidth {
+
+		&::after,
+		&::before {
+
+			position: absolute;
+			width: var(--indent);
+			top: 0;
+			left: 0;
+			bottom: 10px;
+			content: '';
+			background-image: linear-gradient(to right, var(--bg), rgba(242, 242, 242, 0));
+			z-index: 1;
+			pointer-events: none;
+
+		}
+
+		&::before {
+
+			left: auto;
+			right: 0;
+			background-image: linear-gradient(to left, var(--bg), rgba(242, 242, 242, 0));
+
+		}
 
 	}
 
 	&__list {
 
 		display: flex;
-		flex-wrap: wrap;
+		white-space: nowrap;
 
-		@media $smWidth {
+		@media $mdWidth {
 
-			flex-wrap: nowrap;
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			margin: 0 calc( var(--indent) * -1);
-			padding: 0 var(--indent);
+			overflow-x: auto;
+			margin: -10px calc( var(--indent) * -1);
+			padding: 10px var(--indent);
 
 		}
 

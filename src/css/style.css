@@ -3,6 +3,7 @@
 @import url(media.css);
 @import url(default.css);
 @import url(form.css);
+@import url(select.css);
 
 @import url(content.css);
 @import url(header.css);
@@ -18,6 +19,10 @@
 @import url(category.css);
 @import url(tab-swiper.css);
 @import url(preview-product.css);
+
+@import url(catalog.css);
+@import url(filter.css);
+@import url(nouislider.css);
 /* @import url(catalog-list.css); */
 
 /*
@@ -27,9 +32,6 @@
 @import url(brands-list.css);
 
 @import url(service.css);
-@import url(catalog.css);
-@import url(filter.css);
-@import url(nouislider.css);
 @import url(pagin.css);
 @import url(sort.css);
 

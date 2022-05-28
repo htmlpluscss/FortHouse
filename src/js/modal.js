@@ -30,7 +30,7 @@
 
 		if(event.key === "Escape") {
 
-			modal.dispatchEvent(new CustomEvent("hide"));
+			modal.dispatchEvent(new Event("hide"));
 
 		}
 
@@ -66,7 +66,7 @@
 
 		if( event.target.classList.contains('modal') || event.target.closest('.modal__close')){
 
-			modal.dispatchEvent(new CustomEvent("hide"));
+			modal.dispatchEvent(new Event("hide"));
 
 		}
 

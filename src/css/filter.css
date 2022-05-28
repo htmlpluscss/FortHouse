@@ -1,33 +1,73 @@
 .filter {
 
-	margin: 30px 0;
+	position: relative;
+	background-color: #fff;
 
 	@media $mdWidth {
 
-		margin: 18px 0 0;
+		margin: 0 calc( var(--indent) * -1);
+		padding: 0 var(--indent);
 
-	}
+		&__counter-total {
 
-	&__header {
-
-		display: flex;
-		justify-content: center;
-		position: relative;
-		margin-bottom: 24px;
-
-		@media $desktop {
-
-			display: none;
+			color: var(--color);
+			font-weight: 500;
 
 		}
 
 	}
 
-	&__title {
+	&__total {
 
-		font-weight: 500;
-		font-size: 18px;
-		line-height: 24px;
+		font-size: 12px;
+		color: var(--text);
+		padding: 10px 20px;
+
+		@media $mdWidth {
+
+			font-size: 16px;
+			line-height: 24px;
+
+		}
+
+	}
+
+	&__head {
+
+		border-bottom: 1px solid var(--bg);
+
+		@media $mdWidth {
+
+			background-color: #fff;
+			z-index: 1;
+			position: sticky;
+			top: 0;
+			box-shadow: 0 0 10px 10px #fff;
+
+		}
+
+	}
+
+	&__foot {
+
+		padding: 20px;
+
+		@media $mdWidth {
+
+			background-color: rgba(255, 255, 255, .9);
+			z-index: 1;
+			position: sticky;
+			bottom: 0;
+			padding: 20px 0;
+			box-shadow: 0 0 10px 10px #fff;
+
+		}
+
+		.btn {
+
+			width: 100%;
+
+		}
 
 	}
 
@@ -36,14 +76,18 @@
 		position: absolute;
 		width: 24px;
 		height: 24px;
-		top: 0;
+		top: 10px;
 		right: 0;
-		bottom: 0;
-		margin: auto;
+
+		@media $desktop {
+
+			display: none;
+
+		}
 
 		svg {
 
-			fill: var(--BnW);
+			fill: #000;
 
 		}
 
@@ -88,46 +132,198 @@
 
 	}
 
-	&__count {
+	&__counter {
 
-		font-weight: 500;
-		margin-left: 8px;
+		font-size: inherit;
+		color: var(--text);
 
 	}
 
 	&__fieldset {
 
-		margin: 24px 0;
-
-		@media $mdWidth {
-
-			margin: 24px auto;
-			max-width: 768px;
-
-		}
+		border-bottom: 1px solid var(--bg);
+		padding: 16px 20px;
+		position: static;
 
 	}
 
 	&__legend {
 
-		margin-bottom: 3px;
+		float: left;
+		width: calc( 100% + 12px );
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: 600;
+		padding: 6px 24px 6px 6px;
+		margin: -6px;
+		cursor: pointer;
+		user-select: none;
+		position: relative;
+
+		&::after {
+
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			top: 0;
+			right: 4px;
+			bottom: 0;
+			margin: auto;
+			content: '';
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fa481c' d='M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16Z'/%3E%3C/svg%3E");
+			background-position: right;
+			background-repeat: no-repeat;
+			transition: var(--transitionDefault);
+			transform: scaleY(-1);
+
+		}
+
+		&.is-open {
+
+			color: var(--text);
+
+			&::after {
+
+				transform: scaleY(1);
+
+			}
+
+		}
 
 	}
 
-	&__item {
+	&__show-result {
 
-		margin: 12px 0;
+		position: absolute;
+		left: 100%;
+		padding: 0 10px;
+		font-size: 13px;
+		margin-top: -18px;
+		color: #fff !important;
+		line-height: 36px;
+		z-index: 5;
+		background-color: rgba(250,72,28,.85);
+
+		&:not(.is-show) {
+
+			pointer-events: none;
+			opacity: 0;
+
+		}
+
+		&::before {
+
+			content: '';
+			top: 50%;
+			margin-top: -11px;
+			right: 100%;
+			border: 11px solid transparent;
+			border-right-color: rgba(250,72,28,.85);
+			position: absolute;
+			transition: var(--transitionDefault);
+
+		}
+
+		&:hover {
+
+			background-color: var(--orangeHover);
+
+			&::before {
+
+				border-right-color: var(--orangeHover);
+
+			}
+
+		}
+
+		u {
+
+			text-decoration-style: dotted;
+
+		}
+
+		@media $mdWidth {
+
+			display: none;
+
+		}
+
+	}
+
+	&__box {
+
+		clear: both;
+		max-height: 0;
+		transition: var(--transitionDefault);
+		overflow: hidden;
+		margin: 0 -10px;
+		padding: 0 10px;
+
+		& > *:first-child {
+
+			margin-top: 14px;
+
+		}
+
+	}
+
+	&__legend.is-open + &__box {
+
+		max-height: 9999px;
 
 	}
 
 	&__nouislider {
 
-		margin: 6px 0 12px;
-		position: relative;
 
-		.input.is-side {
+	}
 
-			color: var(--grey);
+}
+
+.checkbox-filter {
+
+	display: block;
+	width: calc( 100% + 12px );
+	position: relative;
+	cursor: pointer;
+	color: #000;
+	margin: 0 -6px;
+	padding: 2px 0;
+	user-select: none;
+
+	&__input:checked + &__label {
+
+		background-color: var(--orange);
+		color: #fff;
+		--text: #fff;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='m13.41 12 4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42Z'/%3E%3C/svg%3E");
+		background-position: right;
+		background-repeat: no-repeat;
+
+	}
+
+	&__label {
+
+		display: block;
+		font-size: 13px;
+		line-height: 16px;
+		padding: 2px 6px;
+
+		@media $mdWidth {
+
+			font-size: 14px;
+			line-height: 20px;
+
+		}
+
+	}
+
+	@media $desktop {
+
+		&:hover {
+
+			--text: var(--orangeHover);
+			color: var(--orangeHover);
 
 		}
 

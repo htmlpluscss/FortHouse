@@ -157,6 +157,7 @@
 
 		position: relative;
 		display: block;
+		background-color: #000;
 
 		@media $desktop {
 

@@ -114,4 +114,26 @@
 
 	}
 
+	.preview-product {
+
+		@media $desktop {
+
+			transition: var(--transitionDefault);
+
+			&:hover {
+
+				background-color: var(--bg);
+
+			}
+
+		}
+
+		img {
+
+			mix-blend-mode: multiply;
+
+		}
+
+	}
+
 }
