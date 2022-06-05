@@ -3,6 +3,16 @@
 	color: var(--orange);
 
 }
+.color-red {
+
+	color: var(--red);
+
+}
+.color-green {
+
+	color: var(--green);
+
+}
 
 .js-accent {
 

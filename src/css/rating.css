@@ -1,0 +1,38 @@
+.rating {
+
+	position: relative;
+	width: 100px;
+	height: 20px;
+	background-image: url("data:image/svg+xml,%3Csvg width='200' height='20' viewBox='0 0 200 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3E%3Cpath id='s' d='M15.6 6.34H9.84L8.05.75 6.26 6.34H.5l4.66 3.45-1.76 5.56 4.65-3.45 4.65 3.45-1.78-5.59 4.68-3.42Z'/%3E%3C/desc%3E%3Cg fill='%23fa481c'%3E%3Cuse/%3E%3Cuse href='%23s'/%3E%3Cuse x='20' href='%23s'/%3E%3Cuse x='40' href='%23s'/%3E%3Cuse x='60' href='%23s'/%3E%3Cuse x='80' href='%23s'/%3E%3C/g%3E%3Cg fill='%23ababab'%3E%3Cuse x='100' href='%23s'/%3E%3Cuse x='120' href='%23s'/%3E%3Cuse x='140' href='%23s'/%3E%3Cuse x='160' href='%23s'/%3E%3Cuse x='180' href='%23s'/%3E%3C/g%3E%3C/svg%3E%0A");
+
+	&--4 {
+
+		background-position: -20px 0;
+
+	}
+
+	&--3 {
+
+		background-position: -40px 0;
+
+	}
+
+	&--2 {
+
+		background-position: -60px 0;
+
+	}
+
+	&--1 {
+
+		background-position: -80px 0;
+
+	}
+
+	&--0 {
+
+		background-position: -100px 0;
+
+	}
+
+}

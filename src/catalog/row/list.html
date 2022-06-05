@@ -56,16 +56,19 @@
 
 							{% if item.price === '0' %}
 
-							<form action="/" class="preview-product-row__form-buy">
+							<form action="/" class="preview-product-row__form-buy form-buy">
 
-								<input type="hidden" name="id" value="123">
-								<input type="hidden" name="modal" value="get">
+								<input type="hidden" name="id" value="19021">
+
+								<input type="hidden" name="modal" value="get-price">
+								<input type="hidden" name="img" value="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg">
+								<input type="hidden" name="name" value="{{ item.name }} {{ item.code }}">
 
 								<p class="preview-product-row__price is-get">
 									Стоимость уточняйте
 								</p>
 
-								<button class="btn">
+								<button class="btn form-buy__submit">
 									Запросить
 								</button>
 
@@ -73,15 +76,15 @@
 
 							{% else %}
 
-							<form action="/" class="preview-product-row__form-buy">
+							<form action="/order/" class="preview-product-row__form-buy form-buy">
 
-								<input type="hidden" name="id" value="123">
+								<input type="hidden" name="id" value="19021">
 
 								<p class="preview-product-row__price">
 									{{ item.price }} ₽
 								</p>
 
-								<button class="btn">
+								<button class="btn form-buy__submit">
 									В корзину
 								</button>
 

@@ -25,11 +25,33 @@
 	&__item {
 
 		background-color: #fff;
-		padding: 24px var(--gap);
+		padding: var(--gap);
 		max-width: 100%;
-		box-shadow: var(--card-shadow);
-		border-radius: 3px;
-		width: 550px;
+		width: 512px;
+
+		&--gallery {
+
+			border-radius: 0;
+			width: 1180px;
+			padding: 0;
+
+			.swiper-slide {
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: var(--gap);
+
+			}
+
+			img {
+
+				max-width: 100%;
+				height: auto;
+
+			}
+
+		}
 
 		@media $smWidth {
 

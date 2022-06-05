@@ -22,7 +22,7 @@
 			  billboard = swipe.classList.contains('swiper-container--billboard'),
 			  preview = swipe.classList.contains('swiper-container--preview'),
 			  gallery = swipe.classList.contains('swiper-container--gallery'),
-			  related = swipe.classList.contains('swiper-container--related');
+			  galleryModal = swipe.classList.contains('swiper-container--gallery-modal');
 
 		swipeNav.className = 'swiper-pagination';
 		swipeControls.className = 'swiper-controls';
@@ -93,34 +93,6 @@
 
 		}
 
-		if (related) {
-
-			toggleSwipe = () => {
-
-				resetSwipe();
-
-				if ( window.innerWidth < 768 ) {
-
-					swipe.parentNode.classList.add('swiper-container-style');
-					swipeBtns.classList.remove('hide');
-					swipeControls.classList.remove('hide');
-
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						navigation: {
-							nextEl: swipeNext,
-							prevEl: swipePrev
-						}
-					});
-
-				}
-
-			}
-
-			swipe.addEventListener('swiperResize', toggleSwipe);
-
-		}
-
 		if (preview) {
 
 			swipeNav.remove();
@@ -162,53 +134,66 @@
 
 		if (gallery) {
 
-			const current = swipe.querySelector('.swiper-container-counter__current')
-				  modalBox = document.querySelector('#modal-gallery'),
-				  desktopBox = document.querySelector('#desktop-gallery');
+			toggleSwipe = () => {
+
+				swipe.parentNode.classList.add('swiper-container-style');
+				swipe.appendChild(swipeNav);
+
+				mySwipe = new Swiper(swipe, {
+					loop: true,
+					navigation: {
+						nextEl: swipeNext,
+						prevEl: swipePrev
+					},
+					pagination: {
+						el: swipeNav,
+						clickable: true,
+						bulletClass: 'button',
+						bulletActiveClass: 'is-active'
+					}
+				});
+
+			}
+
+		}
+
+		if (galleryModal) {
 
 			swipeNav.remove();
 
 			toggleSwipe = () => {
 
-				if ( window.innerWidth < 768 ) {
+				toggleSwipe = false;
 
-					desktopBox.appendChild(swipe.parentNode);
+				swipe.parentNode.classList.add('swiper-container-style');
 
-				} else {
+				mySwipe = new Swiper(swipe, {
+					loop: true,
+					navigation: {
+						nextEl: swipeNext,
+						prevEl: swipePrev
+					},
+					on: {
+						init: () => {
 
-					modalBox.appendChild(swipe.parentNode);
+							swipe.addEventListener('setSlides', event => {
 
-				}
+								console.log(event.detail.index);
+								swipe.swiper.slideTo(event.detail.index + 1, 0);
 
-				if ( mySwipe === null ) {
+							});
 
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						navigation: {
-							nextEl: swipeNext,
-							prevEl: swipePrev
-						},
-						on: {
-							slideChange: () => {
-								current.textContent = swipe.swiper.realIndex + 1;
-							}
 						}
-					});
+					}
+				});
+
+				if ( count <= 1 ) {
+
+					resetSwipe();
 
 				}
 
 			}
-
-			swipe.addEventListener('swiperResize', toggleSwipe);
-
-			modalBox.addEventListener('setSlides', event => {
-
-				console.log(event.detail.index);
-
-				mySwipe.slideTo(event.detail.index + 1, 0);
-				current.textContent = event.detail.index + 1;
-
-			});
 
 		}
 

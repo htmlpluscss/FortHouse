@@ -22,8 +22,6 @@
 
 		setTimeout( () => document.documentElement.classList.remove('scroll-behavior-off'), 500);
 
-		document.querySelector('#modal-video').innerHTML = '';
-
 	});
 
 	modal.addEventListener('keyup', event => {

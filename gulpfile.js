@@ -76,7 +76,7 @@ const html = (files, since = {}, folder = '') => {
 
 gulp.task('html', () => html('src/**/index.html', {since: gulp.lastRun('html')}));
 gulp.task('html:touch', () => html('src/**/index.html'));
-gulp.task('html:catalog', () => html('src/catalog/**/index.html', {}, '/catalog'));
+gulp.task('html:product', () => html('src/product/**/index.html', {}, '/product'));
 
 gulp.task('css', () => {
 
@@ -170,11 +170,11 @@ gulp.task('copy', () => {
 
 gulp.task('ftp', () => {
 
-//	if(!config) {
+	if(!config) {
 
 		return true;
 
-//	}
+	}
 
 	const f = filter('**/*.html', {restore: true});
 	const conn = ftp.create( config.ftp );
@@ -193,7 +193,7 @@ gulp.task('watch', () => {
 	gulp.watch('src/js/*.*', gulp.series('js'));
 	gulp.watch('src/css/*.*', gulp.series('css'));
 	gulp.watch('src/**/index.html', gulp.series('html'));
-	gulp.watch(['src/catalog/**','!src/catalog/index.html'], gulp.series('html:catalog'));
+	gulp.watch(['src/product/**','!src/product/index.html'], gulp.series('html:product'));
 	gulp.watch(['src/_include/**/*.html','src/template/**/*.html'], gulp.series('html:touch'));
 	gulp.watch(['src/**/*.*', '!src/**/*.{css,html,js}'], gulp.series('copy'));
 	gulp.watch('build/**/*.*', gulp.series('ftp'));

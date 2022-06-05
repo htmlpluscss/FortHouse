@@ -23,6 +23,12 @@
 @import url(catalog.css);
 @import url(filter.css);
 @import url(nouislider.css);
+
+@import url(product.css);
+@import url(rating.css);
+@import url(tooltip.css);
+@import url(tabs.css);
+
 /* @import url(catalog-list.css); */
 
 /*
@@ -35,7 +41,7 @@
 @import url(pagin.css);
 @import url(sort.css);
 
-@import url(product.css);
+
 @import url(swiper-gallery.css);
 @import url(key-value.css);
 
