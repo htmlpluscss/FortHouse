@@ -1,0 +1,35 @@
+{% set title = "Холодильники" %}
+
+{% set description = "Купить Холодильники в Москве и МО. Низкая цена, бесплатная доставка на Холодильники в интернет-магазине FortHouse.ru. Холодильник в кредит." %}
+
+{% set breadcrumbs = ["Главная", "Крупная бытовая техника", title] %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="catalog">
+
+			<div class="catalog__filter">
+
+{% include "catalog/filter.html" %}
+
+			</div>
+
+			<div class="catalog__body">
+
+{% include "catalog/row/head.html" %}
+
+{% include "catalog/row/list.html" %}
+
+{% include "catalog/foot.html" %}
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}

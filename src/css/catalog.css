@@ -91,6 +91,18 @@
 		gap: var(--gap);
 		grid-template-columns: repeat(4, 1fr);
 
+		&.is-row {
+
+			display: block;
+
+			.catalog__item {
+
+				margin: var(--gap) 0;
+
+			}
+
+		}
+
 		@media $mdWidth {
 
 			grid-template-columns: repeat(3, 1fr);

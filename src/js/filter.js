@@ -104,6 +104,8 @@
 
 					resultBox.innerHTML = html;
 
+					resultBox.classList.toggle('is-row', filter.elements.view.value !== 'row');
+
 				}
 
 			});

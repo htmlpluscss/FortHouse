@@ -1,0 +1,137 @@
+			<div class="catalog__list is-row">
+
+{% for item in [
+
+	{
+		img  : "r-bg410",
+		name : "Холодильник Hitachi",
+		code : "R-BG410 PU6X GPW",
+		price : "99 950"
+	},
+	{
+		img  : "r-wb642vu0_gmg",
+		name : "Холодильник Hitachi",
+		code : "R-WB642VU0 GMG",
+		price : "0"
+	},
+	{
+		img  : "r-bg410_pu6x_xgr",
+		name : "Холодильник Hitachi",
+		code : "R-BG410 PU6X XGR",
+		price : "99 950"
+	}
+
+]%}
+
+				<div class="catalog__item">
+
+					<article class="preview-product-row">
+
+						<div class="preview-product-row__head">
+
+							<a href="/product/">
+
+								<picture>
+
+									<source srcset="https://forthouse.ru/pic/220x220/{{ item.img }}.webp 1x, https://forthouse.ru/pic/440x440/{{ item.img }}.webp 2x" type="image/webp">
+									<source srcset="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg 1x, https://forthouse.ru/pic/440x440/{{ item.img }}.jpg 2x">
+
+									<img src="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg" width="220" height="220" alt="{{ item.name }} {{ item.code }}" loading="lazy">
+
+								</picture>
+
+							</a>
+
+						</div>
+
+						<div class="preview-product-row__body">
+
+							<h3 class="preview-product-row__name">
+
+								<a href="/product/">
+									{{ item.name }} <br> {{ item.code }}
+								</a>
+
+							</h3>
+
+							{% if item.price === '0' %}
+
+							<form action="/" class="preview-product-row__form-buy">
+
+								<input type="hidden" name="id" value="123">
+								<input type="hidden" name="modal" value="get">
+
+								<p class="preview-product-row__price is-get">
+									Стоимость уточняйте
+								</p>
+
+								<button class="btn">
+									Запросить
+								</button>
+
+							</form>
+
+							{% else %}
+
+							<form action="/" class="preview-product-row__form-buy">
+
+								<input type="hidden" name="id" value="123">
+
+								<p class="preview-product-row__price">
+									{{ item.price }} ₽
+								</p>
+
+								<button class="btn">
+									В корзину
+								</button>
+
+							</form>
+
+							{% endif %}
+
+							<p class="preview-product-row__desc">
+								Двухкамерный холодильник Hitachi R-BG410 PU6X GBE - охлаждение и заморозка в лучшем виде. Отдельностоящий холодильник-морозильник Hitachi R-BG410 PU6X GBE отличается множеством удобных функций и способствует поддержанию здорового и современного образа жизни.
+							</p>
+
+						</div>
+
+						<div class="preview-product-row__foot">
+
+							<dl class="product-param">
+
+								<div class="product-param__item">
+									<dt>Количество камер</dt>
+									<dd>2</dd>
+								</div>
+								<div class="product-param__item">
+									<dt>Морозильная камера</dt>
+									<dd>Снизу</dd>
+								</div>
+								<div class="product-param__item">
+									<dt>Зона свежести</dt>
+									<dd>нет</dd>
+								</div>
+								<div class="product-param__item">
+									<dt>Льдогенератор</dt>
+									<dd>нет</dd>
+								</div>
+								<div class="product-param__item">
+									<dt>Система разморозки</dt>
+									<dd>NoFrost</dd>
+								</div>
+								<div class="product-param__item">
+									<dt>Диспенсер</dt>
+									<dd>нет</dd>
+								</div>
+
+							</dl>
+
+						</div>
+
+					</article>
+
+				</div>
+
+{% endfor %}
+
+			</div>

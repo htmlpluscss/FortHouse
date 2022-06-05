@@ -1,0 +1,62 @@
+			<div class="catalog-mobile-filter">
+
+				<button class="btn" type="button">
+					Фильтр
+				</button>
+
+			</div>
+
+			<h1 class="catalog__title h1">
+				{{ title }}
+			</h1>
+
+			<fieldset class="catalog__sort">
+
+				<div class="catalog-sort">
+
+					<div class="select">
+
+						<select name="sort">
+
+							<option value="0">По популярности</option>
+							<option value="5622">От дешевых к дорогим</option>
+							<option value="5623">От дорогих к дешевым</option>
+							<option value="5624" selected="selected">Новинки</option>
+							<option value="2780">По рейтингу покупателей</option>
+							<option value="33">По наименованию</option>
+
+						</select>
+
+					</div>
+
+				</div>
+
+				<div class="catalog-view">
+
+					<label class="catalog-view__item">
+
+						<input class="catalog-view__input visuallyhidden" type="radio" name="view" value="row" aria-label="вид карточки">
+
+						<svg class="catalog-view__label" width="24" height="24" viewBox="0 0 24 24">
+
+							<path d="M9 3H5a2 2 0 0  0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM19 3h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM9 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2ZM19 13h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Z"/>
+
+						</svg>
+
+					</label>
+
+					<label class="catalog-view__item">
+
+						<input class="catalog-view__input visuallyhidden" type="radio" name="view" value="list" aria-label="подробный вид" checked="checked">
+
+						<svg class="catalog-view__label" width="24" height="24" viewBox="0 0 612 612">
+
+							<path d="M59.23 88.84a59.22 59.22 0 1 0 0 118.45 59.22 59.22 0 1 0 0-118.45zm0 157.93a59.22 59.22 0 1 0-.01 118.45 59.22 59.22 0 0 0 0-118.45zm0 157.94a59.22 59.22 0 1 0 0 118.45 59.22 59.22 0 1 0 0-118.45zm138.19-217.16h375.1c21.81 0 39.48-17.67 39.48-39.49s-17.67-39.48-39.48-39.48h-375.1a39.48 39.48 0 1 0 0 78.97zm375.1 78.97h-375.1A39.47 39.47 0 0 0 157.93 306a39.47 39.47 0 0 0 39.49 39.48h375.1A39.47 39.47 0 0 0 612 306a39.47 39.47 0 0 0-39.48-39.48zm0 157.93h-375.1c-21.82 0-39.49 17.67-39.49 39.49s17.67 39.48 39.49 39.48h375.1c21.81 0 39.48-17.67 39.48-39.49s-17.67-39.48-39.48-39.48z"/>
+
+						</svg>
+
+					</label>
+
+				</div>
+
+			</fieldset>
