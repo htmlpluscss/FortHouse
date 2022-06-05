@@ -22,9 +22,19 @@
 
 				<div class="product__box">
 
-{% include "product/mod/head.html" %}
+					<h1 class="product__title h1">
+						{{ title }}
+					</h1>
 
-{% include "product/mod/body.html" %}
+{% include "product/data.html" %}
+
+{% include "product/desc.html" %}
+
+{% include "product/mod/gallery.html" %}
+
+{% include "product/label.html" %}
+
+{% include "product/mod/buy.html" %}
 
 				</div>
 
