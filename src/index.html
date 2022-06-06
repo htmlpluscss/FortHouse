@@ -59,16 +59,40 @@ setTimeout( ()=> {
 
 		<div class="item">
 
-			<button class="btn" type="button">
-				btn
-			</button>
+			<form action="/" class="form-buy">
+
+				<input type="hidden" name="id" value="19021">
+
+				<button class="btn form-buy__submit">
+					Купить
+				</button>
+
+			</form>
 
 		</div>
 
 		<div class="item">
 
-			<button class="btn" type="button">
-				btn btn--small
+			<form action="/" class="form-buy">
+
+				<input type="hidden" name="id" value="19021">
+
+				<input type="hidden" name="modal" value="get-price">
+				<input type="hidden" name="img" value="https://forthouse.ru/pic/180x180/r-wb642vu0_gmg.jpg">
+				<input type="hidden" name="name" value="Холодильник Hitachi R-WB642VU0 GMG">
+
+				<button class="btn form-buy__submit">
+					Запросить цену
+				</button>
+
+			</form>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="ok" onclick="document.querySelector('.modal__item--ok .modal__head').innerHTML = `Заголовок`;document.querySelector('.modal__item--ok .modal__text').innerHTML = `Текст сообщения`">
+				Info
 			</button>
 
 		</div>
@@ -318,25 +342,25 @@ setTimeout( ()=> {
 
 		<div class="item">
 
-			<input value="123" class="input">
+			<input class="input" placeholder="placeholder">
 
 		</div>
 
 		<div class="item">
 
-			<input value="123" class="input" disabled="disabled">
+			<input class="input" value="value">
 
 		</div>
 
 		<div class="item">
 
-			<input value="123" class="input input--border">
+			<input class="input" value="disabled" disabled="disabled">
 
 		</div>
 
 		<div class="item">
 
-			<input value="123" class="input input--border" disabled="disabled">
+			<input class="input input--big" placeholder="input--big">
 
 		</div>
 

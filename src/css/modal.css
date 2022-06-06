@@ -25,13 +25,12 @@
 	&__item {
 
 		background-color: #fff;
-		padding: var(--gap);
+		padding: var(--indent);
 		max-width: 100%;
-		width: 512px;
+		width: 428px;
 
 		&--gallery {
 
-			border-radius: 0;
 			width: 1180px;
 			padding: 0;
 
@@ -53,10 +52,6 @@
 
 		}
 
-		@media $smWidth {
-
-		}
-
 	}
 
 	&__close-btn {
@@ -64,20 +59,19 @@
 		position: absolute;
 		top: 15px;
 		right: 15px;
-		--text: var(--grey);
+		z-index: 1;
 
-		@media $smWidth {
+		svg {
 
-			top: 12px;
-			right: 12px;
+			fill: #000;
 
 		}
 
 		@media $desktop {
 
-			&:hover {
+			&:hover svg {
 
-				--text: var(--dark);
+				fill: var(--grey);
 
 			}
 
@@ -85,6 +79,26 @@
 
 	}
 
+	&__head {
+
+		margin-bottom: var(--gap);
+
+	}
+
+	&__text {
+
+		margin: var(--gap) 0;
+		font-size: 16px;
+
+	}
+
+	&__btn {
+
+		display: flex;
+		margin-top: var(--indent);
+		justify-content: center;
+
+	}
 
 }
 
@@ -117,6 +131,53 @@
 			z-index: 9;
 			opacity: .4;
 			background-color: #000;
+
+		}
+
+	}
+
+}
+
+.modal-get-price {
+
+	&__product {
+
+		border-bottom: 1px;
+		display: flex;
+		align-items: center;
+		margin-bottom: var(--gap);
+
+	}
+
+	&__photo {
+
+		width: 90px;
+		height: 90px;
+		margin-right: var(--gap);
+		flex-shrink: 0;
+
+		img {
+
+			object-fit: contain;
+
+		}
+
+	}
+
+	.input {
+
+		margin: var(--gap) auto;
+
+	}
+
+	.btn {
+
+		width: 256px;
+		margin: var(--indent) auto 0;
+
+		@media $smWidth {
+
+			width: 100%;
 
 		}
 

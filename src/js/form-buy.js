@@ -18,13 +18,13 @@
 
 			event.preventDefault();
 
-			if ( form.elements.modal.value === 'get-price' ) {
+			if ( form.elements.modal && form.elements.modal.value === 'get-price' ) {
 
 				// показать модалку
 
-				modalCart.elements.modal.value = form.elements.modal.value;
+				modalCart.elements.id.value = form.elements.modal.value;
 				modalCart.querySelector('.modal-get-price__name').textContent = form.elements.name.value;
-				modalCart.querySelector('.modal-get-price__photo').innerHTML = `<img src="${form.elements.img.value}" width="110" height="110" alt="${form.elements.name.value}">`;
+				modalCart.querySelector('.modal-get-price__photo').innerHTML = `<img src="${form.elements.img.value}" width="90" height="90" alt="${form.elements.name.value}">`;
 
 				const eventModalShow = new CustomEvent("modalShow", {
 					detail: {
@@ -54,6 +54,23 @@
 				[...document.querySelectorAll('.js-set-cart-counter')].forEach( el => el.setAttribute('data-counter', result.totalCart) );
 
 				alert('модалка успеха. с результатом?')
+
+			// info modal
+
+				if(false) {
+
+					document.querySelector('.modal__item--ok .modal__head').innerHTML = result.title;
+					document.querySelector('.modal__item--ok .modal__text').innerHTML = result.text;
+
+					const eventModalShow = new CustomEvent("modalShow", {
+						detail: {
+							selector: "ok"
+						}
+					});
+
+					window.modal.dispatchEvent(eventModalShow);
+
+				}
 
 			});
 

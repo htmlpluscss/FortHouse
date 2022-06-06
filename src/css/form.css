@@ -170,11 +170,12 @@ gap: 12px;
 	filter: none;
 	-webkit-transform: translateZ(0px);
 
-	background-color: transparent;
-
 	height: 36px;
-	border: 0;
-	border-radius: 0;
+
+	border-radius: 3px;
+	border: 1px solid var(--border);
+	background-color: #fff;
+	box-shadow: inset 0 0 0 100px #fff;
 
 	textarea& {
 
@@ -210,8 +211,29 @@ gap: 12px;
 
 	&::placeholder {
 
-		opacity: 1;
+		opacity: .5;
 		font-size: 14px;
+
+	}
+
+	&--big {
+
+		height: 50px;
+		line-height: 24px;
+		padding: 13px 16px;
+		font-size: 18px;
+
+		@media $desktop {
+
+			font-size: 18px;
+
+		}
+
+		&::placeholder {
+
+			font-size: 16px;
+
+		}
 
 	}
 
@@ -228,6 +250,7 @@ gap: 12px;
 	&:focus {
 
 		outline: none;
+		border-color: var(--orange);
 		box-shadow: 0 0 0 1px var(--orange);
 
 	}
@@ -236,6 +259,9 @@ gap: 12px;
 
 		pointer-events: none;
 		color: var(--text);
+		box-shadow: inset 0 0 0 100px #d7dada;
+		background-color: #d7dada;
+		border-color: var(--grey);
 		background-color: var(--grey);
 
 	}
@@ -243,21 +269,6 @@ gap: 12px;
 	&:invalid {
 
 		box-shadow: none;
-
-	}
-
-	&--border {
-
-		border-radius: 3px;
-		border: 1px solid var(--border);
-		background-color: #fff;
-		box-shadow: inset 0 0 0 100px #fff;
-
-		&:focus {
-
-			border-color: var(--orange);
-
-		}
 
 	}
 

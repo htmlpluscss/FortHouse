@@ -6,17 +6,14 @@
 
 	}
 
-	Array.from(items, form => {
+	[...items].forEach( form => {
 
-		const btn = form.querySelector('.form__submit'),
-			  okText = form.querySelector('.form__ok'),
-			  errorText = form.querySelector('.form__error');
+		const btn = form.querySelector('.form__submit');
 
 		form.addEventListener('submit', event => {
 
 			event.preventDefault();
 
-			form.classList.add('is-loading');
 			btn.disabled = true;
 
 			fetch(form.getAttribute('action'), {
@@ -28,123 +25,30 @@
 
 				console.log(result);
 
-				form.classList.remove('is-loading');
 				btn.disabled = false;
-/*
-				if(result.msg) {
 
-					form.reset();
+			// info modal
 
-					modal.ok(result.msg.title, result.msg.text);
+				if(result.type === 'ok') {
 
-				}
-
-			// результат успеха заявки quality
-
-				if(result.modal === 'quality-ok') {
-
-					document.querySelector('.quality-result__number').textContent = result.number;
-					document.querySelector('.quality-result__product').textContent = result.productName;
-					document.querySelector('.quality-result__product').getAttribute('href', result.productLink);
+					document.querySelector('.modal__item--ok .modal__head').innerHTML = result.title;
+					document.querySelector('.modal__item--ok .modal__text').innerHTML = result.text;
 
 					const eventModalShow = new CustomEvent("modalShow", {
 						detail: {
-							selector: result.modal
+							selector: "ok"
 						}
 					});
 
 					window.modal.dispatchEvent(eventModalShow);
 
 				}
-*/
-			// info modal
 
-				if(result.type === 'ok') {
-
-					modal.ok(result.title, result.text);
-
-				}
-
-
-			// ok in form
-
-				if(okText) {
-
-					if(result.type === 'form-ok') {
-
-						okText.textContent = result.text;
-						okText.classList.remove('hide');
-
-						if(!window.isInViewport(okText)){
-
-							okText.scrollIntoView({ behavior: 'smooth' });
-
-						}
-
-					} else {
-
-						okText.classList.add('hide');
-
-					}
-
-				}
-
-			// error in form
-
-				if(errorText) {
-
-					if(result.type === 'form-error') {
-
-						errorText.textContent = result.text;
-						errorText.classList.remove('hide');
-
-						if(!window.isInViewport(errorText)){
-
-							errorText.scrollIntoView({ behavior: 'smooth' });
-
-						}
-
-					} else {
-
-						errorText.classList.add('hide');
-
-					}
-
-				}
-
-			// redirect
-
-				if(result.redirect) {
-
-					const delay = result.redirectDelay ? result.redirectDelay * 1000 : 0;
-
-					setTimeout( ()=> location.assign(result.redirect), delay);
-
-				}
-
-			// fadeout
-/*
-				if(result.fadeout) {
-
-					okText.classList.remove('is-fadeout');
-
-					setTimeout( ()=> okText.classList.add('is-fadeout'), result.fadeout * 1000);
-
-				}
-
-*/			// reset
+			// reset
 
 				if(result.reset) {
 
 					form.reset();
-
-				}
-
-			// reload
-
-				if(result.refresh) {
-
-					location.reload();
 
 				}
 

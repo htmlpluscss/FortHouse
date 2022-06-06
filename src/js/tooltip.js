@@ -43,9 +43,9 @@
 
 			});
 
-			tooltip.addEventListener('mouseenter', () => tooltip.open = true);
+			tooltip.addEventListener('mouseenter', () => window.innerWidth < 1250 || tooltip.open = true);
 
-			tooltip.addEventListener('mouseleave', () => tooltip.open = false);
+			tooltip.addEventListener('mouseleave', () => window.innerWidth < 1250 || tooltip.open = false);
 
 		});
 

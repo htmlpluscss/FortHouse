@@ -12,9 +12,13 @@
 		text-decoration-style: dotted;
 		text-underline-position: under;
 
-		&:hover {
+		@media $desktop {
 
-			text-decoration-color: transparent;
+			&:hover {
+
+				text-decoration-color: transparent;
+
+			}
 
 		}
 
@@ -69,6 +73,7 @@
 		text-align: left;
 		pointer-events: none;
 		z-index: 9;
+		opacity: 0;
 
 		@media ($smWidth) {
 

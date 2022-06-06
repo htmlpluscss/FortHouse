@@ -347,11 +347,13 @@
 					width: 100%;
 					color: #fff;
 					background-color: #000;
+					border: 0;
+					border-radius: 0;
+					box-shadow: none;
 
 					&::placeholder {
 
 						text-transform: uppercase;
-						opacity: .5;
 
 					}
 
@@ -401,11 +403,14 @@
 			padding: 20px 10px 20px 50px;
 			width: 100%;
 			color: #fff;
+			border: 0;
+			border-radius: 0;
+			background-color: transparent;
+			box-shadow: none;
 
 			&::placeholder {
 
 				text-transform: uppercase;
-				opacity: .5;
 
 			}
 
