@@ -248,7 +248,6 @@
 
 	&__details {
 
-		padding: var(--space) 0;
 		display: grid;
 		gap: var(--indent);
 		grid-template-columns: 4fr 3fr;
@@ -269,69 +268,15 @@
 
 		}
 
-		.h2 {
+		h2 {
 
 			color: var(--text);
-			margin-bottom: 1em;
+			margin: 0 0 1em;
 			text-transform: uppercase;
 
-			@media $mdWidth {
+			& ~ h2 {
 
-				& ~ .h2 {
-
-					margin-top: 2em;
-
-				}
-
-			}
-
-		}
-
-		p {
-
-			text-align: justify;
-			margin: 1em 0;
-
-			strong {
-
-				font-weight: 600;
-
-			}
-
-		}
-
-		hr {
-
-			margin: var(--gap) 0;
-
-		}
-
-		ol {
-
-			counter-reset: headings 0;
-
-			li {
-
-				margin: 24px 32px;
-				font-size: 13px;
-
-				&::before {
-
-					top: 0;
-					left: -32px;
-					width: 21px;
-					height: 21px;
-					border-radius: 50%;
-					background-color: #000;
-					color: #fff;
-					position: absolute;
-					font-size: 13px;
-					line-height: 20px;
-					text-align: center;
-					counter-increment: headings 1;
-					content: counter(headings, decimal);
-
-				}
+				margin-top: 2em;
 
 			}
 

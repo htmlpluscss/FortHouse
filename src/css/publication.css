@@ -1,0 +1,73 @@
+.publication {
+
+	&__item {
+
+		display: flex;
+		margin: var(--space) 0;
+
+		p {
+
+			text-align: justify;
+
+		}
+
+		@media $smWidth {
+
+			display: block;
+			overflow: hidden;
+			padding-bottom: var(--gap);
+
+		}
+
+	}
+
+	&__img {
+
+		width: 220px;
+		flex-shrink: 0;
+		margin-right: var(--gap);
+
+		@media $smWidth {
+
+			width: 40%;
+			float: left;
+			margin-bottom: 8px;
+
+		}
+
+		img {
+
+			max-width: 100%;
+			height: auto;
+
+		}
+
+	}
+
+	&__name {
+
+		font-size: 14px;
+		font-weight: 500;
+
+		a {
+
+			color: var(--orange);
+
+		}
+
+	}
+
+	&__date {
+
+		display: block;
+		margin: var(--gap) 0;
+
+		@media $smWidth {
+
+			margin-top: 8px;
+
+		}
+
+	}
+
+}
