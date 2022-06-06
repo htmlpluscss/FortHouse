@@ -12,10 +12,6 @@
 
 		if (form) {
 
-			const btnSubmit = form.querySelector('.form-buy__submit');
-
-			btnSubmit.disabled = true;
-
 			event.preventDefault();
 
 			if ( form.elements.modal && form.elements.modal.value === 'get-price' ) {
@@ -37,6 +33,10 @@
 				return;
 
 			}
+
+			const btnSubmit = form.querySelector('.form-buy__submit');
+
+			btnSubmit.disabled = true;
 
 			fetch(form.getAttribute('action'), {
 				method: 'POST',
