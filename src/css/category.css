@@ -78,7 +78,7 @@
 
 		@media $smWidth {
 
-			margin: var(--space) 0 0;
+			margin: var(--space) 0;
 
 		}
 

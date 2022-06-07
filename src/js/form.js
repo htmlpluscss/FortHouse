@@ -31,7 +31,7 @@
 
 				if(result.type === 'ok') {
 
-					document.querySelector('.modal__item--ok .modal__head').innerHTML = result.title;
+					document.querySelector('.modal__item--ok .modal__title').innerHTML = result.title;
 					document.querySelector('.modal__item--ok .modal__text').innerHTML = result.text;
 
 					const eventModalShow = new CustomEvent("modalShow", {

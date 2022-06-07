@@ -1,6 +1,6 @@
-( modalCart => {
+( forms => {
 
-	if ( !modalCart ) {
+	if ( forms.length === 0 ) {
 
 		return;
 
@@ -14,21 +14,35 @@
 
 			event.preventDefault();
 
-			if ( form.elements.modal && form.elements.modal.value === 'get-price' ) {
+			if ( form.elements.modal ) {
 
-				// показать модалку
+				// Запрос цены или Купить в 1 клик
 
-				modalCart.elements.id.value = form.elements.modal.value;
-				modalCart.querySelector('.modal-get-price__name').textContent = form.elements.name.value;
-				modalCart.querySelector('.modal-get-price__photo').innerHTML = `<img src="${form.elements.img.value}" width="90" height="90" alt="${form.elements.name.value}">`;
+				const modalForm = form.elements.modal.value === 'get-price' ?
+					document.querySelector('#modal-get-price') :
+					document.querySelector('#modal-buy-one-click');
+
+				let name = form.elements.name.value;
+
+				if ( form.elements.price ) {
+
+					name += '<br><small>' + form.elements.price.value + '</small>';
+
+				}
+
+				modalForm.elements.id.value = form.elements.id.value;
+				modalForm.querySelector('.modal-product__name').innerHTML = name;
+				modalForm.querySelector('.modal-product__photo').innerHTML = `<img src="${form.elements.img.value}" width="90" height="90" alt="${form.elements.name.value}">`;
 
 				const eventModalShow = new CustomEvent("modalShow", {
 					detail: {
-						selector: "get-price"
+						selector: form.elements.modal.value
 					}
 				});
 
 				window.modal.dispatchEvent(eventModalShow);
+
+				setTimeout( ()=> modalForm.querySelector('.input').focus(), 1);
 
 				return;
 
@@ -59,7 +73,7 @@
 
 				if(false) {
 
-					document.querySelector('.modal__item--ok .modal__head').innerHTML = result.title;
+					document.querySelector('.modal__item--ok .modal__title').innerHTML = result.title;
 					document.querySelector('.modal__item--ok .modal__text').innerHTML = result.text;
 
 					const eventModalShow = new CustomEvent("modalShow", {
@@ -78,4 +92,4 @@
 
 	});
 
-})(document.querySelector('.modal-get-price'));
+})(document.querySelectorAll('.form-buy'));

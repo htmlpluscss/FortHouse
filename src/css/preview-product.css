@@ -93,6 +93,7 @@
 		opacity: 0;
 		border-radius: 0;
 		margin-top: auto;
+		-webkit-tap-highlight-color: transparent;
 
 		&::after {
 
@@ -114,13 +115,11 @@
 
 		}
 
-	}
-
-	&.is-small &__btn-link {
-
 		@media $smWidth {
 
-			display: none;
+			height: 0;
+			font-size: 0;
+			line-height: 0;
 
 		}
 
@@ -130,9 +129,12 @@
 
 .preview-product-row {
 
-	display: flex;
+	display: grid;
+	grid-template-columns: 220px 1fr 220px;
+	gap: var(--gap);
 	background-color: #fff;
 	padding: var(--gap);
+	flex-grow: 1;
 
 	@media $desktop {
 
@@ -144,10 +146,19 @@
 
 	}
 
-	&__head {
+	@media $mdWidth {
 
-		width: 220px;
-		flex-shrink: 0;
+		grid-template-columns: 220px 1fr;
+
+	}
+
+	@media $smWidth {
+
+		display: block;
+
+	}
+
+	&__head {
 
 		img {
 
@@ -156,12 +167,21 @@
 
 		}
 
+		@media $mdWidth {
+
+			grid-row: span 2;
+
+		}
+
 	}
 
 	&__body {
 
-		flex-grow: 1;
-		padding: 0 var(--gap);
+		@media $smWidth {
+
+			margin: var(--gap) 0;
+
+		}
 
 	}
 
@@ -169,6 +189,7 @@
 
 		font-size: 20px;
 		font-weight: 700;
+		margin-bottom: 14px;
 
 		@media $desktop {
 
@@ -202,6 +223,12 @@
 			font-weight: 400;
 			color: var(--orange);
 
+			@media $smWidth {
+
+				font-size: 14px;
+
+			}
+
 		}
 
 		@media $smWidth {
@@ -216,19 +243,21 @@
 
 		margin: 14px 0;
 
+		@media $mdWidth {
+
+			display: none;
+
+		}
+
 	}
 
 	&__foot {
-
-		width: 220px;
-		flex-shrink: 0;
 
 	}
 
 	&__form-buy {
 
 		display: flex;
-		margin: 14px 0;
 		align-items: center;
 
 		.btn {

@@ -105,7 +105,26 @@ setTimeout( ()=> {
 
 		<div class="item">
 
-			<button class="btn" type="button" data-modal="ok" onclick="document.querySelector('.modal__item--ok .modal__head').innerHTML = `Заголовок`;document.querySelector('.modal__item--ok .modal__text').innerHTML = `Текст сообщения`">
+			<form action="/" class="form-buy">
+
+				<input type="hidden" name="id" value="19021">
+
+				<input type="hidden" name="modal" value="buy-one-click">
+				<input type="hidden" name="img" value="https://forthouse.ru/pic/180x180/r-wb642vu0_gmg.jpg">
+				<input type="hidden" name="name" value="Холодильник Hitachi R-WB642VU0 GMG">
+				<input type="hidden" name="price" value="84 950 ₽">
+
+				<button class="btn form-buy__submit">
+					Заказ в 1 клик
+				</button>
+
+			</form>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="ok" onclick="document.querySelector('.modal__item--ok .modal__title').innerHTML = `Заголовок`;document.querySelector('.modal__item--ok .modal__text').innerHTML = `Текст сообщения`">
 				Info
 			</button>
 
@@ -141,6 +160,14 @@ setTimeout( ()=> {
 
 			<button class="btn btn--medium">
 				btn btn--medium
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--big">
+				btn btn--big
 			</button>
 
 		</div>

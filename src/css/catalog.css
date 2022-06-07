@@ -180,6 +180,18 @@
 
 	display: flex;
 
+	@media $smWidth {
+
+		max-width: calc( 100% - 100px );
+
+		.select {
+
+			max-width: 100%;
+
+		}
+
+	}
+
 }
 
 .catalog-view {

@@ -18,19 +18,34 @@
 
 					</dl>
 
-					<form action="/order/" class="product-buy__form form-buy">
+					<div class="product-buy__form">
 
-						<input type="hidden" name="id" value="19021">
+						<form action="/order/" class="form-buy">
 
-						<button class="btn btn--medium form-buy__submit">
-							Купить
-						</button>
+							<input type="hidden" name="id" value="19021">
 
-						<button class="btn btn--medium btn--outline buy-one-click" type="button">
-							Заказ в 1 клик
-						</button>
+							<button class="btn btn--medium form-buy__submit">
+								Купить
+							</button>
 
-					</form>
+						</form>
+
+						<form action="/order/" class="form-buy">
+
+							<input type="hidden" name="id" value="19021">
+
+							<input type="hidden" name="modal" value="buy-one-click">
+							<input type="hidden" name="img" value="/img/product/180x180/r-bg410.jpg">
+							<input type="hidden" name="name" value="{{ title }}">
+							<input type="hidden" name="price" value="84 950 ₽">
+
+							<button class="btn btn--medium btn--outline form-buy__submit">
+								Заказ в 1 клик
+							</button>
+
+						</form>
+
+					</div>
 
 				</div>
 

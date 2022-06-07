@@ -8,19 +8,23 @@
 						Стоимость модели можно уточнить у нашего консультанта
 					</p>
 
-					<form action="/order/" class="product-buy__form form-buy">
+					<div class="product-buy__form">
 
-						<input type="hidden" name="id" value="19021">
+						<form action="/order/" class="form-buy">
 
-						<input type="hidden" name="modal" value="get-price">
-						<input type="hidden" name="img" value="/img/product/180x180/r-bg410.jpg">
-						<input type="hidden" name="name" value="{{ title }}">
+							<input type="hidden" name="id" value="19021">
 
-						<button class="btn btn--medium form-buy__submit">
-							Запросить цену
-						</button>
+							<input type="hidden" name="modal" value="get-price">
+							<input type="hidden" name="img" value="/img/product/180x180/r-bg410.jpg">
+							<input type="hidden" name="name" value="{{ title }}">
 
-					</form>
+							<button class="btn btn--medium form-buy__submit">
+								Запросить цену
+							</button>
+
+						</form>
+
+					</div>
 
 				</div>
 

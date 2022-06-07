@@ -630,6 +630,16 @@
 				background-color: var(--orange);
 				color: #fff;
 
+				@media $smWidth {
+
+					br {
+
+						display: none;
+
+					}
+
+				}
+
 			}
 
 		}
@@ -661,6 +671,7 @@
 	&__form {
 
 		display: flex;
+		gap: var(--gap);
 		margin-top: var(--gap);
 
 		@media $smWidth {
@@ -671,21 +682,18 @@
 
 		.btn {
 
-			margin-right: var(--gap);
-
-			@media $smWidth {
-
-				padding: 0;
-				margin: 0;
-				width: calc( 50% - 10px );
-
-			}
+			padding: 0 var(--gap);
+			width: 100%;
 
 		}
 
-		.btn--outline {
+		.form-buy {
 
-			padding: 0 var(--gap);
+			@media $smWidth {
+
+				flex-basis: calc( 50% - 10px );
+
+			}
 
 		}
 
