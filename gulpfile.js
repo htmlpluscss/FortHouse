@@ -185,7 +185,7 @@ gulp.task('ftp', () => {
 		.pipe(replace('css/styles.css', 'css/styles.min.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
 		.pipe(f.restore)
-        .pipe(conn.dest(domain));
+		.pipe(conn.dest(domain));
 
 });
 

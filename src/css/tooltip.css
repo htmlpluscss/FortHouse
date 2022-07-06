@@ -75,13 +75,13 @@
 		z-index: 9;
 		opacity: 0;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			width: 280px;
 
 		}
 
-		@media ($xsWidth) {
+		@media $xsWidth {
 
 			width: 256px;
 

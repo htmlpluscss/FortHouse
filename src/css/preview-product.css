@@ -6,6 +6,7 @@
 	text-align: center;
 	flex-grow: 1;
 	background-color: #fff;
+	box-shadow: var(--box-shadow);
 
 	@media $desktop {
 
@@ -133,6 +134,7 @@
 	grid-template-columns: 220px 1fr 220px;
 	gap: var(--gap);
 	background-color: #fff;
+	box-shadow: var(--box-shadow);
 	padding: var(--gap);
 	flex-grow: 1;
 

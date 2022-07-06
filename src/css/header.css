@@ -340,7 +340,7 @@
 
 				.input {
 
-					font-weight: 600;
+					font-weight: 700;
 					height: 40px;
 					line-height: 40px;
 					padding: 10px var(--indent);
@@ -397,7 +397,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			font-weight: 600;
+			font-weight: 700;
 			height: 80px;
 			line-height: 40px;
 			padding: 20px 10px 20px 50px;
