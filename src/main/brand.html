@@ -1,0 +1,75 @@
+		<aside class="main-brand">
+
+			<h3 class="main-brand__title h1">
+				Популярные категории товаров в бренде
+			</h3>
+
+			<div class="main-brand__box">
+
+				<div class="swiper-container swiper-container--brand">
+
+					<div class="main-brand__list swiper-wrapper">
+
+{% for item in [
+
+	{
+		name : "asko",
+		logo : "asko",
+		list : ["Стиральные машины","Сушильные машины","Посудомоечные машины","Холодильники","Варочные панели","Духовые шкафы","Вытяжки","Микроволновые печи","Кофемашины"]
+	},
+	{
+		name : "miele",
+		logo : "miele",
+		list : ["Стиральные машины","Пылесосы","Холодильники","Гладильные системы","Посудомоечные машины","Сушильные машины","Варочные панели","Микроволновые печи","Вытяжки"]
+	},
+	{
+		name : "neff",
+		logo : "neff",
+		list : ["Стиральные машины","Сушильные машины","Посудомоечные машины","Холодильники","Варочные панели","Духовые шкафы","Вытяжки","Микроволновые печи","Кофемашины","Подогреватели"]
+	},
+	{
+		name : "gaggenau",
+		logo : "gaggenau",
+		list : ["Стиральные машины","Сушильные машины","Посудомоечные машины","Холодильники","Варочные панели","Духовые шкафы"]
+	}
+
+]%}
+
+						<div class="main-brand__item swiper-slide">
+
+							<div class="main-brand__logo">
+
+								<picture>
+
+									<source srcset="/img/main/brand/{{ item.logo }}.webp 1x, /img/main/brand/{{ item.logo }}@2x.webp 2x" type="image/webp">
+									<source srcset="/img/main/brand/{{ item.logo }}.png 1x, /img/main/brand/{{ item.logo }}@2x.png 2x">
+
+									<img src="/img/main/brand/{{ item.logo }}.png" alt="{{ item.name }}" width="150" height="48" loading="lazy">
+
+								</picture>
+
+							</div>
+
+							<ul>
+
+	{% for link in item.list %}
+
+								<li>
+									<a href="/">{{ link }}</a>
+								</li>
+
+	{% endfor %}
+
+							</ul>
+
+						</div>
+
+{% endfor %}
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</aside>

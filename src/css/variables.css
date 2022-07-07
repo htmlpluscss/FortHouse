@@ -1,15 +1,15 @@
 :root {
 
-	--color: #000;
-	--text: #777;
+	--color: #050505;
+	--text: #999;
 	--grey: #ababab;
 	--orange: #fa481c;
 	--orangeDark: #d53d18;
 	--orangeHover: #fa5a32;
 	--green: #5e9f00;
-	--red: red;
+	--red: #d60000;
 	--error: #f00;
-	--bg: #f2f2f2;
+	--bg: #fff;
 	--border: #797979;
 	--box-shadow: 0 4px 10px 2px rgba(175, 174, 198, 0.12);
 
@@ -18,7 +18,7 @@
 
 	--indent: 40px;
 	--gap: 24px;
-	--space: 36px;
+	--space: 81px;
 
 }
 

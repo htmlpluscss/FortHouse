@@ -20,6 +20,7 @@
 			  items = swipe.querySelectorAll('.swiper-slide'),
 			  count = items.length,
 			  billboard = swipe.classList.contains('swiper-container--billboard'),
+			  brand = swipe.classList.contains('swiper-container--brand'),
 			  preview = swipe.classList.contains('swiper-container--preview'),
 			  gallery = swipe.classList.contains('swiper-container--gallery'),
 			  galleryModal = swipe.classList.contains('swiper-container--gallery-modal');
@@ -34,8 +35,8 @@
 		swipePrev.setAttribute('aria-label','Previous slide');
 		swipeNext.setAttribute('aria-label','Next slide');
 
-		swipePrev.innerHTML = '<svg width="20" height="20" viewBox="0 0 96 96"><path d="m39.38 48 30.47-25.39a6 6 0 0 0-7.7-9.22l-36 30a6 6 0 0 0 0 9.22l36 30a6 6 0 0 0 7.7-9.22Z"/></svg>';
-		swipeNext.innerHTML = '<svg width="20" height="20" viewBox="0 0 96 96"><path d="m69.84 43.39-36-30a6 6 0 0 0-7.69 9.22L56.62 48 26.15 73.39a6 6 0 0 0 7.7 9.22l36-30a6 6 0 0 0 0-9.22Z"/></svg>';
+		swipePrev.innerHTML = '<svg width="36" height="36" viewBox="0 0 36 36"><path d="m13.5 16.5 6.9-6.9a1.49 1.49 0 1 1 2.1 2.1l-5.85 5.85 5.85 5.85a1.48 1.48 0 0 1-2.1 2.1l-6.9-6.88a1.5 1.5 0 0 1 0-2.13Z"/></svg>';
+		swipeNext.innerHTML = '<svg width="36" height="36" viewBox="0 0 36 36">><path d="m22.5 16.5-6.9-6.9a1.49 1.49 0 1 0-2.1 2.1l5.85 5.85-5.85 5.85a1.48 1.48 0 0 0 2.1 2.1l6.9-6.88a1.5 1.5 0 0 0 0-2.13Z"/></svg>';
 
 		swipeBtns.appendChild(swipePrev);
 		swipeBtns.appendChild(swipeNext);
@@ -86,6 +87,45 @@
 						clickable: true,
 						bulletClass: 'button',
 						bulletActiveClass: 'is-active'
+					}
+				});
+
+			}
+
+		}
+
+		if (brand) {
+
+			swipeNav.remove();
+
+			toggleSwipe = () => {
+
+				toggleSwipe = false;
+
+				swipe.parentNode.classList.add('swiper-container-style');
+				swipe.parentNode.appendChild(swipeControls);
+
+				new Swiper(swipe, {
+					loop: true,
+					slidesPerView: 4,
+					slidesPerGroup: 1,
+					navigation: {
+						nextEl: swipeNext,
+						prevEl: swipePrev
+					},
+					breakpoints: {
+						320: {
+							slidesPerView: 2,
+							slidesPerGroup: 2
+						},
+						768: {
+							slidesPerView: 3,
+							slidesPerGroup: 3
+						},
+						1250: {
+							slidesPerView: 4,
+							slidesPerGroup: 1
+						}
 					}
 				});
 

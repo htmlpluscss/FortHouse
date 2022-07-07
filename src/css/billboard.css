@@ -1,55 +1,8 @@
 .billboard {
 
-	position: relative;
-	flex-shrink: 0;
-	background-color: #000;
-
-	.swiper-controls .swiper-pagination {
-
-		bottom: 340px;
-
-		@media $mdWidth {
-
-			bottom: 14px;
-
-		}
-
-		.button {
-
-			background-color: transparent;
-
-			&::after {
-
-				position: absolute;
-				width: 6px;
-				height: 6px;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				content: '';
-				margin: auto;
-				border-radius: 50%;
-				background-color: #616161;
-
-			}
-
-			&.is-active {
-
-				border: 1px solid var(--orange);
-				background-color: #000;
-
-				&::after {
-
-					background-color: #000;
-
-				}
-
-			}
-
-		}
-
-	}
+	/* background-color: #050505; */
+	margin: var(--space) 0 66px;
+	box-shadow: 0 -4px 10px rgba(175, 174, 198, 0.03), 0 4px 10px 2px rgba(175, 174, 198, 0.23);
 
 	&:not(.swiper-container-style) &__item + &__item {
 
@@ -275,12 +228,6 @@
 			position: relative;
 			z-index: 1;
 			margin: 0 1px;
-
-			@media (min-width: 1336px) {
-
-				margin: 0 10px;
-
-			}
 
 			@media $mdWidth {
 

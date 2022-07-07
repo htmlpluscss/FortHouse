@@ -87,16 +87,11 @@
 
 			width: 36px;
 			height: 36px;
+			background-color: #fff;
 
 			svg {
 
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				fill: var(--grey);
+				fill: #d5d5d5;
 
 			}
 
@@ -148,18 +143,17 @@
 
 		.button {
 
-			margin: 0 5px;
 			height: 10px;
 			width: 10px;
 			flex-shrink: 0;
 			border-radius: 50%;
 			transition: var(--transitionDefault);
 			pointer-events: auto;
-			background-color: var(--border);
+			background-color: var(--red);
 
 			&.is-active {
 
-				background-color: #d9d8df;
+				/* background-color: #d9d8df; */
 
 			}
 

@@ -7,85 +7,114 @@
 {% for item in [
 
 	{
-		name : "Официальный <br>партнер Miele",
-		text : "<p>Посетите <span class=\"color-orange\">бренд-зону Miele</span> в кухонной студии FortHouse</p>",
-		link : "/katalog/miele/",
-		img  : "slide-miele",
-		alt  : "Техника Miele"
+		style : "dark-slash",
+		title : "Скидка на комплект от компании Teka",
+		text  : "<p>На комплект из 2-х или более единиц техники компании Teka предоставляется <b class=\"color-red\">скидка до 95%</b></p>",
+		logo : "teka",
+		link : "/katalog/teka/",
+		img  : "teka-set"
 	},
 	{
-		name : "Акция LauraStar",
-		text : "<p>Отпариватель для одежды в ПОДАРОК!</p><p>При покупке гладильной системы LauraStar подарок - <b class=\"color-orange\">отпариватель для одежды IGGI</b><small>* уточняйте, участвует ли выбранная вами модель в акции.</small></p>",
-		link : "/action#akciya-ot-laurastar",
-		img  : "slide-laurastar",
-		alt  : "Акция - Готовьте кухню летом!"
+		style : "light-slash",
+		title : "Скидка на комплект от компании Teka",
+		text  : "<p>На комплект из 2-х или более единиц техники компании Teka предоставляется <b class=\"color-red\">скидка до 95%</b></p>",
+		logo : "teka",
+		link : "/katalog/teka/",
+		img  : "teka-set"
 	},
 	{
-		name : "Акция Bertazzoni",
-		text : "<p>Готовьте кухню летом!</p><p>При покупке комплекта из <b class=\"color-orange\">4-х предметов</b><br>техники Bertazzoni <b class=\"color-orange\">5-я ед. в подарок</b></p>",
-		link : "/action#akciya-ot-bertazzoni",
-		img  : "slide-bertazzoni",
-		alt  : "Акция - Готовьте кухню летом!"
+		style : "dark-grad",
+		title : "Скидка на комплект от компании Teka",
+		text  : "<p>На комплект из 2-х или более единиц техники компании Teka предоставляется <b class=\"color-red\">скидка до 95%</b></p>",
+		logo : "teka",
+		link : "/katalog/teka/",
+		img  : "teka-full"
 	},
 	{
-		name : "Чайники Bugatti",
-		text : "<p>Разнообразие цвета в чайниках Bugatti <br> на искушенного покупателя.</p>",
-		link : "/katalog/chajniki/bugatti/",
-		img  : "slide-2-bugatti",
-		alt  : "Электрические чайники Bugatti со скидкой"
+		style : "light-grad",
+		title : "Скидка на комплект от компании Teka",
+		text  : "<p>На комплект из 2-х или более единиц техники компании Teka предоставляется <b class=\"color-red\">скидка до 95%</b></p>",
+		logo : "teka",
+		link : "/katalog/teka/",
+		img  : "teka-full"
 	},
 	{
-		name : "Цена снижена",
-		text : "<p>Специальная цена на вытяжки Sirius <br><span class=\"color-orange\">SLTC 919 WING 85</span> и <span class=\"color-orange\">SLTC 919 WING 50</span></p><p>* самая популярная модель 2020 года</p><p>Акция действует <span class=\"color-orange\">до 31 марта 2022 года</span></p>",
-		link : "/action#super-ceny-na-vytyazhki-sirius",
-		img  : "slide-sirius",
-		alt  : "Самая популярная вытяжка Sirius"
+		style : "dark-bg",
+		bg    : "eee2d8",
+		title : "Подарок <br>от компании IGGI",
+		text  : "<p>Текст, описывающий какие условия нужно выполнить для получения подарка</p>",
+		logo : "iggi",
+		link : "/katalog/iggi/",
+		img  : "iggi"
+	},
+	{
+		style : "light-bg",
+		bg    : "eee2d8",
+		title : "Подарок <br>от компании IGGI",
+		text  : "<p>Текст, описывающий какие условия нужно выполнить для получения подарка</p>",
+		logo : "iggi",
+		link : "/katalog/iggi/",
+		img  : "iggi"
 	}
 
 ]%}
 
-				<article class="billboard__item swiper-slide">
+				<article class="billboard__item billboard__style-{{ item.style }} swiper-slide">
 
-					<div class="center">
+					<div class="billboard__content">
 
-						<div class="billboard__content">
+						<h2 class="billboard__title h0">
+							{{ item.title | safe }}
+						</h2>
 
-							<h2 class="billboard__title h0">
-								{{ item.name | safe }}
-							</h2>
+						<div class="billboard__text">
+							{{ item.text | safe }}
+						</div>
 
-							<div class="billboard__text">
-								{{ item.text | safe }}
-							</div>
+						<div class="billboard__foot">
 
 							<div class="billboard__btn">
 
 								<a class="btn btn--medium" href="{{ item.link }}">
-									узнать подробности
+									Подробности акции
 								</a>
+
+							</div>
+
+							<div class="billboard__date">
+
+								<time datetime="2022-06-16">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<path fill-rule="evenodd" d="M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7c0-1.1.9-2 2-2Zm0 4v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9H5Zm1-5a1 1 0 0 1 2 0v1H6V4Zm10 0a1 1 0 0 1 2 0v1h-2V4Zm-9 9v-2h2v2H7Zm8 0v-2h2v2h-2Zm-4 0v-2h2v2h-2Zm-4 4v-2h2v2H7Zm4 0v-2h2v2h-2Zm4 0v-2h2v2h-2Z" clip-rule="evenodd"/>
+									</svg>
+
+									до 16 июня 2022 года
+
+								</time>
 
 							</div>
 
 						</div>
 
-						<div class="billboard__img">
+					</div>
 
-							<picture>
+					<div class="billboard__img"{% if item.bg %} style="background-color: {{ item.bg }}"{% endif %}>
 
-								<source srcset="https://forthouse.ru/img/slide/{{ item.img }}--mobile.webp" type="image/webp" media="(max-width: 360px)">
-								<source srcset="https://forthouse.ru/img/slide/{{ item.img }}--mobile.jpg" media="(max-width: 360px)">
+						<picture>
 
-								<source srcset="https://forthouse.ru/img/slide/{{ item.img }}--tablet.webp" type="image/webp" media="(max-width: 768px)">
-								<source srcset="https://forthouse.ru/img/slide/{{ item.img }}--tablet.jpg" media="(max-width: 768px)">
+							<source srcset="/img/billboard/{{ item.img }}--mobile.webp" type="image/webp" media="(max-width: 360px)">
+							<source srcset="/img/billboard/{{ item.img }}--mobile.jpg" media="(max-width: 360px)">
 
-								<source srcset="https://forthouse.ru/img/slide/{{ item.img }}.webp" type="image/webp">
-								<source srcset="https://forthouse.ru/img/slide/{{ item.img }}.jpg">
+							<source srcset="/img/billboard/{{ item.img }}--tablet.webp" type="image/webp" media="(max-width: 768px)">
+							<source srcset="/img/billboard/{{ item.img }}--tablet.jpg" media="(max-width: 768px)">
 
-								<img src="https://forthouse.ru/img/slide/{{ item.img }}.jpg" alt="{{ item.alt }}" loading="lazy" width="1336" height="768">
+							<source srcset="/img/billboard/{{ item.img }}--1290x560.webp 1x, /img/billboard/{{ item.img }}--2580x1120.webp 2x" type="image/webp">
+							<source srcset="/img/billboard/{{ item.img }}--1290x560.jpg 1x, /img/billboard/{{ item.img }}--2580x1120.jpg 2x">
 
-							</picture>
+							<img src="/img/billboard/{{ item.img }}.jpg" alt="{{ item.title }}" loading="lazy" width="1290" height="560">
 
-						</div>
+						</picture>
 
 					</div>
 
@@ -96,164 +125,5 @@
 			</div>
 
 		</div>
-
-		<ul class="billboard__service">
-
-			<li class="billboard__service-item">
-
-				<a href="/payment/">
-
-					<img src="https://forthouse.ru/img/service_03.png" width="160" height="60" loading="lazy" alt="Оплата наличными при получении, кредитными картами, банковским переводом, кредит">
-
-				</a>
-
-				<dl>
-
-					<dt>
-						Удобные способы оплаты
-					</dt>
-
-					<dd>
-
-						<p>Наличными при получении</p>
-						<p>Банковской картой при получении</p>
-						<p>Он-лайн оплата</p>
-						<p>Безналичный расчет</p>
-
-					</dd>
-
-				</dl>
-
-			</li>
-
-			<li class="billboard__service-item">
-
-				<a href="/delivery/">
-
-					<img src="https://forthouse.ru/img/service_05.png" width="160" height="60" loading="lazy" alt="Доставка бесплатная по Москве и Московской области, Санкт-Петербургу и Ленинградской области">
-
-				</a>
-
-				<dl>
-
-					<dt>
-						Доставим и&nbsp;подключим
-					</dt>
-
-					<dd>
-
-						<p>Бесплатная доставка по&nbsp;Москве и Санкт-Петербургу</p>
-						<p>Удобное время доставки <span class="white-space-nowrap">с 10 до 24 ч</span></p>
-						<p>Поднимем на этаж, подключим технику и&nbsp;проведем обучение</p>
-
-					</dd>
-
-				</dl>
-
-			</li>
-
-			<li class="billboard__service-item">
-
-				<a href="/about-company/#brend-zone">
-
-					<img src="https://forthouse.ru/img/service_07.png" width="160" height="60" loading="lazy" alt="Магазин на Новорижском шоссе, бренд зоны Miele и Asko">
-
-				</a>
-
-				<dl>
-
-					<dt>
-						Бренд зоны компаний<br> <a href="/about-company/#miele">Miele</a> и Asko
-					</dt>
-
-					<dd>
-
-						<p>Вся техника встроена в кухни</p>
-						<p>Квалифицированные сотрудники и дизайнеры</p>
-						<p>Более 5 000 товаров<br> в наличии в интернет-магазине</p>
-
-					</dd>
-
-				</dl>
-
-			</li>
-
-			<li class="billboard__service-item">
-
-				<a href="/about-company/#unimoll">
-
-					<img src="https://forthouse.ru/img/service_09.png" width="160" height="60" loading="lazy" alt="Пункт самовывоза">
-
-				</a>
-
-				<dl>
-
-					<dt>
-						Пункт самовывоза
-					</dt>
-
-					<dd>
-
-						<p>Заберите из магазина салон&nbsp;FortHouse <br> М.О., Новорижское шоссе, 7-й километр от МКАД, ТЦ Юнимолл</p>
-						<p>Самовывоз со склада в&nbsp;Москве или Санкт-Петербурге</p>
-
-					</dd>
-
-				</dl>
-
-			</li>
-
-			<li class="billboard__service-item">
-
-				<a href="/action/">
-
-					<img src="https://forthouse.ru/img/service_11.png" width="160" height="60" loading="lazy" alt="Подарочные сертификаты, акции, программы лояльности">
-
-				</a>
-
-				<dl>
-
-					<dt>
-						Бонусы за покупки
-					</dt>
-
-					<dd>
-
-						<p>Дисконтная программа и&nbsp;подарочные сертификаты</p>
-						<p>Акции и программы лояльности</p>
-						<p>Подарки от фирм производителей</p>
-
-					</dd>
-
-				</dl>
-
-			</li>
-
-			<li class="billboard__service-item">
-
-				<a href="http://forthouse-kitchen.ru/">
-
-					<img src="https://forthouse.ru/img/service_13.png" width="160" height="60" loading="lazy" alt="Студия дизайна помещений">
-
-				</a>
-
-				<dl>
-
-					<dt>
-						Разработка дизайна под ключ
-					</dt>
-
-					<dd>
-
-						<p>Студия дизайна кухни и&nbsp;кулинарное обучение</p>
-						<p>Мы создадим индивидуальный проект кухни и спланируем всё — от освещения до салфеток и приборов на вашем столе</p>
-
-					</dd>
-
-				</dl>
-
-			</li>
-
-		</ul>
 
 	</div>

@@ -12,6 +12,15 @@
 	margin: 0 auto;
 	position: relative;
 
+	&-wide {
+
+		width: 1290px;
+		max-width: 100%;
+		margin: 0 auto;
+		position: relative;
+
+	}
+
 }
 
 @media $desktop {
@@ -19,7 +28,7 @@
 
 }
 
-@media ($tablet) {
+@media $tablet {
 
 
 }
