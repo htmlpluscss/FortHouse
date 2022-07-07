@@ -63,7 +63,7 @@ const html = (files, since = {}, folder = '') => {
 		.pipe(debug({title: 'html:'}))
 		.pipe(nunjucksRender({
 			data: {
-				url: 'https://' + domain,
+				url: 'https://forthouse.ru',
 				site: site
 			},
 			path: 'src/'
@@ -182,6 +182,7 @@ gulp.task('ftp', () => {
 	return gulp.src( ['build/**/*'] )
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
+		.pipe(replace('https://forthouse.ru', 'https://forthouse.htmlpluscss.website'))
 		.pipe(replace('css/styles.css', 'css/styles.min.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
 		.pipe(f.restore)
