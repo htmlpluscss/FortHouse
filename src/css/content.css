@@ -82,8 +82,17 @@ hr {
 	font-size: 42px;
 	line-height: 51px;
 
+	@media $mdWidth {
+
+		font-size: 27px;
+		line-height: 33px;
+
+	}
+
 	@media $smWidth {
 
+		font-size: 24px;
+		line-height: 30px;
 
 	}
 
@@ -94,6 +103,20 @@ hr {
 	font-weight: 600;
 	font-size: 30px;
 	line-height: 36px;
+
+	@media $mdWidth {
+
+		font-size: 24px;
+		line-height: 30px;
+
+	}
+
+	@media $mdWidth {
+
+		font-size: 21px;
+		line-height: 27px;
+
+	}
 
 }
 
@@ -108,6 +131,12 @@ hr {
 	font-weight: 600;
 	font-size: 21px;
 	line-height: 24px;
+
+	@media $mdWidth {
+
+		font-size: 18px;
+
+	}
 
 }
 

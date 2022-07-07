@@ -2,16 +2,39 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	margin: -14px;
+	margin: -15px;
+
+	@media $smWidth {
+
+		display: block;
+		margin: 0;
+
+	}
 
 	&__item {
 
-		width: calc( 100% / 3 - 28px );
-		margin: 14px;
+		width: calc( 100% / 3 - 30px );
+		margin: 15px;
 		padding: 30px;
 		min-height: 297px;
 		position: relative;
 		box-shadow: 0 4px 10px 2px rgba(175, 174, 198, 0.12);
+
+		@media $mdWidth {
+
+			width: calc( 100% / 2 - 30px );
+			min-height: 256px;
+			padding: 24px;
+
+		}
+
+		@media $smWidth {
+
+			width: auto;
+			padding: 21px;
+			margin: 18px 0;
+
+		}
 
 		dt {
 
@@ -96,7 +119,23 @@
 
 	margin: var(--space) 0;
 
-	.swiper-controls {
+	@media $smWidth {
+
+		margin: var(--space) calc(var(--indent) * -1);
+
+	}
+
+	.swiper-pagination {
+
+		@media $desktop {
+
+			display: none;
+
+		}
+
+	}
+
+	.swiper-navigation {
 
 		padding-top: 20px;
 
@@ -124,11 +163,29 @@
 
 		}
 
+		@media $mdWidth {
+
+			display: none;
+
+		}
+
 	}
 
 	&__title {
 
 		margin-bottom: 39px;
+
+		@media $mdWidth {
+
+			margin-bottom: 30px;
+
+		}
+
+		@media $smWidth {
+
+			margin: 20px var(--indent);
+
+		}
 
 	}
 
@@ -136,6 +193,12 @@
 
 		box-shadow: 0 4px 10px 2px rgba(175, 174, 198, 0.12);
 		position: relative;
+
+		@media $smWidth {
+
+			box-shadow: none;
+
+		}
 
 	}
 
@@ -154,6 +217,18 @@
 		@media (min-width: 1410px) {
 
 			padding: 12px 24px 24px;
+
+		}
+
+		@media $mdWidth {
+
+			padding: 12px 24px 48px;
+
+		}
+
+		@media $smWidth {
+
+			padding: 12px var(--indent) 48px;
 
 		}
 
@@ -184,6 +259,17 @@
 		border-bottom: 1px solid #f2f2f2;
 		margin-bottom: 21px;
 		padding-bottom: 12px;
+
+		@media $smWidth {
+
+			img {
+
+				max-width: 100%;
+				object-fit: contain;
+
+			}
+
+		}
 
 	}
 

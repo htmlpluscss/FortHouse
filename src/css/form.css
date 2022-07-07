@@ -107,10 +107,16 @@ gap: 12px;
 		height: 48px;
 		line-height: 48px;
 		padding: 0 40px;
-		font-size: 16px;
 		font-weight: 600;
 		font-size: 18px;
-		line-height: 24px;
+
+		@media $mdWidth {
+
+			height: 42px;
+			line-height: 42px;
+			font-size: 15px;
+
+		}
 
 	}
 

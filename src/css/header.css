@@ -19,7 +19,7 @@
 
 		.center {
 
-			@media $smWidth {
+			@media $mdWidth {
 
 				padding: 0;
 				width: 100%;
@@ -65,6 +65,13 @@
 		@media $smWidth {
 
 			margin: 12px auto;
+
+			img {
+
+				width: 135px;
+				height: 33px;
+
+			}
 
 		}
 
@@ -234,7 +241,7 @@
 
 		@media $mdWidth {
 
-			margin-left: -10px;
+			margin-left: 30px;
 
 		}
 

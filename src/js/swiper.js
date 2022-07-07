@@ -97,8 +97,6 @@
 
 		if (brand) {
 
-			swipeNav.remove();
-
 			toggleSwipe = () => {
 
 				toggleSwipe = false;
@@ -121,12 +119,18 @@
 						},
 						768: {
 							slidesPerView: 3,
-							slidesPerGroup: 3
+							slidesPerGroup: 1
 						},
 						1250: {
 							slidesPerView: 4,
 							slidesPerGroup: 1
 						}
+					},
+					pagination: {
+						el: swipeNav,
+						clickable: true,
+						bulletClass: 'button',
+						bulletActiveClass: 'is-active'
 					}
 				});
 

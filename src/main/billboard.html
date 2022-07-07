@@ -1,8 +1,10 @@
 	<div class="billboard">
 
-		<div class="billboard__wrap swiper-container swiper-container--billboard">
+		<div class="center">
 
-			<div class="billboard__list swiper-wrapper">
+			<div class="billboard__wrap swiper-container swiper-container--billboard">
+
+				<div class="billboard__list swiper-wrapper">
 
 {% for item in [
 
@@ -63,79 +65,81 @@
 
 ]%}
 
-				<article class="billboard__item billboard__style-{{ item.style }} swiper-slide">
+					<article class="billboard__item billboard__style-{{ item.style }} swiper-slide">
 
-					<div class="billboard__content">
+						<div class="billboard__content">
 
-						<div class="billboard__logo">
+							<div class="billboard__logo">
+
+								<picture>
+
+									<source srcset="/img/billboard/brand/{{ item.logo }}.webp 1x, /img/billboard/brand/{{ item.logo }}@2x.webp 2x" type="image/webp">
+									<source srcset="/img/billboard/brand/{{ item.logo }}.png 1x, /img/billboard/brand/{{ item.logo }}@2x.png 2x">
+
+									<img src="/img/billboard/brand/{{ item.logo }}.png" alt="{{ item.title | striptags(true) }}" width="132" height="90" loading="lazy">
+
+								</picture>
+
+							</div>
+
+							<h2 class="billboard__title h0">
+								{{ item.title | safe }}
+							</h2>
+
+							<div class="billboard__text">
+								{{ item.text | safe }}
+							</div>
+
+							<div class="billboard__foot">
+
+								<a class="btn btn--big" href="{{ item.link }}">
+									Подробности акции
+								</a>
+
+								<time class="billboard__date" datetime="2022-06-16">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<path fill-rule="evenodd" d="M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7c0-1.1.9-2 2-2Zm0 4v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9H5Zm1-5a1 1 0 0 1 2 0v1H6V4Zm10 0a1 1 0 0 1 2 0v1h-2V4Zm-9 9v-2h2v2H7Zm8 0v-2h2v2h-2Zm-4 0v-2h2v2h-2Zm-4 4v-2h2v2H7Zm4 0v-2h2v2h-2Zm4 0v-2h2v2h-2Z" clip-rule="evenodd"/>
+									</svg>
+
+									до 16 июня 2022 года
+
+								</time>
+
+							</div>
+
+						</div>
+
+						<div class="billboard__img">
 
 							<picture>
 
-								<source srcset="/img/billboard/brand/{{ item.logo }}.webp 1x, /img/billboard/brand/{{ item.logo }}@2x.webp 2x" type="image/webp">
-								<source srcset="/img/billboard/brand/{{ item.logo }}.png 1x, /img/billboard/brand/{{ item.logo }}@2x.png 2x">
+								<source srcset="/img/billboard/{{ item.img }}--mobile.webp" type="image/webp" media="(max-width: 360px)">
+								<source srcset="/img/billboard/{{ item.img }}--mobile.jpg" media="(max-width: 360px)">
 
-								<img src="/img/billboard/brand/{{ item.logo }}.png" alt="{{ item.title | striptags(true) }}" width="132" height="90" loading="lazy">
+								<source srcset="/img/billboard/{{ item.img }}--tablet.webp" type="image/webp" media="(max-width: 768px)">
+								<source srcset="/img/billboard/{{ item.img }}--tablet.jpg" media="(max-width: 768px)">
+
+								<source srcset="/img/billboard/{{ item.img }}--{{ item.width }}x560.webp 1x, /img/billboard/{{ item.img }}--{{ item.width * 2 }}x1120.webp 2x" type="image/webp">
+								<source srcset="/img/billboard/{{ item.img }}--{{ item.width }}x560.jpg 1x, /img/billboard/{{ item.img }}--{{ item.width * 2 }}x1120.jpg 2x">
+
+								<img src="/img/billboard/{{ item.img }}--{{ item.width }}x560.jpg" alt="{{ item.title | striptags(true) }}" loading="lazy" width="{{ item.width }}" height="560">
 
 							</picture>
 
-						</div>
+							{% if item.style === "dark-slash" or item.style === "light-slash" %}
 
-						<h2 class="billboard__title h0">
-							{{ item.title | safe }}
-						</h2>
+							<svg class="billboard__slash" viewBox="0 0 130 560" preserveAspectRatio="none"><path d="M130 0 0 560V0h130Z"/></svg>
 
-						<div class="billboard__text">
-							{{ item.text | safe }}
-						</div>
-
-						<div class="billboard__foot">
-
-							<a class="btn btn--big" href="{{ item.link }}">
-								Подробности акции
-							</a>
-
-							<time class="billboard__date" datetime="2022-06-16">
-
-								<svg width="24" height="24" viewBox="0 0 24 24">
-									<path fill-rule="evenodd" d="M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7c0-1.1.9-2 2-2Zm0 4v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9H5Zm1-5a1 1 0 0 1 2 0v1H6V4Zm10 0a1 1 0 0 1 2 0v1h-2V4Zm-9 9v-2h2v2H7Zm8 0v-2h2v2h-2Zm-4 0v-2h2v2h-2Zm-4 4v-2h2v2H7Zm4 0v-2h2v2h-2Zm4 0v-2h2v2h-2Z" clip-rule="evenodd"/>
-								</svg>
-
-								до 16 июня 2022 года
-
-							</time>
+							{% endif %}
 
 						</div>
 
-					</div>
-
-					<div class="billboard__img">
-
-						<picture>
-
-							<source srcset="/img/billboard/{{ item.img }}--mobile.webp" type="image/webp" media="(max-width: 360px)">
-							<source srcset="/img/billboard/{{ item.img }}--mobile.jpg" media="(max-width: 360px)">
-
-							<source srcset="/img/billboard/{{ item.img }}--tablet.webp" type="image/webp" media="(max-width: 768px)">
-							<source srcset="/img/billboard/{{ item.img }}--tablet.jpg" media="(max-width: 768px)">
-
-							<source srcset="/img/billboard/{{ item.img }}--{{ item.width }}x560.webp 1x, /img/billboard/{{ item.img }}--{{ item.width * 2 }}x1120.webp 2x" type="image/webp">
-							<source srcset="/img/billboard/{{ item.img }}--{{ item.width }}x560.jpg 1x, /img/billboard/{{ item.img }}--{{ item.width * 2 }}x1120.jpg 2x">
-
-							<img src="/img/billboard/{{ item.img }}--{{ item.width }}x560.jpg" alt="{{ item.title | striptags(true) }}" loading="lazy" width="{{ item.width }}" height="560">
-
-						</picture>
-
-						{% if item.style === "dark-slash" or item.style === "light-slash" %}
-
-						<svg class="billboard__slash" viewBox="0 0 130 560" preserveAspectRatio="none"><path d="M130 0 0 560V0h130Z"/></svg>
-
-						{% endif %}
-
-					</div>
-
-				</article>
+					</article>
 
 {% endfor %}
+
+				</div>
 
 			</div>
 

@@ -29,8 +29,7 @@
 
 	:root {
 
-		--indent: 30px;
-		--space: 30px;
+		--space: 60px;
 
 	}
 
@@ -59,9 +58,9 @@
 
 	:root {
 
-		--indent: 20px;
+		--indent: 18px;
 		--gap: 20px;
-		--space: 20px;
+		--space: 40px;
 
 	}
 
@@ -79,7 +78,7 @@
 
 	.center {
 
-		width: 600px;
+		width: 464px;
 
 	}
 
