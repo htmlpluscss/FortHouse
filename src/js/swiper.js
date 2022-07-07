@@ -77,7 +77,7 @@
 				new Swiper(swipe, {
 					loop: true,
 					autoplay: {
-						delay: 10000
+						delay: 5000
 					},
 					effect: 'fade',
 					fadeEffect: {

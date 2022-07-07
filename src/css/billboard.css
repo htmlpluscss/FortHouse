@@ -26,15 +26,6 @@
 
 	}
 
-	&__wrap {
-
-
-	}
-
-	&__list {
-
-	}
-
 	&__item {
 
 		display: flex;
@@ -47,9 +38,9 @@
 
 		position: absolute;
 		top: 0;
+		left: 620px;
 		right: 0;
 		bottom: 0;
-		width: 670px;
 		pointer-events: none;
 
 		img {
@@ -72,7 +63,7 @@
 
 	&__style-dark-grad &__img {
 
-		width: 100%;
+		left: 0;
 
 		&::after {
 
@@ -90,7 +81,7 @@
 
 	&__style-light-grad &__img {
 
-		width: 100%;
+		left: 0;
 
 		&::after {
 
@@ -125,7 +116,7 @@
 
 	&__content {
 
-		max-width: 620px;
+		width: 620px;
 		padding: 58px 50px 72px 78px;
 		position: relative;
 		z-index: 1;
