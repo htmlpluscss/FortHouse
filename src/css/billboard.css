@@ -1,6 +1,5 @@
 .billboard {
 
-	/* background-color: #050505; */
 	margin: var(--space) 0 66px;
 	box-shadow: 0 -4px 10px rgba(175, 174, 198, 0.03), 0 4px 10px 2px rgba(175, 174, 198, 0.23);
 
@@ -10,52 +9,37 @@
 
 	}
 
+	&__style-dark-slash,
+	&__style-dark-grad,
+	&__style-dark-bg {
+
+		background-color: var(--color);
+		color: #fff;
+
+	}
+
+	&__style-light-slash,
+	&__style-light-grad,
+	&__style-light-bg {
+
+		background-color: #fff;
+
+	}
+
 	&__wrap {
 
-		display: flex;
-		overflow: hidden;
-		flex-grow: 1;
 
 	}
 
 	&__list {
 
-		display: flex;
-		width: 100%;
-		position: relative;
-		z-index: 1;
-
 	}
 
 	&__item {
 
-		width: 100%;
 		display: flex;
-		flex-shrink: 0;
-		height: 768px;
+		height: 560px;
 		position: relative;
-
-		@media $mdWidth {
-
-			height: 560px;
-
-			.center {
-
-				display: block;
-				padding: 0;
-
-			}
-
-		}
-
-		.center {
-
-			display: flex;
-			align-items: flex-start;
-			position: static;
-			padding: 80px 0 360px;
-
-		}
 
 	}
 
@@ -63,27 +47,22 @@
 
 		position: absolute;
 		top: 0;
-		left: 0;
 		right: 0;
 		bottom: 0;
+		width: 670px;
+		pointer-events: none;
 
 		img {
 
-			width: auto;
+			width: 100%;
 			height: 100%;
 			position: absolute;
 			top: 0;
 			left: 0;
-			right: 0;
-			bottom: 0;
-			margin: auto;
 			object-fit: cover;
-			max-width: 100%;
 
 			@media $mdWidth {
 
-				margin: 0;
-				width: 100%;
 
 			}
 
@@ -91,48 +70,78 @@
 
 	}
 
-	&__content {
+	&__style-dark-grad &__img {
 
-		max-width: 480px;
-		position: relative;
-		z-index: 1;
-		color: #fff;
+		width: 100%;
 
-		@media $mdWidth {
+		&::after {
 
-			max-width: none;
-			padding: var(--indent);
 			position: absolute;
+			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
-			color: #000;
-			text-align: center;
-			background-color: rgba(242, 242, 242, .8);
-
-			&::before  {
-
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				border-radius: 0;
-
-			}
+			content: '';
+			background-image: linear-gradient(84deg, var(--color) 24%, rgba(5, 12, 5, 0) 86%);
 
 		}
 
-		&::before {
+	}
+
+	&__style-light-grad &__img {
+
+		width: 100%;
+
+		&::after {
 
 			position: absolute;
-			top: -36px;
-			left: -36px;
-			right: -36px;
-			bottom: -36px;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			content: '';
+			background-image: linear-gradient(84deg, #fff 24%, rgba(255, 255, 255, 0) 86%);
 
-			border-radius: 36px;
-			backdrop-filter: blur(6px);
+		}
+
+	}
+
+	&__slash {
+
+		position: absolute;
+		width: 130px;
+		height: 100%;
+		left: 0;
+		top: 0;
+		fill: var(--color);
+
+	}
+
+	&__style-light-slash &__slash {
+
+		fill: #fff;
+
+	}
+
+	&__content {
+
+		max-width: 620px;
+		padding: 58px 50px 72px 78px;
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+
+	}
+
+	&__logo {
+
+		height: 96px;
+		margin-bottom: 21px;
+
+		img {
+
+			width: auto;
 
 		}
 
@@ -153,140 +162,30 @@
 
 	&__text {
 
-		position: relative;
-
-		p {
-
-			margin: 1em 0;
-
-		}
-
-		small {
-
-			display: block;
-
-		}
+		font-size: 18px;
+		line-height: 33px;
 
 	}
 
-	&__btn {
+	&__foot {
 
-		margin-top: 36px;
 		display: flex;
-
-		@media $mdWidth {
-
-			margin: 24px 0 20px;
-			justify-content: center;
-
-		}
-
-		@media $smWidth {
-
-			.btn {
-
-				width: 100%;
-
-			}
-
-		}
+		align-items: center;
+		margin-top: auto;
+		padding-top: 24px;
 
 	}
 
-	&__service {
+	&__date {
 
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 30px;
+		margin-left: 36px;
 		display: flex;
-		justify-content: center;
+		white-space: nowrap;
 
-		@media $mdWidth {
+		svg {
 
-			position: relative;
-			bottom: 0;
-			padding: 10px 0;
-			margin: 0 auto;
-			flex-wrap: wrap;
-			max-width: 960px;
-
-		}
-
-		@media $smWidth {
-
-			display: block;
-
-		}
-
-		&-item {
-
-			width: 200px;
-			padding: 0 20px;
-			height: 280px;
-			background-color: #fff;
-			position: relative;
-			z-index: 1;
-			margin: 0 1px;
-
-			@media $mdWidth {
-
-				margin: 5px;
-
-			}
-
-			@media $smWidth {
-
-				width: auto;
-				height: auto;
-				margin: 10px var(--indent);
-				padding-bottom: 20px;
-
-				img {
-
-					margin: auto;
-
-				}
-
-			}
-
-			dt {
-
-				font-size: 13px;
-				line-height: 18px;
-				padding: 8px 0 6px;
-				font-weight: 700;
-
-			}
-
-			dd {
-
-				font-size: 12px;
-				color: var(--text);
-				line-height: 16px;
-
-				p {
-
-					padding-left: 12px;
-					position: relative;
-					padding-bottom: 7px;
-
-					&::before {
-
-						position: absolute;
-						width: 5px;
-						height: 5px;
-						top: 7px;
-						left: 0;
-						content: '';
-						border-radius: 50%;
-						background-color: var(--orange);
-
-					}
-
-				}
-
-			}
+			margin-right: 9px;
+			flex-shrink: 0;
 
 		}
 

@@ -72,6 +72,7 @@
 
 				toggleSwipe = false;
 				swipe.closest('.billboard').classList.add('swiper-container-style');
+				swipe.parentNode.appendChild(swipeControls);
 
 				new Swiper(swipe, {
 					loop: true,

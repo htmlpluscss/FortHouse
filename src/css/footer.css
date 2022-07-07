@@ -111,12 +111,6 @@
 			color: var(--grey);
 			transition: var(--transitionDefault);
 
-			svg {
-
-				fill: var(--grey);
-
-			}
-
 			&[href^="tel"] {
 
 				font-size: 20px;
