@@ -142,7 +142,9 @@ hr {
 
 .h4 {
 
-
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 24px;
 
 }
 
@@ -180,5 +182,38 @@ table {
 .title {
 
 	margin: var(--gap) 0;
+
+}
+
+[data-youtube] {
+
+	position: relative;
+	display: block;
+
+	&::after {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: '';
+		transition: var(--transitionDefault);
+		background-color: rgba(0,0,0,.3);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45' height='45' viewBox='0 0 45 45'%3E%3Cpath fill='%23F84A2B' d='M18.75 30.94 30 22.5l-11.25-8.44v16.88ZM22.5 3.75a18.76 18.76 0 1 0 .01 37.51 18.76 18.76 0 0 0-.01-37.51Zm0 33.75c-8.27 0-15-6.73-15-15s6.73-15 15-15 15 6.73 15 15-6.73 15-15 15Z'/%3E%3C/svg%3E");
+
+	}
+
+	@media $desktop {
+
+		&:hover::after {
+
+			background-color: rgba(0,0,0,0);
+
+		}
+
+	}
 
 }

@@ -1,0 +1,29 @@
+{% set title = "Asko" %}
+
+{% set description = "Компания FortHouse является официальным представителем Asko в Москве." %}
+
+{% set breadcrumbs = ["Главная", title] %}
+
+{% set ogType = "article" %}
+{% set urlPage = "brand" %}
+{% set ogImage = "img/brand/asko@2x.png" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="brand">
+
+{% include "brand/head.html" %}
+
+{% include "brand/category.html" %}
+
+{% include "brand/about.html" %}
+
+		</div>
+
+	</article>
+
+{% endblock %}

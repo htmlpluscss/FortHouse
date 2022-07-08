@@ -1,6 +1,6 @@
 .billboard {
 
-	margin: var(--space) 0 66px;
+	margin: 36px 0 var(--space);
 
 	@media $mdWidth {
 

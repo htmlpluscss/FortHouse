@@ -62,9 +62,7 @@
 
 	&__logo {
 
-		@media $smWidth {
-
-			margin: 12px auto;
+		@media $mdWidth {
 
 			img {
 
@@ -72,6 +70,12 @@
 				height: 33px;
 
 			}
+
+		}
+
+		@media $smWidth {
+
+			margin: 12px auto;
 
 		}
 
@@ -359,7 +363,7 @@
 					padding: 10px var(--indent);
 					width: 100%;
 					color: #fff;
-					background-color: #000;
+					background-color: var(--color);
 					border: 0;
 					border-radius: 0;
 					box-shadow: none;
@@ -374,7 +378,7 @@
 
 						background-color: #fff;
 						box-shadow: none;
-						color: #000;
+						color: var(--color);
 
 					}
 
@@ -401,7 +405,8 @@
 			position: absolute;
 			top: 28px;
 			left: 14px;
-			fill: var(--grey);
+			fill: #fff;
+			transition: none;
 
 		}
 
@@ -424,6 +429,7 @@
 			&::placeholder {
 
 				text-transform: uppercase;
+				opacity: 1;
 
 			}
 
@@ -431,11 +437,11 @@
 
 				background-color: #fff;
 				box-shadow: none;
-				color: #000;
+				color: var(--color);
 
-				svg {
+				& + svg {
 
-					fill: #fff;
+					fill: var(--color);
 
 				}
 

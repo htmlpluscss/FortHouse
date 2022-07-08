@@ -1,0 +1,47 @@
+			<div class="brand-category">
+
+				<h1 class="brand-category__title h1">
+					Категории бренда
+				</h1>
+
+				<ul class="brand-category__list">
+
+{% for name in ["Духовые шкафы","Холодильники","Посудомоечные машины","Духовые шкафы","Посудомоечные машины","Духовые шкафы"]%}
+
+					<li class="brand-category__item">
+
+						<a href="/catalog/" class="brand-category__link">
+
+							<span class="brand-category__img">
+
+								<picture>
+
+									<source srcset="/img/brand/category/{{ [1,2] | random }}--660x300.webp" type="image/webp" media="(max-width: 1249px)">
+									<source srcset="/img/brand/category/{{ [1,2] | random }}--660x300.jpg" media="(max-width: 1249px)">
+
+									<source srcset="/img/brand/category/{{ [1,2] | random }}--306x194.webp 1x, /img/brand/category/{{ [1,2] | random }}--612x388.webp 2x" type="image/webp">
+									<source srcset="/img/brand/category/{{ [1,2] | random }}--306x194.jpg 1x, /img/brand/category/{{ [1,2] | random }}--612x388.jpg 2x">
+
+									<img src="/img/brand/category/{{ [1,2] | random }}--306x194.jpg" alt="{{ name }}" width="306" height="194" loading="lazy">
+
+								</picture>
+
+							</span>
+
+							<p class="brand-category__name h4">
+								{{ name }}
+							</p>
+
+							<p class="brand-category__desc">
+								от 77 900 до 349 900 ₽
+							</p>
+
+						</a>
+
+					</li>
+
+{% endfor %}
+
+				</ul>
+
+			</div>
