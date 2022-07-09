@@ -107,59 +107,6 @@
 
 		}
 
-		@media $desktop {
-
-			&:hover &__minicart {
-
-				pointer-events: auto;
-				opacity: 1;
-
-			}
-
-		}
-
-		&__minicart {
-
-			position: absolute;
-			top: 100%;
-			right: 0;
-			z-index: 5;
-			pointer-events: none;
-			opacity: 0;
-			transition: var(--transitionDefault);
-			background-color: #fff;
-			min-width: 400px;
-			font-size: 13px;
-			padding: 20px;
-			color: #000;
-
-			&-flex {
-
-				margin-top: 14px;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-
-			}
-
-			&-result {
-
-				color: #000;
-				font-weight: 700;
-				margin: 0 24px;
-				font-size: 15px;
-
-				&::after {
-
-					content: attr(data-suf);
-					margin-left: 4px;
-
-				}
-
-			}
-
-		}
-
 	}
 
 	.btn-menu-toggle {
@@ -262,28 +209,6 @@
 
 	}
 
-	&__slogan {
-
-		font-size: 13px;
-		color: var(--grey);
-		font-weight: 600;
-
-		@media $mdWidth {
-
-			display: none;
-
-		}
-
-		b {
-
-			display: block;
-			font-weight: 600;
-			text-transform: uppercase;
-
-		}
-
-	}
-
 	&__phone {
 
 		font-size: 11.2px;
@@ -343,8 +268,9 @@
 
 	&__search {
 
-		height: 80px;
-		width: 220px;
+		height: 40px;
+		margin: 20px 24px;
+		flex-grow: 1;
 		position: relative;
 
 		&-mobile {
@@ -391,7 +317,7 @@
 
 		@media $mdWidth {
 
-			margin-right: calc( var(--indent) * -1);
+
 
 		}
 
@@ -404,7 +330,7 @@
 		svg {
 
 			position: absolute;
-			top: 28px;
+			top: 8px;
 			left: 14px;
 			fill: #fff;
 			transition: none;
@@ -417,12 +343,12 @@
 			top: 0;
 			left: 0;
 			font-weight: 700;
-			height: 80px;
-			line-height: 40px;
-			padding: 20px 10px 20px 50px;
+			height: 40px;
+			line-height: 24px;
+			padding: 12px 12px 12px 50px;
 			width: 100%;
 			color: #fff;
-			border: 0;
+			border: 2px solid var(--orange);
 			border-radius: 0;
 			background-color: transparent;
 			box-shadow: none;
