@@ -1,7 +1,7 @@
 .product {
 
-	background-color: #fff;
 	padding: var(--space) 0;
+	box-shadow: var(--box-shadow);
 
 	&__box {
 
@@ -81,6 +81,8 @@
 		@media $smWidth {
 
 			order: 1;
+			display: flex;
+			gap: 24px;
 
 		}
 
@@ -165,6 +167,12 @@
 
 			margin-top: var(--gap);
 
+			@media $smWidth {
+
+				margin-top: 0;
+
+			}
+
 		}
 
 		&-inner {
@@ -210,6 +218,26 @@
 				pointer-events: none;
 				opacity: 0;
 				transition: var(--transitionDefault);
+
+			}
+
+			@media $mdWidth {
+
+				width: 256px;
+				white-space: normal;
+
+				bottom: auto;
+				height: auto;
+				top: 50%;
+				line-height: 1.4;
+				padding: 10px;
+				transform: translateY(-50%);
+
+			}
+
+			@media $smWidth {
+
+				display: none;
 
 			}
 
@@ -367,6 +395,136 @@
 				margin-top: 1em;
 
 			}
+
+		}
+
+	}
+
+}
+
+.product-scroll {
+
+	transition: opacity var(--transitionDefault);
+	height: 0;
+
+	position: sticky;
+	top: 0;
+	z-index: 9;
+
+	@media ($smWidth) {
+
+		position: fixed;
+		top: auto;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: auto;
+
+	}
+
+	&:not(.is-show) {
+
+		opacity: 0;
+		pointer-events: none;
+		overflow: hidden;
+
+	}
+
+	&__inner {
+
+		box-shadow: var(--box-shadow);
+		background-color: var(--bg);
+		position: relative;
+
+	}
+
+	&__flex {
+
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding: var(--gap) 0;
+
+	}
+
+	&__img {
+
+		img {
+
+			object-fit: contain;
+
+		}
+
+		@media ($smWidth) {
+
+			img {
+
+				width: 45px;
+				height: 45px;
+
+			}
+
+		}
+
+	}
+
+	&__head {
+
+		flex-grow: 1;
+		margin: 0 var(--gap);
+
+	}
+
+	&__price {
+
+		.price {
+
+			font-size: 24px;
+			font-weight: 700;
+			white-space: nowrap;
+
+			@media ($smWidth) {
+
+				font-size: 18px;
+
+			}
+
+			&__old {
+
+				font-size: 20px;
+				color: var(--text);
+
+				@media ($smWidth) {
+
+					font-size: 16px;
+					display: block;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&__title {
+
+		@media ($smWidth) {
+
+			display: none;
+
+		}
+
+	}
+
+	&__buy {
+
+		@media ($smWidth) {
+
+			font-size: 16px;
+			padding: 0 20px;
+			font-weight: 600;
+			text-transform: none;
 
 		}
 
@@ -558,7 +716,7 @@
 
 .product-buy {
 
-	background-color: var(--bg);
+	background-color: #f2f2f2;
 	display: flex;
 
 	@media $smWidth {
@@ -622,23 +780,6 @@
 			& + & {
 
 				border-top: 1px solid #fff;
-
-			}
-
-			&--orange {
-
-				background-color: var(--orange);
-				color: #fff;
-
-				@media $smWidth {
-
-					br {
-
-						display: none;
-
-					}
-
-				}
 
 			}
 

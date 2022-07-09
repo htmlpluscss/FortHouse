@@ -182,7 +182,7 @@ gulp.task('ftp', () => {
 	return gulp.src( ['build/**/*'] )
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
-		.pipe(replace('https://forthouse.ru', 'https://forthouse.htmlpluscss.website'))
+//		.pipe(replace('https://forthouse.ru', 'https://forthouse.htmlpluscss.website'))
 		.pipe(replace('css/styles.css', 'css/styles.min.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
 		.pipe(f.restore)

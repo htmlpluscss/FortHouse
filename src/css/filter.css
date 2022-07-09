@@ -1,7 +1,7 @@
 .filter {
 
 	position: relative;
-	background-color: #fff;
+	box-shadow: var(--box-shadow);
 
 	@media $mdWidth {
 
@@ -34,7 +34,7 @@
 
 	&__head {
 
-		border-bottom: 1px solid var(--bg);
+		border-bottom: 1px solid #f2f2f2;
 
 		@media $mdWidth {
 
@@ -141,7 +141,7 @@
 
 	&__fieldset {
 
-		border-bottom: 1px solid var(--bg);
+		border-bottom: 1px solid #f2f2f2;
 		padding: 16px 20px;
 		position: static;
 

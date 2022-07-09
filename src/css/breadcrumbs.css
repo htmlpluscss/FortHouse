@@ -1,6 +1,6 @@
 .breadcrumbs {
 
-	margin: var(--space) 0 var(--gap);
+	margin: var(--gap) 0;
 	position: relative;
 
 	@media $mdWidth {
@@ -14,7 +14,7 @@
 			left: 0;
 			bottom: 10px;
 			content: '';
-			background-image: linear-gradient(to right, var(--bg), rgba(242, 242, 242, 0));
+			background-image: linear-gradient(to right, var(--bg), rgba(255, 255, 255, 0));
 			z-index: 1;
 			pointer-events: none;
 
@@ -24,15 +24,9 @@
 
 			left: auto;
 			right: 0;
-			background-image: linear-gradient(to left, var(--bg), rgba(242, 242, 242, 0));
+			background-image: linear-gradient(to left, var(--bg), rgba(255, 255, 255, 0));
 
 		}
-
-	}
-
-	@media $smWidth {
-
-		margin: var(--gap) 0;
 
 	}
 
@@ -79,6 +73,7 @@
 	&__link {
 
 		color: var(--text);
+		font-size: 13px;
 
 		@media $desktop {
 

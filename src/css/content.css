@@ -26,6 +26,28 @@
 
 }
 
+.js-btn-back {
+
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	font-size: 18px;
+	color: var(--text);
+
+	@media $desktop {
+
+		transition: var(--transitionDefault);
+
+		&:hover {
+
+			color: var(--color);
+
+		}
+
+	}
+
+}
+
 .flex {
 
 	display: flex;

@@ -68,7 +68,7 @@
 
 	&__brand {
 
-		background-color: #fff;
+		box-shadow: var(--box-shadow);
 		padding: 20px;
 		column-gap: 20px;
 		column-count: 2;

@@ -66,8 +66,6 @@
 
 		if (billboard) {
 
-			swipeBtns.remove();
-
 			toggleSwipe = () => {
 
 				toggleSwipe = false;
@@ -82,6 +80,10 @@
 					effect: 'fade',
 					fadeEffect: {
 						crossFade: true
+					},
+					navigation: {
+						nextEl: swipeNext,
+						prevEl: swipePrev
 					},
 					pagination: {
 						el: swipeNav,

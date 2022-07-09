@@ -1,6 +1,6 @@
 .tab-swiper {
 
-	background-color: #fff;
+	box-shadow: var(--box-shadow);
 	padding: var(--space) 0;
 
 	&__title {
@@ -115,6 +115,8 @@
 	}
 
 	.preview-product {
+
+		box-shadow: none;
 
 		@media $desktop {
 

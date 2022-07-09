@@ -371,12 +371,13 @@
 					&::placeholder {
 
 						text-transform: uppercase;
+						opacity: 1;
 
 					}
 
 					&:focus {
 
-						background-color: #fff;
+						background-color: #f2f2f2;
 						box-shadow: none;
 						color: var(--color);
 

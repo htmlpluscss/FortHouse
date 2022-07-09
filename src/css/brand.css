@@ -49,26 +49,37 @@
 
 	&__service {
 
-		display: none;
-
 		@media $smWidth {
 
 			width: 30%;
+			display: flex;
+			justify-content: flex-end;
 
-			display: block;
-			padding-right: 28px;
-			font-size: 12px;
-			line-height: 15px;
-			position: relative;
+		}
 
-			svg {
+		&-link {
 
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				fill: var(--orange);
+			display: none;
+
+			@media $smWidth {
+
+				display: block;
+				padding-right: 28px;
+				font-size: 12px;
+				line-height: 15px;
+				position: relative;
+				flex-basis: 0;
+
+				svg {
+
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					fill: var(--orange);
+
+				}
 
 			}
 
@@ -450,6 +461,192 @@
 
 				margin-right: 0;
 				margin-left: 40px;
+
+			}
+
+		}
+
+	}
+
+}
+
+.service-page {
+
+	&__title {
+
+		border-bottom: 1px solid #f2f2f2;
+		margin-bottom: 32px;
+		padding-bottom: 18px;
+
+		@media $smWidth {
+
+			padding-bottom: 14px;
+			margin-bottom: 20px;
+
+		}
+
+	}
+
+	&__back {
+
+		display: flex;
+		margin-bottom: 24px;
+
+	}
+
+	&__box {
+
+		display: flex;
+		margin-bottom: var(--space);
+
+		@media $smWidth {
+
+			flex-direction: column-reverse;
+
+		}
+
+	}
+
+	&__map {
+
+		flex-grow: 1;
+		display: flex;
+
+		@media $smWidth {
+
+			display: block;
+			margin: 0 calc( var(--indent) * -1 );
+
+		}
+
+		#map {
+
+			min-height: 420px;
+			width: 100%;
+
+			@media $smWidth {
+
+				min-height: 256px;
+				height: 100vw;
+
+			}
+
+		}
+
+	}
+
+	&__list {
+
+		width: 664px;
+		margin-left: 42px;
+
+		@media $mdWidth {
+
+			width: 300px;
+			margin-left: 30px;
+
+		}
+
+		@media $smWidth {
+
+			width: 100%;
+			margin: 0 0 30px;
+
+			max-height: 100vw;
+			overflow: auto;
+
+		}
+
+	}
+
+	&__item {
+
+		& + & {
+
+			margin-top: 30px;
+
+			@media $mdWidth {
+
+				margin-top: 24px;
+
+			}
+
+		}
+
+	}
+
+	&__name {
+
+		font-size: 24px;
+		line-height: 30px;
+		cursor: pointer;
+		margin-bottom: 12px;
+
+		&.is-open {
+
+			color: var(--orange);
+
+		}
+
+		@media $mdWidth {
+
+			font-size: 18px;
+
+		}
+
+		@media $desktop {
+
+			&:hover {
+
+				color: var(--orangeHover);
+
+			}
+
+		}
+
+	}
+
+	&__tel,
+	&__address {
+
+		margin-top: 6px;
+		display: flex;
+
+		a {
+
+			font-size: 15px;
+			color: var(--text);
+			display: flex;
+			align-items: center;
+
+			@media $mdWidth {
+
+				font-size: 12px;
+
+				svg {
+
+					width: 15px;
+					height: 15px;
+					margin-right: 6px;
+
+				}
+
+			}
+
+			@media $desktop {
+
+				&:not([href^="tel"]):hover {
+
+					color: var(--orangeHover);
+
+				}
+
+			}
+
+			svg {
+
+				fill: var(--color);
+				margin-right: 9px;
 
 			}
 
