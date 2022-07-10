@@ -89,19 +89,24 @@
 
 			width: 45px;
 			height: 45px;
-			line-height: 32px;
-			text-align: center;
-			font-size: 13px;
-			font-weight: 700;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			background-color: var(--orange);
 			position: relative;
+			color: #fff;
 
-			svg {
+			&[data-counter]::after {
 
-				fill: #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				content: attr(data-counter);
+				text-align: center;
+				font-size: 14px;
+				line-height: 18px;
+				font-weight: 700;
 
 			}
 
@@ -363,7 +368,6 @@
 			&:focus {
 
 				background-color: #fff;
-				box-shadow: none;
 				color: var(--color);
 
 				& + svg {

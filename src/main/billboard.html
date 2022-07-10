@@ -51,6 +51,7 @@
 		logo  : "iggi-dark",
 		link  : "/katalog/iggi/",
 		img   : "iggi",
+		bg    : "#eee2d8",
 		width : 670
 	},
 	{
@@ -60,6 +61,7 @@
 		logo  : "iggi-light",
 		link  : "/katalog/iggi/",
 		img   : "iggi",
+		bg    : "#eee2d8",
 		width : 670
 	}
 
@@ -110,7 +112,7 @@
 
 						</div>
 
-						<div class="billboard__img">
+						<div class="billboard__img"{% if item.bg %} style="background-color: {{ item.bg }}"{% endif %}>
 
 							<picture>
 
