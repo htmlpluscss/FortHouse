@@ -171,6 +171,28 @@ gap: 12px;
 
 	}
 
+	&--more {
+
+		background-color: transparent !important;
+		font-weight: 400;
+		color: var(--color);
+		border-bottom: 1px dotted;
+		padding: 0;
+		height: 24px;
+		line-height: 24px;
+
+		@media $desktop {
+
+			&:hover {
+
+				border-bottom-color: transparent;
+
+			}
+
+		}
+
+	}
+
 }
 
 .input {

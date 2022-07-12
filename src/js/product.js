@@ -3,7 +3,8 @@
 	if(form) {
 
 		const productForm = document.querySelector('.product-buy'),
-			  footer = document.querySelector('.footer');
+			  footer = document.querySelector('.footer'),
+			  scrollHeight = form.querySelector('.product-scroll__inner');
 
 		window.product.insertAdjacentElement('afterbegin', form);
 
@@ -24,6 +25,28 @@
 			});
 
 		});
+
+		// hash
+
+		window.addEventListener('hashchange', () => {
+
+			document.querySelector(location.hash).dispatchEvent(new Event("toggle"));
+
+		});
+
+		// resize
+
+		window.addEventListener("resize", () => {
+
+			window.requestAnimationFrame( () => {
+
+				document.documentElement.style.setProperty('--heightProductScroll', scrollHeight.clientHeight + 'px');
+
+			});
+
+		});
+
+		document.documentElement.style.setProperty('--heightProductScroll', scrollHeight.clientHeight + 'px');
 
 	}
 

@@ -16,6 +16,8 @@
 	--transitionDefault: 0s;
 	--scrollMargin: 0; /* heightHeader */
 
+	--heightProductScroll: 138px; /* product-scroll__inner */
+
 	--indent: 40px;
 	--gap: 24px;
 	--space: 81px;
