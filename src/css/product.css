@@ -430,7 +430,7 @@
 	top: 0;
 	z-index: 9;
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		position: fixed;
 		top: auto;
@@ -474,7 +474,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			img {
 
@@ -502,7 +502,7 @@
 			font-weight: 700;
 			white-space: nowrap;
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				font-size: 18px;
 
@@ -513,7 +513,7 @@
 				font-size: 20px;
 				color: var(--text);
 
-				@media ($smWidth) {
+				@media $smWidth {
 
 					font-size: 16px;
 					display: block;
@@ -528,7 +528,7 @@
 
 	&__title {
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			display: none;
 
@@ -538,7 +538,7 @@
 
 	&__buy {
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			font-size: 16px;
 			padding: 0 20px;

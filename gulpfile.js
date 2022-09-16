@@ -179,7 +179,7 @@ gulp.task('ftp', () => {
 	const f = filter('**/*.html', {restore: true});
 	const conn = ftp.create( config.ftp );
 
-	return gulp.src( ['build/**/*'] )
+	return gulp.src( ['build/**/*','!build/img/**/*'] )
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
 //		.pipe(replace('https://forthouse.ru', 'https://forthouse.htmlpluscss.website'))

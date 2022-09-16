@@ -10,14 +10,8 @@
 
 	@media $desktop {
 
-		&:hover &__name {
-
-			text-decoration: underline;
-			color: var(--orangeHover);
-
-		}
-
-		&:hover &__btn-link {
+		&:hover &__btn-link,
+		&:hover &__form .btn {
 
 			opacity: 1;
 
@@ -27,12 +21,34 @@
 
 	&__img {
 
-		padding: 14px;
+		padding: 14px 8px 0;
+		display: block;
 
 		img {
 
 			width: 100%;
 			object-fit: contain;
+
+		}
+
+		&-name {
+
+			font-size: 13px;
+			line-height: 1.4;
+			font-weight: 400;
+			margin-top: 14px;
+			transition: var(--transitionDefault);
+
+		}
+
+		@media $desktop {
+
+			&:hover &-name {
+
+				text-decoration: underline;
+				color: var(--orangeHover);
+
+			}
 
 		}
 
@@ -121,6 +137,37 @@
 			height: 0;
 			font-size: 0;
 			line-height: 0;
+
+		}
+
+	}
+
+	&__form {
+
+		.btn {
+
+			width: 100%;
+			opacity: 0;
+			border-radius: 0;
+			margin-top: auto;
+			-webkit-tap-highlight-color: transparent;
+
+			@media $tablet {
+
+				height: 8px;
+				line-height: 0;
+				font-size: 0;
+				margin: 0;
+
+			}
+
+			@media $smWidth {
+
+				height: 0;
+				font-size: 0;
+				line-height: 0;
+
+			}
 
 		}
 

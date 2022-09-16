@@ -225,7 +225,7 @@
 
 					<article class="preview-product">
 
-						<div class="preview-product__img">
+						<a href="/product/" class="preview-product__img">
 
 							<picture>
 
@@ -236,19 +236,27 @@
 
 							</picture>
 
-						</div>
+							<h3 class="preview-product__img-name">
 
-						<h3 class="preview-product__name">
-							{{ item.name }} <br> {{ item.code }}
-						</h3>
+								{{ item.name }} <br> {{ item.code }}
+
+							</h3>
+
+						</a>
 
 						<p class="preview-product__price{% if item.price === 'По запросу' %} is-get{% endif %}">
 							{{ item.price }}
 						</p>
 
-						<a href="/product/" class="preview-product__btn-link btn">
-							Подробнее
-						</a>
+						<form action="/" class="preview-product__form js-add-cart">
+
+							<input type="hidden" name="id" value="123456789">
+
+							<button class="btn">
+								Купить
+							</button>
+
+						</form>
 
 					</article>
 
