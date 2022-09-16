@@ -76,19 +76,23 @@
 
 							{% else %}
 
-							<form action="/order/" class="preview-product-row__form-buy form-buy">
-
-								<input type="hidden" name="id" value="19021">
+							<div class="preview-product-row__form-buy">
 
 								<p class="preview-product-row__price">
 									{{ item.price }} ₽
 								</p>
 
-								<button class="btn form-buy__submit">
-									В корзину
-								</button>
+								<form action="/zakaz/" class="js-add-cart">
 
-							</form>
+									<input type="hidden" name="id" value="123456789">
+
+									<button class="btn">
+										Купить
+									</button>
+
+								</form>
+
+							</div>
 
 							{% endif %}
 

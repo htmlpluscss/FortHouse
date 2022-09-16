@@ -173,6 +173,20 @@
 
 	}
 
+	.link-in-cart {
+
+		margin-top: auto;
+
+		.btn {
+
+			width: 100%;
+			border-radius: 0;
+			-webkit-tap-highlight-color: transparent;
+
+		}
+
+	}
+
 }
 
 .preview-product-row {
