@@ -77,43 +77,45 @@
 
 ]%}
 
-		<article class="publication__item">
+			<article class="publication__item">
 
-			<a href="https://forthouse.ru/publication/{{ item.link }}" class="publication__img">
+				<a href="https://forthouse.ru/publication/{{ item.link }}" class="publication__img">
 
-				<picture>
+					<picture>
 
-					<source srcset="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg 1x, https://forthouse.ru/pic/440x440/{{ item.img }}.jpg 2x">
+						<source srcset="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg 1x, https://forthouse.ru/pic/440x440/{{ item.img }}.jpg 2x">
 
-					<img src="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg" alt="{{ item.name }}" loading="lazy" width="220" height="220">
+						<img src="https://forthouse.ru/pic/220x220/{{ item.img }}.jpg" alt="{{ item.name }}" loading="lazy" width="220" height="220">
 
-				</picture>
+					</picture>
 
-			</a>
+				</a>
 
-			<div class="publication__body">
+				<div class="publication__body">
 
-				<h2 class="publication__name">
+					<h2 class="publication__name">
 
-					<a href="https://forthouse.ru/publication/{{ item.link }}">
-						{{ item.name }}
-					</a>
+						<a href="https://forthouse.ru/publication/{{ item.link }}">
+							{{ item.name }}
+						</a>
 
-				</h2>
+					</h2>
 
-				<time class="publication__date" datetime="{{ item.dateF }}">
-					{{ item.date }}
-				</time>
+					<time class="publication__date" datetime="{{ item.dateF }}">
+						{{ item.date }}
+					</time>
 
-				<p>
-					{{ item.desc | safe }}
-				</p>
+					<p>
+						{{ item.desc | safe }}
+					</p>
 
-			</div>
+				</div>
 
-		</article>
+			</article>
 
 {% endfor %}
+
+		</div>
 
 	</section>
 

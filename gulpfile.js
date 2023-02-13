@@ -42,7 +42,7 @@ const w3cjs            = require('gulp-w3cjs');
 let config             = null;
 
 const site             = 'FortHouse.ru';
-const domain           = 'forthouse.htmlpluscss.website';
+const domain           = 'forthouse.htmlpluscss.site';
 
 try {
 
@@ -68,8 +68,10 @@ const html = (files, since = {}, folder = '') => {
 			},
 			path: 'src/'
 		}))
-//		.pipe(w3cjs())
-//		.pipe(w3cjs.reporter())
+		.pipe(w3cjs({
+			url : 'https://validator.w3.org/nu/'
+		}))
+		.pipe(w3cjs.reporter())
 		.pipe(gulp.dest('build' + folder))
 
 };
@@ -182,7 +184,7 @@ gulp.task('ftp', () => {
 	return gulp.src( ['build/**/*','!build/img/**/*'] )
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
-//		.pipe(replace('https://forthouse.ru', 'https://forthouse.htmlpluscss.website'))
+		.pipe(replace('https://forthouse.ru', 'https://forthouse.htmlpluscss.site'))
 		.pipe(replace('css/styles.css', 'css/styles.min.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
 		.pipe(f.restore)
