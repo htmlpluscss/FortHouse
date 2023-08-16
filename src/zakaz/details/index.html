@@ -1,0 +1,300 @@
+{% set title = "Оформление заказа в интернет-магазине Asko-Home.ru" %}
+{% set description = "Оформление заказа в интернет-магазине Asko-Home.ru" %}
+{% set css = "cart" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="flexcolumn center">
+
+		<div class="cart mobile-padding">
+
+			<h1 class="h2">
+				Доставка и оплата
+			</h1>
+
+			<form action="/zakaz/" method="post" class="cart__order cart__order-details border form form-zakaz-details" novalidate="novalidate">
+
+				<div class="input-row">
+					<label class="input-row__label input-row__label--checkbox">
+						Тип плательщика
+					</label>
+					<span class="input-row__input">
+						<span class="checkbox">
+							<label class="checkbox__control">
+								<input class="checkbox__input toggle-control" data-toggle-hide="type" data-toggle-show="type-fio" type="radio" name="type" value="fisik" checked="checked">
+								<span class="checkbox__label">
+									Физическое лицо
+								</span>
+							</label>
+						</span>
+						<span class="checkbox">
+							<label class="checkbox__control">
+								<input class="checkbox__input toggle-control" data-toggle-hide="type" data-toggle-show="type-ooo" type="radio" name="type" value="urik">
+								<span class="checkbox__label">
+									Юридическое лицо
+								</span>
+							</label>
+						</span>
+					</span>
+				</div>
+
+				<div class="input-row">
+					<label class="input-row__label input-row__label--checkbox">
+						Способ доставки
+					</label>
+					<span class="input-row__input">
+						<span class="checkbox">
+							<label class="checkbox__control">
+								<input class="checkbox__input toggle-control" data-toggle-hide="delivery" data-toggle-show="delivery-address" type="radio" name="delivery" value="address" checked="checked">
+								<span class="checkbox__label">
+									Доставка по адресу
+								</span>
+							</label>
+						</span>
+						<span class="checkbox">
+							<label class="checkbox__control">
+								<input class="checkbox__input toggle-control" data-toggle-hide="delivery" data-toggle-show="delivery-sklad" type="radio" name="delivery" value="sklad">
+								<span class="checkbox__label">
+									Самовывоз
+								</span>
+							</label>
+						</span>
+					</span>
+				</div>
+
+				<div class="input-row" data-toggle-dependent-hide="delivery" data-toggle-dependent-show="delivery-address">
+					<label for="CAddr" class="input-row__label">
+						Адрес доставки
+					</label>
+					<span class="input-row__input">
+						<input class="input" name="address" id="CAddr">
+					</span>
+				</div>
+
+				<div class="input-row" data-toggle-dependent-hide="delivery" data-toggle-dependent-show="delivery-address">
+					<label for="DDate" class="input-row__label">
+						Дата доставки
+					</label>
+					<span class="input-row__input">
+						<input class="input" name="date" id="DDate" type="date">
+					</span>
+				</div>
+
+				<div class="input-row" data-toggle-dependent-hide="delivery" data-toggle-dependent-show="delivery-address">
+					<label for="v_598" class="input-row__label input-row__label--checkbox">
+						Лифт
+					</label>
+					<span class="input-row__input">
+						<span class="checkbox">
+							<label class="checkbox__control">
+							<input class="checkbox__input" type="radio" name="lift" value="not">
+							<span class="checkbox__label">
+								Нет
+							</span>
+							</label>
+						</span>
+						<span class="checkbox">
+							<label class="checkbox__control">
+							<input class="checkbox__input" type="radio" name="lift" value="big">
+							<span class="checkbox__label">
+								Грузовой
+							</span>
+							</label>
+						</span>
+						<span class="checkbox">
+							<label class="checkbox__control">
+							<input class="checkbox__input" type="radio" name="lift" value="small">
+							<span class="checkbox__label">
+								Пассажирский
+							</span>
+							</label>
+						</span>
+					</span>
+				</div>
+
+				<div class="input-row input-row--required hide" data-toggle-dependent-hide="delivery" data-toggle-dependent-show="delivery-sklad">
+					<label class="input-row__label input-row__label--checkbox">
+						Пункт самовывоза
+					</label>
+					<span class="input-row__input" data-error="Пожалуйста, выберите пункт самовывоза">
+						<span class="checkbox">
+							<label class="checkbox__control">
+							<input class="checkbox__input" type="radio" name="sklad" value="Пятницкое шоссе" required="required">
+							<span class="checkbox__label">
+								<span class="cart__sklad">
+									<span class="cart__sklad-city">
+										Москва
+									</span>
+									<span class="cart__sklad-street">
+										Пятницкое шоссе д. 18, пв. 270
+									</span>
+									<span class="cart__sklad-time">
+										часы работы: Пн-Пт, с 10-00 до 18-00
+									</span>
+								</span>
+							</span>
+							</label>
+						</span>
+						<span class="checkbox">
+							<label class="checkbox__control">
+							<input class="checkbox__input" type="radio" name="sklad" value="ул. Дорожная" required="required">
+							<span class="checkbox__label">
+								<span class="cart__sklad">
+									<span class="cart__sklad-city">
+										Москва
+									</span>
+									<span class="cart__sklad-street">
+										ул. Дорожная, дом 1с3Б
+									</span>
+									<span class="cart__sklad-time">
+										часы работы: Пн-Пт, с 10-00 до 18-00
+									</span>
+								</span>
+							</span>
+							</label>
+						</span>
+						<span class="checkbox">
+							<label class="checkbox__control">
+							<input class="checkbox__input" type="radio" name="sklad" value="Свердловская набережная" required="required">
+							<span class="checkbox__label">
+								<span class="cart__sklad">
+									<span class="cart__sklad-city">
+										Санкт-Петербург
+									</span>
+									<span class="cart__sklad-street">
+										Свердловская набережная, д. 4
+									</span>
+									<span class="cart__sklad-time">
+										часы работы: Пн,Ср,Пт, с 10-00 до 18-00
+									</span>
+								</span>
+							</span>
+							</label>
+						</span>
+					</span>
+				</div>
+
+				<div class="input-row">
+					<label class="input-row__label input-row__label--checkbox">
+						Способ оплаты
+					</label>
+					<span class="input-row__input">
+						<span class="checkbox">
+							<label class="checkbox__control">
+							<input class="checkbox__input" type="radio" name="pay" value="cash">
+							<span class="checkbox__label">
+								Наличными
+							</span>
+							</label>
+						</span>
+							<span class="checkbox">
+								<label class="checkbox__control" data-toggle-dependent-hide="delivery" data-toggle-dependent-show="delivery-address">
+									<input class="checkbox__input" type="radio" name="pay" value="card">
+									<span class="checkbox__label">
+										Банковской картой
+									</span>
+								</label>
+							</span>
+							<span class="checkbox">
+								<label class="checkbox__control">
+									<input class="checkbox__input" type="radio" name="pay" value="account">
+									<span class="checkbox__label">
+										Безналичный расчет
+									</span>
+								</label>
+							</span>
+							<span class="checkbox">
+								<label class="checkbox__control" data-toggle-dependent-hide="delivery" data-toggle-dependent-show="delivery-address">
+									<input class="checkbox__input" type="radio" name="pay" value="online">
+									<span class="checkbox__label">
+										on-line (картой)
+									</span>
+								</label>
+							</span>
+					</span>
+				</div>
+
+				<div class="input-row">
+					<label for="email" class="input-row__label">
+						Ваш e-mail
+					</label>
+					<span class="input-row__input">
+						<input class="input" name="email" type="email" id="email">
+					</span>
+				</div>
+
+				<div class="input-row hide" data-toggle-dependent-hide="type" data-toggle-dependent-show="type-ooo">
+					<label for="OOO" class="input-row__label">
+						Название организации
+					</label>
+					<span class="input-row__input">
+						<input class="input" name="OOO" id="OOO">
+					</span>
+				</div>
+
+				<div class="input-row hide" data-toggle-dependent-hide="type" data-toggle-dependent-show="type-ooo">
+					<label for="OOOdesc" class="input-row__label">
+						Полные реквизиты организации
+					</label>
+					<span class="input-row__input">
+						<textarea class="input" name="OOOdesc" id="OOOdesc" style="height: 200px"></textarea>
+					</span>
+				</div>
+
+				<div class="input-row">
+					<label for="info" class="input-row__label">
+						Дополнительная информация
+					</label>
+					<span class="input-row__input">
+						<textarea class="input" name="info" id="info"></textarea>
+					</span>
+				</div>
+
+				<div class="form__texterror"></div>
+
+				<button class="btn cart__submit form__submit">
+					Отправить
+				</button>
+
+			</form>
+
+			<script>
+
+				// переключение с зависимыми контролами
+
+				(function(controls){
+
+					Array.prototype.forEach.call(controls, function(el) {
+
+						var hide = el.getAttribute('data-toggle-hide'),
+							show = el.getAttribute('data-toggle-show');
+
+						el.addEventListener('change', function() {
+
+							Array.prototype.forEach.call(document.querySelectorAll('[data-toggle-dependent-hide="'+hide+'"]'), function(el) {
+
+								el.classList.add('hide');
+
+							});
+
+							Array.prototype.forEach.call(document.querySelectorAll('[data-toggle-dependent-show="'+show+'"]'), function(el) {
+
+								el.classList.remove('hide');
+
+							});
+
+						});
+
+					});
+
+				})(document.querySelectorAll('.toggle-control'));
+
+			</script>
+
+		</div>
+
+	</article>
+
+{% endblock %}

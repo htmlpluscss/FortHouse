@@ -12,6 +12,377 @@
 				{{ title }}
 			</h1>
 
+			<form action="/zakaz/" method="post" class="cart">
+
+				<div class="cart__list">
+
+					<table>
+
+						<thead class="hidden-md">
+
+							<tr class="cart__row cart__row--head">
+								<td class="cart__col-1"></td>
+								<td class="cart__col-2">Наименование</td>
+								<td class="cart__col-3">Количество</td>
+								<td class="cart__col-4">Цена, руб.</td>
+								<td class="cart__col-5">Сумма, руб.</td>
+								<td class="cart__col-6"></td>
+							</tr>
+
+						</thead>
+
+						<tbody>
+
+							<tr class="cart__row cart__item">
+								<td class="cart__col-1">
+									<a href="/" target="_blank">
+										<picture>
+											<source srcset="https://asko.htmlpluscss.site/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
+											<source srcset="https://asko.htmlpluscss.site/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
+											<img src="/img/product/img@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</td>
+								<td class="cart__col-2">
+									<a class="link" href="/" target="_blank">
+										Отдельностоящая стиральная машина Asko Эксклюзивная коллекция ASKO x ALENA AKHMADULLINA: 4 единиц техники (сушильный шкаф, стиральная и сушильная машина и Hidden Helpers)
+									</a>
+								</td>
+								<td class="cart__col-3" data-pref="Количество">
+									<span class="quantity">
+										<button class="no-js-hidden quantity__btn quantity__btn--down button" type="button">
+											уменьшить на одну штуку
+										</button>
+										<input type="tel" name="goods[364]" value="2" class="quantity__count input" maxlength="3">
+										<input type="hidden" value="364" class="quantity__id">
+										<input type="hidden" value="390000" class="quantity__price">
+										<button class="no-js-hidden quantity__btn quantity__btn--up button" type="button">
+											увеличить на одну штуку
+										</button>
+									</span>
+								</td>
+								<td class="cart__col-4" data-pref="Цена, руб.">
+									<div class="cart__item-price">
+										390 000
+									</div>
+								</td>
+								<td class="cart__col-5" data-pref="Сумма, руб.">
+									<div class="cart__item-price cart__item-price--total">
+										780 000
+									</div>
+								</td>
+								<td class="cart__col-6">
+									<button class="no-js-hidden cart__item-remove button" type="button">
+										Удалить
+									</button>
+								</td>
+							</tr>
+
+							<tr class="cart__row cart__item">
+								<td class="cart__col-1">
+									<a href="/" target="_blank">
+										<picture>
+											<source srcset="https://asko.htmlpluscss.site/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
+											<source srcset="https://asko.htmlpluscss.site/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
+											<img src="/img/product/img@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</td>
+								<td class="cart__col-2">
+									<a class="link" href="/" target="_blank">
+										Варочная стеклокерамическая панель HiLight Asko HC1643G
+									</a>
+								</td>
+								<td class="cart__col-3" data-pref="Количество">
+									<span class="quantity">
+
+										<button class="no-js-hidden quantity__btn quantity__btn--down button" type="button">
+											уменьшить на одну штуку
+										</button>
+
+										<input type="tel" name="goods[141]" value="1" class="quantity__count input" maxlength="3">
+
+										<input type="hidden" value="141" class="quantity__id">
+										<input type="hidden" value="29900" class="quantity__price">
+
+										<button class="no-js-hidden quantity__btn quantity__btn--up button" type="button">
+											увеличить на одну штуку
+										</button>
+
+									</span>
+								</td>
+								<td class="cart__col-4" data-pref="Цена, руб.">
+									<div class="cart__item-price">
+										29 900
+									</div>
+								</td>
+								<td class="cart__col-5" data-pref="Сумма, руб.">
+									<div class="cart__item-price cart__item-price--total">
+										29 900
+									</div>
+								</td>
+								<td class="cart__col-6">
+									<button class="no-js-hidden cart__item-remove button" type="button">
+										Удалить
+									</button>
+								</td>
+							</tr>
+
+						</tbody>
+
+					</table>
+
+				</div>
+
+				<div class="cart__order cart__order-create">
+
+					<div class="cart__order-create-left">
+
+						<div class="input-row input-row--required">
+							<label for="CName" class="input-row__label">
+								Ваше ФИО
+							</label>
+							<span class="input-row__input" data-error="Пожалуйста, укажите Ваше имя">
+								<input class="input" required="required" name="client[Name]" id="CName">
+							</span>
+						</div>
+
+						<div class="input-row input-row--required">
+							<label for="CPhone" class="input-row__label">
+								Ваш Телефон
+							</label>
+							<span class="input-row__input" data-error="Пожалуйста, укажите контактный телефон">
+								<input class="input" required="required" name="client[Phone]" type="tel" id="CPhone">
+							</span>
+						</div>
+
+						<div class="input-row input-row--rules">
+
+							<div class="checkbox">
+
+								<label class="checkbox__control" data-error="Пожалуйста, озакомтесь с Публичной офертой и отметьте чекбокс">
+
+									<input class="checkbox__input" type="checkbox" required="required">
+
+									<span class="checkbox__label">
+										Я прочитал(а) и согласен(а) с правилами <a href="/oferta/" target="_blank" class="link">Публичной оферты</a>
+									</span>
+
+								</label>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="cart__order-create-right">
+
+						<div class="cart__total-wrap">
+							<span class="cart__total-pref">
+								Итого:
+							</span>
+							<span class="cart__total">
+								809 900
+							</span>
+							<span class="cart__total-suf rub">₽</span>
+						</div>
+
+						<button class="btn form__submit cart__submit">
+							Оформить заказ
+						</button>
+
+					</div>
+
+				</div>
+
+			</form>
+
+			<script>
+
+				(function(cart){
+
+					var quantity = cart.querySelectorAll('.quantity'),
+						totalText = cart.querySelector('.cart__total');
+
+					function result() {
+
+						var s = 0,
+							items = cart.querySelectorAll('.cart__item');
+
+						Array.prototype.forEach.call(items, function(el){
+
+							var count = parseInt(el.querySelector('.quantity__count').value),
+								price = parseInt(el.querySelector('.quantity__price').value);
+
+							if(isNaN(count)) {
+
+								count = 1;
+								el.querySelector('.quantity__count').value = 1;
+
+							}
+
+							el.querySelector('.cart__item-price--total').textContent = window.sepNumber(count * price);
+
+							s += count * price;
+
+						});
+
+					// total sum
+						totalText.textContent = window.sepNumber(s);
+
+					// в шапке
+
+						[...document.querySelectorAll('.js-set-cart-counter')].forEach( el => el.setAttribute('data-counter', result.totalCart) );
+
+					// hide form empty
+
+						if(s === 0) {
+
+							form.classList.add('cart__list--hide');
+
+						}
+
+						setPurchase();
+
+						navigator.sendBeacon('order.php', 'mode=save');
+
+					}
+
+					function setPurchase() {
+
+						console.log('start проверяем текущий: '+ Cookies.get('purchase'));
+
+						var purchaseUpdate = '{',
+							quantity = form.querySelectorAll('.quantity');
+
+						if(!quantity.length) {
+
+							Cookies.set('purchase', '');
+							console.log('все удалил из корзины: '+Cookies.get('purchase'));
+							return;
+
+						}
+
+						Array.prototype.forEach.call(quantity, function(el){
+
+							var id = el.querySelector('.quantity__id').value,
+								count = el.querySelector('.quantity__count').value;
+
+							purchaseUpdate += '"' + id + '":' + count + ',';
+
+						});
+
+						purchaseUpdate = purchaseUpdate.slice(0,-1);
+						purchaseUpdate += '}';
+						console.log('обновляем: '+purchaseUpdate);
+						Cookies.set('purchase', purchaseUpdate);
+
+						console.log('finish проверяем текущий: '+ Cookies.get('purchase'));
+
+					}
+
+					if(quantity.length) {
+
+				// quantity
+						Array.prototype.forEach.call(quantity, function(el){
+
+							var up = el.querySelector('.quantity__btn--up[type="button"]'),
+								down = el.querySelector('.quantity__btn--down[type="button"]'),
+								count = el.querySelector('.quantity__count'),
+								value = null;
+
+							up.addEventListener('click',function(){
+
+								value = parseInt(count.value) + 1;
+
+								count.value = value;
+
+								result();
+
+							});
+
+							down.addEventListener('click',function(){
+
+								value = parseInt(count.value) - 1;
+
+								if(value < 1) {
+
+									value = 1;
+
+								}
+
+								count.value = value;
+
+								result();
+
+							});
+
+							count.addEventListener('blur',function(){
+
+								result();
+
+							});
+
+							count.addEventListener('focus',function(){
+
+								setTimeout(function(){
+
+									count.setSelectionRange(0,9);
+
+								},100)
+
+							});
+
+							count.addEventListener('keyup',function(){
+
+								var val = this.value.replace(/[\D]/g, '');
+
+								this.value = val;
+
+								result();
+
+							});
+
+						});
+
+				// remove
+						Array.prototype.forEach.call(cart.querySelectorAll('.cart__item-remove'), function(el){
+
+							var item = el.closest('.cart__item');
+
+							el.addEventListener('click', function(){
+
+								item.style.height = item.clientHeight + 'px';
+
+								item.addEventListener(window.cssAnimation('transition'), function(){
+
+									if(item.clientHeight > 0) {
+
+										item.style.height = 0;
+
+									}
+									else {
+
+										item.remove();
+										result();
+
+									}
+
+								});
+
+								item.classList.add('cart__item--remove');
+
+							});
+
+						});
+
+					}
+
+				})(document.querySelector('.cart'));
+
+			</script>
+
 		</div>
 
 	</article>

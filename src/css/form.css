@@ -329,9 +329,9 @@ gap: 12px;
 	&__input {
 
 		position: absolute;
-		width: 16px;
-		height: 16px;
-		top: 4px;
+		width: 24px;
+		height: 24px;
+		top: 0;
 		left: 0;
 		opacity: 0.001;
 		z-index: -1;
