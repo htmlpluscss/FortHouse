@@ -6,6 +6,8 @@
 
 	}
 
+	document.body.append(modal);
+
 	const items = modal.querySelectorAll('.modal__item'),
 		  btns = document.querySelectorAll('[data-modal]'),
 		  wrapper = document.querySelector('.wrapper');
@@ -92,4 +94,4 @@
 
 	modal.addEventListener('modalShow', event => modalShow(event.detail.selector));
 
-})(document.querySelector('.modal'));
+})(document.querySelector('#modal'));

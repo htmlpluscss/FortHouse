@@ -35,7 +35,7 @@
 
 		[...links].forEach( link => {
 
-			const slide = '<div class="swiper-slide"><img src="' + link.href + '"></div>';
+			const slide = '<div class="swiper-slide"><img src="' + link.href + '" loadind="lazy"></div>';
 
 			appendSlide.push(slide);
 
@@ -88,3 +88,68 @@
 	}
 
 })(document.querySelector('.product-gallery'));
+
+// mini gallery
+
+( gallery => {
+
+	if( gallery ) {
+
+		const modalBox = document.querySelector('#modal-gallery'),
+			  appendSlide = [],
+			  items = [...gallery.querySelectorAll('.mini-gallery__item')],
+			  links = [...gallery.querySelectorAll('.mini-gallery__link')];
+
+		links.forEach( link => {
+
+			const slide = '<div class="swiper-slide"><img src="' + link.href + '" loadind="lazy"></div>';
+
+			appendSlide.push(slide);
+
+		});
+
+		console.log(appendSlide);
+
+		if ( modalBox.swiper ) {
+
+			modalBox.swiper.appendSlide(appendSlide);
+
+		} else {
+
+			modalBox.querySelector('.swiper-wrapper').innerHTML = appendSlide.join('');
+
+		}
+
+		gallery.addEventListener('click', event => {
+
+			const item = event.target.closest('.mini-gallery__item');
+
+			if ( item ) {
+
+				event.preventDefault();
+
+				const eventModalShow = new CustomEvent("modalShow", {
+					detail: {
+						selector: "gallery"
+					}
+				});
+
+				window.modal.dispatchEvent(eventModalShow);
+
+				const index = items.findIndex( el => el === item );
+
+				const eventSetSlides = new CustomEvent("setSlides", {
+					detail: {
+						index
+					}
+				});
+
+				modalBox.dispatchEvent(eventSetSlides);
+
+			}
+
+		});
+
+	}
+
+})(document.querySelector('.mini-gallery'));

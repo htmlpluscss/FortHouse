@@ -30,7 +30,7 @@
 
 				}
 
-				modalForm.elements.id.value = form.elements.id.value;
+				modalForm.elements.ID.value = form.elements.ID.value;
 				modalForm.querySelector('.modal-product__name').innerHTML = name;
 				modalForm.querySelector('.modal-product__photo').innerHTML = `<img src="${form.elements.img.value}" width="90" height="90" alt="${form.elements.name.value}">`;
 
