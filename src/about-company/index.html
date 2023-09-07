@@ -93,6 +93,31 @@
 				<b class="color-orange">Эл.почта:</b> <a href="mailto:forthouse@yandex.ru">forthouse@yandex.ru</a>
 			</p>
 
+			<ul class="mini-gallery">
+
+{% for i in range(1,17) %}
+
+				<li class="mini-gallery__item">
+
+					<a class="mini-gallery__link" href="/img/company/{{ i }}.jpg" target="_blank">
+
+						<picture>
+
+							<source srcset="/img/company/{{ i }}--128x128.webp 1x, /img/company/{{ i }}--256x256.webp 2x" type="image/webp">
+							<source srcset="/img/company/{{ i }}--128x128.jpg 1x, /img/company/{{ i }}--256x256.jpg 2x">
+
+							<img src="/img/company/{{ i }}--128x128.jpg" width="128" height="128" loading="lazy" alt="Шоу-рум FortHouse.ru">
+
+						</picture>
+
+					</a>
+
+				</li>
+
+{% endfor %}
+
+			</ul>
+
 		</div>
 
 	</article>
