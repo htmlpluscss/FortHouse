@@ -50,13 +50,13 @@
 								</td>
 								<td class="cart__col-3" data-pref="Количество">
 									<span class="quantity">
-										<button class="no-js-hidden quantity__btn quantity__btn--down button" type="button">
+										<button class="quantity__btn quantity__btn--down button" type="button">
 											уменьшить на одну штуку
 										</button>
 										<input type="tel" name="goods[364]" value="2" class="quantity__count input" maxlength="3">
 										<input type="hidden" value="364" class="quantity__id">
 										<input type="hidden" value="390000" class="quantity__price">
-										<button class="no-js-hidden quantity__btn quantity__btn--up button" type="button">
+										<button class="quantity__btn quantity__btn--up button" type="button">
 											увеличить на одну штуку
 										</button>
 									</span>
@@ -72,7 +72,7 @@
 									</div>
 								</td>
 								<td class="cart__col-6">
-									<button class="no-js-hidden cart__item-remove button" type="button">
+									<button class="cart__item-remove button" type="button">
 										Удалить
 									</button>
 								</td>
@@ -96,7 +96,7 @@
 								<td class="cart__col-3" data-pref="Количество">
 									<span class="quantity">
 
-										<button class="no-js-hidden quantity__btn quantity__btn--down button" type="button">
+										<button class="quantity__btn quantity__btn--down button" type="button">
 											уменьшить на одну штуку
 										</button>
 
@@ -105,7 +105,7 @@
 										<input type="hidden" value="141" class="quantity__id">
 										<input type="hidden" value="29900" class="quantity__price">
 
-										<button class="no-js-hidden quantity__btn quantity__btn--up button" type="button">
+										<button class="quantity__btn quantity__btn--up button" type="button">
 											увеличить на одну штуку
 										</button>
 
@@ -122,7 +122,7 @@
 									</div>
 								</td>
 								<td class="cart__col-6">
-									<button class="no-js-hidden cart__item-remove button" type="button">
+									<button class="cart__item-remove button" type="button">
 										Удалить
 									</button>
 								</td>
@@ -233,13 +233,13 @@
 
 					// в шапке
 
-						[...document.querySelectorAll('.js-set-cart-counter')].forEach( el => el.setAttribute('data-counter', result.totalCart) );
+						[...document.querySelectorAll('.js-set-cart-counter')].forEach( el => el.setAttribute('data-counter', items.length) );
 
 					// hide form empty
 
 						if(s === 0) {
 
-							form.classList.add('cart__list--hide');
+							cart.querySelector('.cart__list').classList.add('cart__list--hide');
 
 						}
 
@@ -254,7 +254,7 @@
 						console.log('start проверяем текущий: '+ Cookies.get('purchase'));
 
 						var purchaseUpdate = '{',
-							quantity = form.querySelectorAll('.quantity');
+							quantity = cart.querySelectorAll('.quantity');
 
 						if(!quantity.length) {
 
@@ -353,23 +353,12 @@
 
 							el.addEventListener('click', function(){
 
-								item.style.height = item.clientHeight + 'px';
+								setTimeout( ()=> {
 
-								item.addEventListener(window.cssAnimation('transition'), function(){
+									item.remove();
+									result();
 
-									if(item.clientHeight > 0) {
-
-										item.style.height = 0;
-
-									}
-									else {
-
-										item.remove();
-										result();
-
-									}
-
-								});
+								},1000);
 
 								item.classList.add('cart__item--remove');
 

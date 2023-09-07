@@ -14,7 +14,7 @@
 				Доставка и оплата
 			</h1>
 
-			<form action="/zakaz/" method="post" class="cart__order cart__order-details border form form-zakaz-details" novalidate="novalidate">
+			<form action="/zakaz/" method="post" class="cart__order cart__order-details border" novalidate="novalidate">
 
 				<div class="input-row">
 					<label class="input-row__label input-row__label--checkbox">
@@ -290,6 +290,14 @@
 					});
 
 				})(document.querySelectorAll('.toggle-control'));
+
+				// DDate дата +1 день
+
+				const minDate = new Date();
+
+				minDate.setDate( minDate.getDate() + 1 );
+
+				window.DDate.value = minDate.getFullYear() + '-' + ( (minDate.getMonth() + 1).toString().padStart(2, '0') ) + '-' + minDate.getDate().toString().padStart(2, '0');
 
 			</script>
 
