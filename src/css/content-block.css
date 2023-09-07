@@ -81,7 +81,7 @@
 
 	}
 
-	ul {
+	ul:not([class]) {
 
 		li {
 
@@ -192,6 +192,30 @@
 
 		margin-top: var(--gap);
 		transition: var(--transitionDefault);
+
+	}
+
+}
+
+.mini-gallery {
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(128px,1fr));
+	gap: var(--gap);
+
+	gap: 10px;
+
+	&__item {
+
+		position: relative;
+
+		img {
+
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+
+		}
 
 	}
 
