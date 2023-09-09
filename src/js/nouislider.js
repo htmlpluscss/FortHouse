@@ -51,10 +51,26 @@
 
 			});
 
+			const setInputName = values => {
+
+				if ( values[0] === min && values[1] === max ) {
+
+					minInputName.value = 'auto';
+					maxInputName.value = 'auto';
+
+				}
+				else {
+
+					minInputName.value = values[0];
+					maxInputName.value = values[1];
+
+				}
+
+			}
+
 			track.noUiSlider.on('end', values => {
 
-				minInputName.value = values[0];
-				maxInputName.value = values[1];
+				setInputName(values);
 
 				form.dispatchEvent(new CustomEvent('change', {
 					detail: {
@@ -64,12 +80,7 @@
 
 			});
 
-			track.noUiSlider.on('update', values => {
-
-				minInputName.value = values[0];
-				maxInputName.value = values[1];
-
-			});
+			track.noUiSlider.on('update', values => setInputName(values));
 
 			form.addEventListener("reset", () => {
 

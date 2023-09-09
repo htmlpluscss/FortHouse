@@ -7,7 +7,9 @@
 	}
 
 	let windowScroll = window.pageYOffset,
-		barResultTotalPositionTop = 0;
+		barResultTotalPositionTop = 0,
+		page = parseInt( filter.elements.page.value ),
+		limit = parseInt( filter.elements.limit.value );
 
 	const resultBox = document.querySelector('.catalog__list'),
 		  barResultTotal = filter.querySelector('.filter__show-result'),
@@ -54,17 +56,34 @@
 
 		barResultTotal.classList.add('is-show');
 
+		page = ajaxBtn.disabled ? page + 1 : 0;
+
+		filter.elements.page.value = page * limit;
+
 		const formData = new FormData(filter);
 
-		const queryString = new URLSearchParams(formData).toString();
+		[...formData].forEach( el => {
 
-		history.pushState(undefined, '', '?' + queryString);
+			if ( el[1] === 'auto' ) {
+
+				formData.delete(el[0]);
+
+			}
+
+		});
+
+		let queryString = new URLSearchParams(formData);
+
+		queryString.delete('ajax');
+		queryString.delete('limit');
+		queryString.delete('total');
+
+//		history.pushState(undefined, '', window.location.href.split('?')[0] + '?' + queryString.toString());
+		history.pushState(undefined, '', 'catalogue.php?' + queryString.toString());
 
 		// источник форма может быть только при клике по кнопке
 
 		if ( target === filter ) {
-
-			filter.elements.page.value = ajaxBtn.disabled === true ? parseInt( filter.elements.page.value ) + 1 : 1;
 
 			resultBox.insertAdjacentElement('afterbegin', loadingLayer);
 
@@ -88,12 +107,6 @@
 
 					resultBox.insertAdjacentHTML('beforeend', html);
 
-					if ( resultBox.querySelectorAll('.catalog__item').length === parseInt(filter.elements.total.value) ) {
-
-						ajaxBtn.classList.add('is-hide');
-
-					}
-
 					if( windowScroll !== window.pageYOffset ) {
 
 						window.scrollTo(0,windowScroll);
@@ -108,22 +121,25 @@
 
 				}
 
+				ajaxBtn.classList.toggle('is-hide', resultBox.querySelectorAll('.catalog__item').length === parseInt(filter.elements.total.value));
+
 			});
 
 		} else {
 
-			formData.append('count', 'on');
+			formData.append('ajaxFilter',true);
+			formData.delete('ajax');
 
 			fetch(filter.getAttribute('action'), {
 				method: 'POST',
 				body: formData
 			})
-			.then(response => response.text())
-			.then(html => {
+			.then(response => response.json())
+			.then(data => {
 
-				[...count].forEach( el => el.textContent = html );
+				[...count].forEach( el => el.textContent = data.count );
 
-				filter.elements.total.value = html;
+				filter.elements.total.value = data.count;
 
 				barResultTotal.style.top = barResultTotalPositionTop + 'px';
 
