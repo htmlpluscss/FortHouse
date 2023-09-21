@@ -1,0 +1,89 @@
+{% set title = "Холодильник Hitachi R-BG410 PU6X GPW" %}
+
+{% set description = "Двухкамерный холодильник Hitachi R-BG410 PU6X GBE - охлаждение и заморозка в лучшем виде. Отдельностоящий холодильник-морозильник Hitachi R-BG410 PU6X GBE отличается множеством удобных функций и способствует поддержанию здорового и современного образа жизни. В холодильной камере созданы идеальные условия для бережного хранения продуктов." %}
+
+{% set breadcrumbs = ["Главная", "Бытовая техника", "Холодильники", "R-BG410 PU6X GPW"] %}
+
+{% set ogType = "article" %}
+{% set urlPage = "product" %}
+{% set ogImage = "img/product/880x880/r-bg410.jpg" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article id="product">
+
+{% include "product/schema.html" %}
+
+		<div class="product">
+
+			<div class="center">
+
+				<div class="product__box">
+
+					<h1 class="product__title h1">
+						{{ title }}
+					</h1>
+
+{% include "product/data.html" %}
+
+{% include "product/desc.html" %}
+
+{% include "product/4/gallery.html" %}
+
+{% include "product/label.html" %}
+
+{% include "product/buy.html" %}
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="center">
+
+			<ul class="product-ancor">
+
+				<li>
+					<a class="btn btn--outline" href="#description">
+						О товаре
+					</a>
+				</li>
+
+				<li>
+					<a class="btn btn--outline" href="#technologies">
+						Технологии
+					</a>
+				</li>
+
+				<li>
+					<a class="btn btn--outline" href="#brand">
+						О бренде
+					</a>
+				</li>
+
+				<li>
+					<a class="btn btn--outline" href="#delivery">
+						Доставка и подключение
+					</a>
+				</li>
+
+				<li>
+					<a class="btn btn--outline" href="#warranty">
+						Гарантия
+					</a>
+				</li>
+
+			</ul>
+
+{% include "product/details.html" %}
+
+		</div>
+
+{% include "product/scroll.html" %}
+
+	</article>
+
+{% endblock %}

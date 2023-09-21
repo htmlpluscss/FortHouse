@@ -111,18 +111,10 @@
 
 		}
 
-		&-prev {
-
-		}
-
-		&-next {
-
-		}
-
 		&-disabled {
 
 			opacity: 0;
-			pointer-events: none;
+			cursor: default;
 
 		}
 
@@ -222,6 +214,18 @@
 			}
 
 		}
+
+	}
+
+	.swiper-vertical .swiper-wrapper {
+
+		flex-direction: column;
+
+	}
+
+	.swiper-pointer-events.swiper-vertical {
+
+		touch-action: pan-x;
 
 	}
 

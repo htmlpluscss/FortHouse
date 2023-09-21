@@ -6,7 +6,7 @@
 
 	}
 
-	[...swiperContainer].forEach( swipe => {
+	swiperContainer.forEach( swipe => {
 
 		let mySwipe = null,
 			toggleSwipe = null,
@@ -23,6 +23,7 @@
 			  brand = swipe.classList.contains('swiper-container--brand'),
 			  preview = swipe.classList.contains('swiper-container--preview'),
 			  gallery = swipe.classList.contains('swiper-container--gallery'),
+			  vertical = swipe.classList.contains('swiper-container--vertical'),
 			  galleryModal = swipe.classList.contains('swiper-container--gallery-modal');
 
 		swipeNav.className = 'swiper-pagination';
@@ -38,10 +39,10 @@
 		swipePrev.innerHTML = '<svg width="36" height="36" viewBox="0 0 36 36"><path d="m13.5 16.5 6.9-6.9a1.49 1.49 0 1 1 2.1 2.1l-5.85 5.85 5.85 5.85a1.48 1.48 0 0 1-2.1 2.1l-6.9-6.88a1.5 1.5 0 0 1 0-2.13Z"/></svg>';
 		swipeNext.innerHTML = '<svg width="36" height="36" viewBox="0 0 36 36">><path d="m22.5 16.5-6.9-6.9a1.49 1.49 0 1 0-2.1 2.1l5.85 5.85-5.85 5.85a1.48 1.48 0 0 0 2.1 2.1l6.9-6.88a1.5 1.5 0 0 0 0-2.13Z"/></svg>';
 
-		swipeBtns.appendChild(swipePrev);
-		swipeBtns.appendChild(swipeNext);
-		swipeControls.appendChild(swipeBtns);
-		swipeControls.appendChild(swipeNav);
+		swipeBtns.append(swipePrev);
+		swipeBtns.append(swipeNext);
+		swipeControls.append(swipeBtns);
+		swipeControls.append(swipeNav);
 
 		resetSwipe = () => {
 
@@ -70,7 +71,7 @@
 
 				toggleSwipe = false;
 				swipe.closest('.billboard').classList.add('swiper-container-style');
-				swipe.parentNode.appendChild(swipeControls);
+				swipe.parentNode.append(swipeControls);
 
 				new Swiper(swipe, {
 					loop: true,
@@ -104,7 +105,7 @@
 				toggleSwipe = false;
 
 				swipe.parentNode.classList.add('swiper-container-style');
-				swipe.parentNode.appendChild(swipeControls);
+				swipe.parentNode.append(swipeControls);
 
 				new Swiper(swipe, {
 					loop: true,
@@ -149,7 +150,7 @@
 				toggleSwipe = false;
 
 				swipe.parentNode.classList.add('swiper-container-style');
-				swipe.parentNode.appendChild(swipeControls);
+				swipe.parentNode.append(swipeControls);
 
 				new Swiper(swipe, {
 					loop: true,
@@ -181,10 +182,23 @@
 
 		if (gallery) {
 
+			const vertical = document.querySelector('.product-gallery__preview .swiper-container'),
+				  verticalItems = [...document.querySelectorAll('.product-gallery__preview-item')];
+
+			let thumbs = {
+				swiper: null
+			};
+
+			if ( vertical ) {
+
+				thumbs.swiper = vertical.swiper;
+
+			}
+
 			toggleSwipe = () => {
 
 				swipe.parentNode.classList.add('swiper-container-style');
-				swipe.appendChild(swipeNav);
+				swipe.append(swipeNav);
 
 				mySwipe = new Swiper(swipe, {
 					loop: true,
@@ -192,15 +206,171 @@
 						nextEl: swipeNext,
 						prevEl: swipePrev
 					},
+					thumbs,
 					pagination: {
 						el: swipeNav,
 						clickable: true,
 						bulletClass: 'button',
 						bulletActiveClass: 'is-active'
+					},
+					on: {
+
+						slideNextTransitionStart() {
+
+							if ( vertical ) {
+
+								if ( vertical.swiper ) {
+
+									verticalItems.forEach( (item,index) => {
+
+										if ( index === mySwipe.realIndex ) {
+
+											item.classList.add('is-active');
+
+											if ( item.classList.contains('swiper-slide-visible') === false ) {
+
+												if ( vertical.swiper.realIndex < swipe.swiper.realIndex ) {
+
+													vertical.swiper.slideNext();
+
+												}
+												else {
+
+													vertical.swiper.slideToLoop(mySwipe.realIndex);
+
+												}
+
+											}
+
+										}
+										else {
+
+											item.classList.remove('is-active');
+
+										}
+
+									});
+
+								}
+
+							}
+							else if ( swipe.swiper ) {
+
+								verticalItems.forEach( (item,index) => item.classList.toggle('is-active', index === swipe.swiper.realIndex));
+
+							}
+
+						},
+
+						slidePrevTransitionStart() {
+
+							if ( vertical ) {
+
+								if ( vertical.swiper ) {
+
+									verticalItems.forEach( (item,index) => {
+
+										if ( index === mySwipe.realIndex ) {
+
+											item.classList.add('is-active');
+
+											if ( item.classList.contains('swiper-slide-visible') === false ) {
+
+												if ( vertical.swiper.realIndex > swipe.swiper.realIndex ) {
+
+													vertical.swiper.slidePrev();
+
+												}
+												else {
+
+													vertical.swiper.slideToLoop(mySwipe.realIndex);
+
+												}
+
+											}
+
+										}
+										else {
+
+											item.classList.remove('is-active');
+
+										}
+
+									});
+
+								}
+
+							}
+							else if ( swipe.swiper ) {
+
+								verticalItems.forEach( (item,index) => item.classList.toggle('is-active', index === swipe.swiper.realIndex));
+
+							}
+
+						}
+
+					}
+
+				});
+
+			}
+
+		}
+
+		if (vertical) {
+
+			const previewMore = document.querySelector('.product-gallery__preview-more');
+
+			toggleSwipe = () => {
+
+				toggleSwipe = false;
+
+				swipeControls.remove();
+
+				swipe.parentNode.classList.add('swiper-container-style');
+
+				new Swiper(swipe, {
+					direction: "vertical",
+					slidesPerView: 4,
+					watchSlidesProgress: true,
+					on: {
+						slideChange() {
+
+							if ( previewMore && swipe.swiper ) {
+
+								let moreLength = 0,
+									realIndex = swipe.swiper.realIndex;
+
+								[...items].forEach( (item,index) => {
+
+									if ( index > realIndex && item.classList.contains('swiper-slide-visible') === false ) {
+
+										moreLength++;
+
+									}
+
+								});
+
+								previewMore.querySelector('.product-gallery__preview-more-index').textContent = moreLength;
+
+							}
+
+						}
 					}
 				});
 
 			}
+
+			if (previewMore) {
+
+				previewMore.querySelector('.btn').addEventListener('click', ()=> {
+
+					swipe.swiper.slideToLoop(swipe.swiper.realIndex+4);
+
+				});
+
+			}
+
 
 		}
 
@@ -246,7 +416,7 @@
 
 		swipe.addEventListener('swiperJsLoad', () => {
 
-			swipe.appendChild(swipeControls);
+			swipe.append(swipeControls);
 
 			// eager
 			[...swipe.querySelectorAll('[loading="lazy"]')].forEach( img => img.setAttribute('loading','eager') );
@@ -279,7 +449,7 @@
 
 						if (window.Swiper) {
 
-							[...swiperContainer].forEach( swipe => swipe.dispatchEvent(new Event("swiperResize")) );
+							swiperContainer.forEach( swipe => swipe.dispatchEvent(new Event("swiperResize")) );
 
 						}
 
@@ -297,8 +467,8 @@
 
 	script.src = '/js/swiper.min.js';
 
-	script.onload = () => [...swiperContainer].forEach( swipe => swipe.dispatchEvent(new Event("swiperJsLoad")) );
+	script.onload = () => swiperContainer.forEach( swipe => swipe.dispatchEvent(new Event("swiperJsLoad")) );
 
-	setTimeout( () => document.head.appendChild(script), localStorage.getItem('fastLoadScript') ? 0 : 10000);
+	setTimeout( () => document.head.append(script), localStorage.getItem('fastLoadScript') ? 0 : 10000);
 
-})(document.querySelectorAll('.swiper-container'));
+})([...document.querySelectorAll('.swiper-container')]);

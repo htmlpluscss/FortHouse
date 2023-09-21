@@ -2,153 +2,79 @@
 
 				<div class="product-gallery">
 
-					<div class="swiper-container swiper-container--gallery">
+					<div class="product-gallery__main">
 
-						<ul class="product-gallery__list swiper-wrapper">
+						<div class="swiper-container swiper-container--gallery">
 
-							<li class="product-gallery__item swiper-slide">
+							<ul class="product-gallery__list swiper-wrapper">
 
-								<a class="product-gallery__link" href="/img/product/880x880/r-bg410.jpg" target="_blank">
+{% for i in range(0,10) %}
 
-									<picture>
+								<li class="product-gallery__item swiper-slide">
 
-										<source srcset="/img/product/440x440/r-bg410.webp 1x, /img/product/880x880/r-bg410.webp 2x" type="image/webp">
-										<source srcset="/img/product/440x440/r-bg410.jpg 1x, /img/product/880x880/r-bg410.jpg 2x">
+									<a class="product-gallery__link" href="/img/product/880x880/r-bg410.jpg" target="_blank">
 
-										<img src="/img/product/440x440/r-bg410.jpg" width="440" height="440" alt="{{ title }}" loading="lazy">
+										<picture>
 
-									</picture>
+											<source srcset="/img/product/440x440/r-bg410.webp 1x, /img/product/880x880/r-bg410.webp 2x" type="image/webp">
+											<source srcset="/img/product/440x440/r-bg410.jpg 1x, /img/product/880x880/r-bg410.jpg 2x">
 
-								</a>
+											<img src="/img/product/440x440/r-bg410.jpg" width="440" height="440" alt="{{ title }}" loading="lazy">
 
-							</li>
+										</picture>
 
-							<li class="product-gallery__item swiper-slide">
+									</a>
 
-								<a class="product-gallery__link" href="/img/product/880x880/r-bg410.jpg" target="_blank">
+								</li>
 
-									<picture>
+{% endfor %}
 
-										<source srcset="/img/product/440x440/r-bg410.webp 1x, /img/product/880x880/r-bg410.webp 2x" type="image/webp">
-										<source srcset="/img/product/440x440/r-bg410.jpg 1x, /img/product/880x880/r-bg410.jpg 2x">
+							</ul>
 
-										<img src="/img/product/440x440/r-bg410.jpg" width="440" height="440" alt="{{ title }}" loading="lazy">
-
-									</picture>
-
-								</a>
-
-							</li>
-
-							<li class="product-gallery__item swiper-slide">
-
-								<a class="product-gallery__link" href="/img/product/880x880/r-bg410.jpg" target="_blank">
-
-									<picture>
-
-										<source srcset="/img/product/440x440/r-bg410.webp 1x, /img/product/880x880/r-bg410.webp 2x" type="image/webp">
-										<source srcset="/img/product/440x440/r-bg410.jpg 1x, /img/product/880x880/r-bg410.jpg 2x">
-
-										<img src="/img/product/440x440/r-bg410.jpg" width="440" height="440" alt="{{ title }}" loading="lazy">
-
-									</picture>
-
-								</a>
-
-							</li>
-
-							<li class="product-gallery__item swiper-slide">
-
-								<a class="product-gallery__link" href="/img/product/880x880/r-bg410.jpg" target="_blank">
-
-									<picture>
-
-										<source srcset="/img/product/440x440/r-bg410.webp 1x, /img/product/880x880/r-bg410.webp 2x" type="image/webp">
-										<source srcset="/img/product/440x440/r-bg410.jpg 1x, /img/product/880x880/r-bg410.jpg 2x">
-
-										<img src="/img/product/440x440/r-bg410.jpg" width="440" height="440" alt="{{ title }}" loading="lazy">
-
-									</picture>
-
-								</a>
-
-							</li>
-
-						</ul>
+						</div>
 
 					</div>
 
-					<ul class="product-gallery__preview">
+					<div class="product-gallery__preview">
 
-						<li class="product-gallery__preview-item">
+						<div class="swiper-container swiper-container--vertical">
 
-							<a class="product-gallery__preview-link" href="/img/product/880x880/r-bg410.jpg" target="_blank">
+							<ul class="product-gallery__preview-list swiper-wrapper">
 
-								<picture>
+{% for i in range(0,10) %}
 
-									<source srcset="/img/product/90x90/r-bg410.webp 1x, /img/product/180x180/r-bg410.webp 2x" type="image/webp">
-									<source srcset="/img/product/90x90/r-bg410.jpg 1x, /img/product/180x180/r-bg410.jpg 2x">
+								<li class="product-gallery__preview-item swiper-slide{% if loop.first %} is-active{% endif %}">
 
-									<img src="/img/product/90x90/r-bg410.jpg" width="90" height="90" alt="{{ title }}" loading="lazy">
+									<a class="product-gallery__preview-link" href="/img/product/880x880/r-bg410.jpg" target="_blank">
 
-								</picture>
+										<picture>
 
-							</a>
+											<source srcset="/img/product/90x90/r-bg410.webp 1x, /img/product/180x180/r-bg410.webp 2x" type="image/webp">
+											<source srcset="/img/product/90x90/r-bg410.jpg 1x, /img/product/180x180/r-bg410.jpg 2x">
 
-						</li>
+											<img src="/img/product/90x90/r-bg410.jpg" width="90" height="90" alt="{{ title }}" loading="lazy">
 
-						<li class="product-gallery__preview-item">
+										</picture>
 
-							<a class="product-gallery__preview-link" href="/img/product/180x180/r-bg410.jpg" target="_blank">
+									</a>
 
-								<picture>
+								</li>
 
-									<source srcset="/img/product/90x90/r-bg410.webp 1x, /img/product/180x180/r-bg410.webp 2x" type="image/webp">
-									<source srcset="/img/product/90x90/r-bg410.jpg 1x, /img/product/180x180/r-bg410.jpg 2x">
+{% endfor %}
 
-									<img src="/img/product/90x90/r-bg410.jpg" width="90" height="90" alt="{{ title }}" loading="lazy">
+							</ul>
 
-								</picture>
+						</div>
 
-							</a>
+						<div class="product-gallery__preview-more">
 
-						</li>
+							<button class="btn btn--more" type="button">
+								Еще <span class="product-gallery__preview-more-index">6</span> фото
+							</button>
 
-						<li class="product-gallery__preview-item">
+						</div>
 
-							<a class="product-gallery__preview-link" href="/img/product/880x880/r-bg410.jpg" target="_blank">
-
-								<picture>
-
-									<source srcset="/img/product/90x90/r-bg410.webp 1x, /img/product/180x180/r-bg410.webp 2x" type="image/webp">
-									<source srcset="/img/product/90x90/r-bg410.jpg 1x, /img/product/180x180/r-bg410.jpg 2x">
-
-									<img src="/img/product/90x90/r-bg410.jpg" width="90" height="90" alt="{{ title }}" loading="lazy">
-
-								</picture>
-
-							</a>
-
-						</li>
-
-						<li class="product-gallery__preview-item">
-
-							<a class="product-gallery__preview-link" href="/img/product/180x180/r-bg410.jpg" target="_blank">
-
-								<picture>
-
-									<source srcset="/img/product/90x90/r-bg410.webp 1x, /img/product/180x180/r-bg410.webp 2x" type="image/webp">
-									<source srcset="/img/product/90x90/r-bg410.jpg 1x, /img/product/180x180/r-bg410.jpg 2x">
-
-									<img src="/img/product/90x90/r-bg410.jpg" width="90" height="90" alt="{{ title }}" loading="lazy">
-
-								</picture>
-
-							</a>
-
-						</li>
-
-					</ul>
+					</div>
 
 				</div>
 

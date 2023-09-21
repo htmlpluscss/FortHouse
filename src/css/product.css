@@ -7,7 +7,7 @@
 
 		display: grid;
 		gap: var(--gap);
-		grid-template-columns: 40px 440px 1fr;
+		grid-template-columns: 40px auto 1fr;
 		grid-template-rows: auto auto auto 1fr;
 
 		@media $mdWidth {
@@ -65,7 +65,7 @@
 	&__labels {
 
 		grid-row-start: 1;
-		grid-row-end: 3;
+		grid-row-end: -1;
 		grid-column-start: 1;
 		grid-column-end: 2;
 
@@ -91,7 +91,7 @@
 	&__gallery {
 
 		grid-row-start: 1;
-		grid-row-end: 5;
+		grid-row-end: -1;
 		grid-column-start: 2;
 		grid-column-end: 3;
 
@@ -551,9 +551,22 @@
 
 }
 
+			.swiper-slide-thumb-active {
+
+				opacity: .5
+
+			}
+
 .product-gallery {
 
 	position: relative;
+
+	@media $desktop {
+
+		display: flex;
+		gap: var(--gap);
+
+	}
 
 	@media $smWidth {
 
@@ -586,10 +599,9 @@
 
 	&__preview {
 
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		margin-top: var(--gap);
+		position: relative;
+		width: 100px;
+		flex-shrink: 0;
 
 		@media $mdWidth {
 
@@ -597,9 +609,65 @@
 
 		}
 
+		.swiper-container {
+
+			height: 440px;
+			overflow: hidden;
+
+		}
+
+		&-item {
+
+			height: 110px;
+			padding: 5px;
+
+			&.is-active::after {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 100px;
+				content: '';
+				opacity: .6;
+				border-radius: 3px;
+				border: solid 1px var(--text);
+
+			}
+
+		}
+
+		&-more {
+
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 100%;
+			display: flex;
+			justify-content: center;
+
+			.btn {
+
+				display: block;
+
+			}
+
+		}
+
 		img {
 
 			object-fit: contain;
+
+		}
+
+	}
+
+	&__main {
+
+		@media $desktop {
+
+			width: 440px;
+			flex-shrink: 0;
 
 		}
 
