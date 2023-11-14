@@ -56,9 +56,9 @@
 
 		barResultTotal.classList.add('is-show');
 
-		page = ajaxBtn.disabled ? page + 1 : 0;
+		page = ajaxBtn.disabled ? page + limit : 0;
 
-		filter.elements.page.value = page * limit;
+		filter.elements.page.value = page;
 
 		const formData = new FormData(filter);
 
