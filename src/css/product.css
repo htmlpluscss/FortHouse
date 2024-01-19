@@ -832,6 +832,14 @@
 		font-weight: 700;
 		margin-bottom: 10px;
 
+		s {
+
+			font-size: 20px;
+			font-weight: 400;
+			color: var(--text);
+
+		}
+
 	}
 
 	&__red-note {

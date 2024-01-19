@@ -96,6 +96,15 @@
 
 		}
 
+		s {
+
+			font-size: 18px;
+			font-weight: 400;
+			color: var(--text);
+			display: block;
+
+		}
+
 	}
 
 	&.is-small &__price {

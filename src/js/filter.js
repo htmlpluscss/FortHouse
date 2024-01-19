@@ -127,6 +127,10 @@
 
 		} else {
 
+		location.assign('catalogue.php?' + queryString.toString());
+
+		return;
+
 			formData.append('ajaxFilter',true);
 			formData.delete('ajax');
 

@@ -42,7 +42,7 @@ const w3cjs            = require('gulp-w3cjs');
 let config             = null;
 
 const site             = 'FortHouse.ru';
-const domain           = 'forthouse.htmlpluscss.site';
+const domain           = 'forthouse.htmlpluscss.website';
 
 try {
 
@@ -187,7 +187,7 @@ gulp.task('ftp', () => {
 	return gulp.src( ['build/**/*','!build/img/**/*'] )
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
-		.pipe(replace('https://forthouse.ru', 'https://forthouse.htmlpluscss.site'))
+		.pipe(replace('https://forthouse.ru', 'https://forthouse.htmlpluscss.website'))
 		.pipe(replace('css/styles.css', 'css/styles.min.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
 		.pipe(f.restore)

@@ -6,6 +6,7 @@
 		img  : "r-bg410",
 		name : "Холодильник Hitachi",
 		code : "R-BG410 PU6X GPW",
+		priceOld : "199 950 ₽",
 		price : "99 950 ₽"
 	},
 	{
@@ -245,6 +246,7 @@
 						</a>
 
 						<p class="preview-product__price{% if item.price === 'По запросу' %} is-get{% endif %}">
+							{% if item.priceOld %}<s>{{ item.priceOld }}</s>{% endif %}
 							{{ item.price }}
 						</p>
 
